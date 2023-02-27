@@ -116,16 +116,119 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \addtocounter{framenumber}{-1}
 
 %----------------------------------------------------------------------------------------
-%	PRESENTATION SLIDES
+%	INTRO
 %----------------------------------------------------------------------------------------
 \section{Introduction}
 \begin{frame}{Introduction: radiative \safeB meson decays}
-\centering
-\textbf{What are radiative $\bm{B}$ decays?}
-
+\centering\small
+{\normalsize What are \textbf{radiative $\bm{B}$} decays?
+\begin{columns}
+   \column{0.4\textwidth}
    \input{tikz/btosgamma_Q.tex}
+   \column{0.4\textwidth}
    \input{tikz/btosgamma_W.tex}
+\end{columns}
+}
+
+\begin{itemize}
+   \item Rare decays: \textbf{forbidden at tree level} in the Standard Model!
+   \item \textbf{New particles} can appear \textbf{in the loops}, one of many examples:
+\end{itemize}
+{\normalsize
+\begin{columns}
+   \column{0.4\textwidth}
    \input{tikz/btosgamma_H.tex}
+\end{columns}
+}
+\begin{itemize}
+   \item In the case of \btosgamma: $\mathcal{B}\sim10^{-4}$.
+   \item[\ra] Accessible with smaller datasets than e.g. $b\to s\ell\ell$, where $\mathcal{B}\sim10^{-6}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Introduction: inclusive \safeB meson decays}
+   \centering\small
+   {\normalsize What are \textbf{inclusive $\bm{B}$} decays?}
+
+   \begin{itemize}
+      \item $B$ mesons are the \textbf{lightest mesons involving a $\bm{b}$ quark}
+      \item[\ra] decays always involve one or more flavour/generation changes!
+      \item[\ra] plethora of final decay states from $u, d, c, s$ quarks
+   \end{itemize}
+
+   \vspace{10pt}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+         \textbf{Exclusive}: pick a particular state and study its properties
+            \begin{itemize}
+               \item $B^0\to{K^0}^*(892)\gamma$
+               \item $B^+\to K^+\mu^+\mu^-$
+            \end{itemize}
+      \column{0.5\textwidth}
+      \centering
+         \textbf{Inclusive}: study all states originating from the associated quark
+         \begin{itemize}
+            \item $B\to X_s \gamma$
+            \item $B\to X_u \ell \nu$
+         \end{itemize}
+   \end{columns}
+   
+   \vspace{10pt}
+   Just a couple from thousands of potential examples!
+
+\end{frame}
+
+\begin{frame}{Introduction: hadronic tagging}
+\centering\small
+{\normalsize What is \textbf{hadronic tagging}?}
+
+\vspace{10pt}
+
+\begin{columns}
+   \column{0.33\textwidth}
+   \input tikz/tagging.tex
+
+   \column{0.66\textwidth}
+   \begin{itemize}
+      \item Method for $\boldsymbol{e^+}\boldsymbol{e^-}$ \textbf{colliders only}!
+      \item Use the known initial state of the \epem collision
+      \item \textit{Tag} the signal side
+      \item the four-momentum constraint allows to \textbf{infer the charge, flavour, four-momentum} of the signal side
+   \end{itemize}
+\end{columns}
+
+
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	THEORY
+%----------------------------------------------------------------------------------------
+\section{\safeBtoXsdgamma theory}
+
+\begin{frame}{Description of the inclusive decays}
+
+   The decay rate of \BtoXsdgamma involves both weak and strong interactions.
+The typical energy scale of these interactions is much lower than the electroweak scale: $\sim\order(m_W)$.
+This motivates approximating the interactions mediated by heavy $Z$ and $\Wpm$ bosons by an effective point-like vertex.
+
+   \begin{equation}\label{eq:effective_lagrangian}\nonumber
+      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+                                                  + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
+  \end{equation}
+
+  \input{tikz/b_to_s_gamma_effective.tex}
+
+\end{frame}
+
+\begin{frame}{\safeBtoXsdgamma total decay rate calculations}
+   
+\end{frame}
+
+\begin{frame}{\safeBtoXsdgamma spectrum calculations}
+   
 \end{frame}
 
 \end{document}
