@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+    \begin{feynman}
+    \vertex (i1){b};
+    \vertex[right =1.2cm of i1] (a) ;
+    \vertex[right=0.85cm of a] (b);
+    \vertex[right=0.85cm of b] (c);
+    \vertex[right=1.2cm of c] (o1) {s,d};
+    \vertex[below=2em of c] (g1);
+    \vertex[right=2em of g1] (o2) {$\gamma$};
+    
+    \diagram* {
+    (i1) -- [fermion] (a) -- [scalar, edge label =\(H^{\pm}\)] (c) -- [fermion] (o1),
+    (a) -- [fermion,half left, edge label = \(uct\)] (c),
+    (b) -- [photon] (o2),
+    };
+    \end{feynman}
+\end{tikzpicture}
