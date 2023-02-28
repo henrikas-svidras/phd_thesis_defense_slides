@@ -415,14 +415,176 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \item [] $\lambda_1$: $b$ quark kinetic energy parameter
       \item [] etc. for higher moments
      \end{itemize}
-   consequentially relating to $\mathcal{F}$.
+   $\mathcal{F}$ can be parametrised in terms of these quantities!
    \end{frame}
 
+
+   \begin{frame}{Kagan-Neubert model}
+      \small
+      \textbf{Kagan-Neubert} model is often used for experimental analyses:
+      \begin{equation}\nonumber
+         \mathcal{F}(x) = N\left(1-\frac{x}{m_B-m_b}\right)^a\exp{(1+a)\frac{x}{m_B-m_b}},
+     \end{equation}
+     and the parameter $a$ is also related to the second moment of the shape function.
+
+     Then the spectrum can be described by two parameters: $m_b$ and $\lambda_1$;
+
+     \begin{itemize}
+      \item[\ra] Measure the moments of \BtoXsgamma spectrum to obtain a better description 
+     \end{itemize}
+
+   \end{frame}
+
+   \begin{frame}{SIMBA global fit of \BtoXsgamma}
+      \small
+      \textbf{SIMBA} collaboration: 
+      Combine all the information available from experimental measurements
+      \begin{itemize}
+       \item[\ra] global fit of \BtoXsgamma measurements to determine $m_b$ and $\lambda_1$
+      \end{itemize}
+
+      \begin{columns}
+         \centering
+         \column{0.5\textwidth}
+         \includegraphics[width=0.7\textwidth]{figures/babar_hadtag_spec_default_la055_a3.pdf}
+         \includegraphics[width=0.7\textwidth]{figures/babar_incl_spec_default_la055_a3.pdf}
+         \column{0.5\textwidth}
+         \includegraphics[width=0.7\textwidth]{figures/babar_sem_spec_default_la055_a3.pdf}
+         \includegraphics[width=0.7\textwidth]{figures/belle_spec_default_la055_a3.pdf}
+      \end{columns}
+      \begin{flushright}
+         {\tiny\textbf{Phys.Rev.Lett. 127 (2021) 10, 102001}}
+      \end{flushright}
+   \end{frame}
+
+\begin{frame}{Beyond the Standard Model}
+   \small
+   Only heavy particles are expected, in other words, the effective Lagrangian would be modified as:
+   \begin{equation}\nonumber
+      \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \Delta\mathcal{C}_i^{\mathrm{BSM}}.
+   \end{equation}
+   Some models may propose $\Delta\mathcal{C}_j^{\mathrm{BSM}}$, where $\mathcal{C}_j^{\mathrm{SM}}=0$
+
+\vspace{10pt}
+   In no particular order, some (but surely not all) theories which propose such modifications:
+   \begin{itemize}
+      \item two-Higgs-doublet models $\leftarrow$ \textbf{to my knowledge, the most studied}
+      \item minimal supersymmetric models with minimal flavour violation
+      \item and left-right symmetric models
+      \item general minimal-supersymmetric theories
+      \item models with extra dimensions
+      \item the littlest Higgs models
+      \item 331 models
+   \end{itemize}
+\end{frame}
 
    %----------------------------------------------------------------------------------------
    %	Experimental status
    %----------------------------------------------------------------------------------------
    \section{\safeBtoXsdgamma experimental status}
-   
+
+   \begin{frame}{\safeBtoXsgamma experimental status}
+      \small
+      \begin{equation}\nonumber
+         \mathcal{B}(\BtoXsgamma) = (3.40\pm 0.17) \cdot 10 ^{-4}
+      \end{equation}
+
+      whereas the experimental value is:
+
+      \begin{equation}\nonumber
+         \mathcal{B}(\BtoXsgamma) = (3.49\pm 0.19) \cdot 10 ^{-4}
+      \end{equation}
+
+      which is a combination of the following measurements:
+      \vspace{5pt}
+
+      \resizebox{1.\textwidth}{!}{
+         \begin{tabular}{|lllllc|}
+         \hline
+         Year & Experiment                 & Technique & Data used  & Energy threshold &  $\mathcal{B}(B\rightarrow X_s\gamma) \times 10^{-4}$  [$\EB>1.6~\gev$]\\ 
+         \hline
+         2001 & CLEO   & Untagged         & 9.1~\invfb &  $\EB>2.0~\gev$ & $3.29\pm0.44\pm0.29$\\ 
+         2007 & BaBar & Hadronic-tagged  & 210~\invfb &  $\EB>1.9~\gev$ & $3.90\pm0.91\pm0.64$\\ 
+         2009 & Belle & Untagged/Lepton-tagged      & 605~\invfb &  $\EB>1.7~\gev$ & $3.47\pm0.15\pm0.40$\\ 
+         2012 & BaBar  & Lepton-tagged         & 347~\invfb &  $\EB>1.7~\gev$ & $3.32\pm0.16\pm0.31$\\ 
+         2012 & BaBar  & Sum-of-exclusive & 429~\invfb &  $\EB>1.7~\gev$ & $3.52\pm0.20\pm0.51$\\ 
+         2014 & Belle & Sum-of-exclusive & 711~\invfb &  $\EB>1.7~\gev$ & $3.75\pm0.18\pm0.35$\\
+         %\hline
+         %2022 & {\bf Belle II}& Hadronic               & 189 fb$^{-1}$ & $3.54 \pm0.78 (\mathrm{stat.})\pm0.83(\mathrm{syst.})$ &              $E^B_{\gamma}>1.8~\gev$                 \\
+         \hline
+         \end{tabular}
+         }
+         
+         \vspace{10pt}
+
+         Notice three prevalent type of measurement techniques:
+         \begin{itemize}
+            \item Sum-of-exclusive
+            \item Untagged
+            \item Tagged
+         \end{itemize}
+         \textbf{Only obtained by $\bm{B}$ factories}!
+   \end{frame}
+
+   \begin{frame}{\safeBtoXsgamma measurement techniques}
+      \begin{columns}
+         \centering
+         \column{0.4\textwidth}
+         \input{tikz/tagging.tex}
+         \column{0.6\textwidth}
+         \centering
+         \textbf{Sum of exclusive}
+         \begin{itemize}
+            \item Reconstruct specific $X_s$ states:
+            \begin{itemize}
+               \item $K^*(892)$
+               \item $K^+p^-$\\
+               etc.
+            \end{itemize} 
+            \item Sum all reconstructed states
+            \item Correct for missing phase space using simulation
+         \end{itemize}
+
+         Very efficient!
+
+         But strongly simulation dependent...
+
+
+      \end{columns}
+   \end{frame}
+
+   \begin{frame}{\safeBtoXsgamma measurement techniques}
+      \begin{columns}
+         \centering
+         \column{0.4\textwidth}
+         \input{tikz/tagging.tex}
+         \column{0.6\textwidth}
+         \centering
+         \textbf{Untagged/Tagged}
+
+         \begin{itemize}
+            \item Do not reconstruct $X_s$: treat them in a `missing-momentum' way
+            \item Suppress background only using the information of the photon
+            \item \textbf{If tagging}: also use the information of the second $B$ meson
+         \end{itemize}
+
+         \begin{tikzpicture}
+            \node[anchor = south west, inner sep=0] (image) at (current page.south west) 
+                {\includegraphics[width=0.8\textwidth]{../phd_thesis/figures/experiment_overview/tagging_advantages_mod.png}};
+            \node[below = 5 mm of image] (ghost) {};
+               \node[align = center, left =15mm of ghost] (firsttext)% <---- 
+                {\footnotesize \textbf{Untagged}};
+            \node[right = 2 mm of firsttext] (temp) {};
+            \node[align = center, above = 1mm of temp] (secondtext)% <---- 
+                {\footnotesize \textbf{lepton tagging}};
+            \node[align = center, right = 6mm of firsttext] (thirdtext)% <---- 
+                {\footnotesize \textbf{semileptonic tagging}};
+            \node[align = center, right = 6mm of secondtext] (fourthtext)% <---- 
+                {\footnotesize \textbf{hadronic tagging}};
+         \end{tikzpicture}
+      \end{columns}
+   \end{frame}
+
+
 
 \end{document}
