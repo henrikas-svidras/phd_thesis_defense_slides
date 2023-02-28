@@ -209,26 +209,220 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \section{\safeBtoXsdgamma theory}
 
 \begin{frame}{Description of the inclusive decays}
+   \small
 
-   The decay rate of \BtoXsdgamma involves both weak and strong interactions.
-The typical energy scale of these interactions is much lower than the electroweak scale: $\sim\order(m_W)$.
-This motivates approximating the interactions mediated by heavy $Z$ and $\Wpm$ bosons by an effective point-like vertex.
+   \begin{itemize}
+      \item Fully inclusive decay rate is related to the \textbf{the parton decay rate}
+      \item The $b\to s$ electroweak loop is \textbf{dominated by the top quark} 
+      \item It \textbf{involves both weak and strong interactions}
+      \item[\ra] energy scale $\ll\order(m_W)$
+      \item[\ra] approximate weak interactions with effective point-like vertices.
+   \end{itemize}
 
-   \begin{equation}\label{eq:effective_lagrangian}\nonumber
+   \textbf{Effective Lagrangian:}
+   \begin{equation}\nonumber
       \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
                                                   + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
   \end{equation}
 
-  \input{tikz/b_to_s_gamma_effective.tex}
+\end{frame}
+
+
+\begin{frame}{Description of the inclusive decays}
+   \small
+
+   \begin{equation}\nonumber
+      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+                                                  + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
+  \end{equation}
+
+  $\mathcal{C}_i$: Wilson coefficients (encode \Wpm and $Z$ interactions)
+  
+  $\mathcal{O}_i$: Four-quark and dipole-type operators (quark interactions)
 
 \end{frame}
 
-\begin{frame}{\safeBtoXsdgamma total decay rate calculations}
-   
+\begin{frame}{Description of the inclusive decays}
+   \small
+
+   \begin{equation}\nonumber
+      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+                                                  + {\underbrace{\frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}}_{\substack{\approx 0.02,~\mathbf{q = s}\\\approx 0.47,~\mathbf{q = d}}}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
+   \end{equation}
+
+\begin{itemize}
+   \item For \btosgamma the second term is much less important
+   \item It is relevant for higher order corrections, and for \btodgamma
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Description of the inclusive decays}
+\small
+   \begin{equation}\nonumber
+      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+                                                  + \cancel{\frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))}\right]
+   \end{equation}
+
+\begin{itemize}
+   \item For \btosgamma the second term is much less important
+   \item It is relevant for higher order corrections, and for \btodgamma
+   \item[\ra] Then the effective Lagrangian takes the form:
+\end{itemize}
+
+\vspace{-15pt}
+
+\input{tikz/b_to_s_gamma_effective.tex}
+
+\begin{itemize}
+   \item and one evaluates the decay rate as 
+\end{itemize}
+
+\vspace{-10pt}
+
+\begin{equation}\nonumber
+   \Gamma(\btosgamma)\propto|\mel**{s\gamma}{\mathcal{L}_{\mathrm{eff}}}{b}|^2
+\end{equation}
+
+\end{frame}
+
+
+\begin{frame}{\safeBtoXsgamma total decay rate calculations}
+\small
+   \begin{itemize}
+      \item That was for the \textit{parton} decay rate;
+      \item[\ra] can be calculated perturbatively 
+      \item Switch from partons to hadrons assuming quark-hadron duality:
+   \end{itemize}
+   \begin{equation}\nonumber
+      \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \underbrace{\Delta\Gamma_{\mathrm{non-p.}}}_{\substack{\text{additional}\\\text{non-perturbative}\\\text{term}}}
+  \end{equation}
+  \begin{itemize}
+   \item[\ra] related to the fact that the $b$ quark is non-stationary and within a $B$ meson
+   \item Many such effects decrease or `average out' over the totality of the spectrum
+   \item However, others remain: e.g. around $\Egamma<1.5~\gev$ non-perturbative \ccbar contributions become relevant 
+     \end{itemize}
+
+     \textbf{A convention $\Egamma>1.6~\gev$ chosen in inclusive decay rate calculations}
+
 \end{frame}
 
 \begin{frame}{\safeBtoXsdgamma spectrum calculations}
-   
+\small
+   Non-perturbative effects more complicated if the partial decay rates are considered
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_to_experiment.png}
+      \column{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_components.png}
+   \end{columns}
+
+   \begin{itemize}
+      \item Use soft-collinear effective field theory:
+   \end{itemize}
+   \begin{equation}\nonumber
+      d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
+  \end{equation}
+  which splits the calculation of:
+  \begin{itemize}
+   \item[] {\color{red}$\mathcal{H}$: effective hard interaction (perturbative)}
+   \item[] {\color{blue}$\mathcal{J}$: collinear particle interactions (perturbative)}
+   \item[] {\color{orange}$\mathcal{S}$: soft particle interactions}
+  \end{itemize}
+
+\vspace{-10pt}
+
+\begin{flushright}
+   \tiny \textbf{Credit to Frank Tackmann for the illustrations.}
+\end{flushright}
+
 \end{frame}
+
+\begin{frame}{\safeBtoXsdgamma spectrum calculations}
+   \small
+      Non-perturbative effects more complicated if the partial decay rates are considered
+   
+      \begin{columns}
+         \column{0.5\textwidth}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_to_experiment.png}
+         \column{0.5\textwidth}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_components.png}
+      \end{columns}
+   
+      \begin{itemize}
+         \item Use soft-collinear effective field theory:
+      \end{itemize}
+      \begin{equation}\nonumber
+         d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
+     \end{equation}
+
+     \vspace{-10pt}
+     \begin{itemize}
+      \item It is assumed that:
+     \end{itemize}
+     \begin{equation}\nonumber
+      \mathcal{S} \equiv \underbrace{\mathcal{S}_p}_{\substack{\text{perturbative}\\\text{partonic soft function}}} \otimes \underbrace{\mathcal{F}}_{\substack{\text{non perturbative}\\\textbf{shape function}}}
+     \end{equation}
+     \begin{itemize}
+      \item[\ra] the theory is capable to separate perturbative and non-perturbative terms 
+     \end{itemize}
+
+   \vspace{-5pt}
+   
+   \begin{flushright}
+      \tiny \textbf{Credit to Frank Tackmann for the illustrations.}
+   \end{flushright}
+   
+   \end{frame}
+
+   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+      \small
+      \begin{itemize}
+         \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
+         \item \textbf{Crucial input for other analyses}, e.g. $|V_{ub}|$ measurements with $B\to\X_u\ell\nu$, using phase space selection to separate $B\to\X_c\ell\nu$ states
+      \end{itemize}
+
+      \textbf{So how to evaluate it?}
+
+   \end{frame}
+
+
+   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+      \small
+      \begin{itemize}
+         \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
+         \item \textbf{Crucial input for other analyses}, e.g. $|V_{ub}|$ measurements with $B\to\X_u\ell\nu$, using phase space selection to separate $B\to\X_c\ell\nu$ states
+      \end{itemize}
+
+      \textbf{So how to evaluate it?}
+      \begin{itemize}
+         \item[\ra] you have to use experimental information: 
+         \item[\ra] \BtoXsgamma is a highly suitable channel for this
+      \end{itemize}
+
+   \end{frame}
+
+   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+      \small
+      It can be shown that the moments of photon energy spectrum relate to
+      \begin{equation}\nonumber
+         \expval**{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval**{\Egamma^2}-\expval**{\Egamma}^2 \sim \lambda_1/3+\order(\Lambda_{\mathrm{QCD}}),
+     \end{equation}
+     with:
+     \begin{itemize}
+      \item [] $m_b$: $b$ quark pole MASS
+      \item [] $\lambda_1$: $b$ quark kinetic energy parameter
+      \item [] etc. for higher moments
+     \end{itemize}
+   consequentially relating to $\mathcal{F}$.
+   \end{frame}
+
+
+   %----------------------------------------------------------------------------------------
+   %	Experimental status
+   %----------------------------------------------------------------------------------------
+   \section{\safeBtoXsdgamma experimental status}
+   
 
 \end{document}
