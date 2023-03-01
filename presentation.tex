@@ -590,8 +590,95 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    %----------------------------------------------------------------------------------------
    \section{Belle~II and SuperKEKB}
 
-   \begin{frame}{Belle~II and SuperKEKB}
+   \begin{frame}{SuperKEKB}
+      \begin{columns}
+         \column{0.5\textwidth}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/super_kekb.png}
+         \column{0.5\textwidth}
+         \includegraphics[width=1\textwidth]{figures/Layout-of-SuperKEKB-at-the-KEK-Tsukuba-campus.png}
+      \end{columns}
    \end{frame}
 
+   \begin{frame}{Belle~II detector}
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/belle2.png}
+   \end{frame}
+
+
+   \begin{frame}{Data samples in B factories}
+      \small\centering
+      \textbf{$\sqrt{s} = 10.58~\gev$}
+      
+      $\epem\ra X$
+
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/corss_sections.pdf}
+      \begin{itemize}
+         \item \epem collissions create not only \FourS!
+         \item Many processes are highly different and easy to distinguish
+         \item Background from $\epem\ra\qqbar$ and $\epem\ra\tautau$ often important
+      \end{itemize}
+   \end{frame}
+
+   %----------------------------------------------------------------------------------------
+   %	B to Xs gamma
+   %----------------------------------------------------------------------------------------
+   \section{Belle II analysis}
+
+   \begin{frame}{Analysis recipe}
+      \small
+      
+      $\mathrm{`tag~B'} + \mathrm{`signal~B'} \ra \FourS$
+     
+      \begin{itemize}
+         \item Reconstruct all events where one of the $B$ mesons decays hadronically
+         \item[\to] \textbf{Full event intepretation} algorithm used (next slide)
+         \item Require a high-energy photon from the other $B$ meson
+         \item[\to] cannot make any more requirements about the signal side, while maintaining an inclusive sample!
+      \end{itemize}
+\textbf{Final goal:}
+      \begin{equation}\nonumber
+         \left.\frac{d\mathcal{B}(\BtoXsgamma)}{d\EB}\right|_i = \mathcal{U}_i \cdot \frac{N_i(\BtoXsgamma)}{\varepsilon_i N_{B}},
+      \end{equation}
+   \end{frame}
+
+
+   \begin{frame}{Full Event Interpretation}
+      \small
+   \begin{columns}
+      \column{0.5\textwidth}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_reconstruction/FEI_tagging.png}
+      \column{0.5\textwidth}
+         \begin{itemize}
+            \item Reconstructs $B$ mesons in thousands of subdecay chains
+            \item Hadronic and semileptonic mode
+            \item \textbf{Step 1:} Combine detector-level objects to final state particles
+            \item \textbf{Step 2:} Combine final state particles to intermediate particles
+            \item \textbf{Step 3:} Combine final/intermediate state particles to other intermediate particles or $B$ mesons
+            \item \textbf{Step 4:} Repeat step 3 for all decay chains.
+         \end{itemize}
+      
+   \end{columns}
+\begin{itemize}
+   \item[\ra] end up with $B^+$ and $B^0$ candidates and a probability score \feiProb for each
+\end{itemize}   
+\end{frame}
+
+\begin{frame}{Reconstructed samples}
+   \small
+   \begin{itemize}
+      \item Because of tagging, $B$ meson rest frame attainable
+      \item[\ra] energy provided in the signal $B$ meson rest frame
+      \item $\EB>1.4~\gev$ threshold adopted
+      \item[\ra] compromise between background and signal ratio
+   \end{itemize}
+   \begin{columns}
+      \column{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_reconstruction/Bp_tagged_background.pdf}
+      \column{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_reconstruction/Bz_tagged_background.pdf}
+   \end{columns}
+\end{frame}
+
+\begin{frame}{Main background sources}
+\end{frame}
 
 \end{document}
