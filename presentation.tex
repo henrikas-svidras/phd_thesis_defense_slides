@@ -918,6 +918,10 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 
    \vspace{10pt}
 
+\begin{itemize}
+   \item Example fits on the full dataset ($\EB>1.4~\gev$)
+\end{itemize}
+
    \begin{columns}
       \centering
       \column{0.33\textwidth}
@@ -948,6 +952,171 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
       \draw[-stealth] (inittwo) -- (end3);
       \draw[-stealth] (init2) -- (end2);
       \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Fit binning}
+\small\scriptsize
+
+Optimise based on statistical significance figure of merit studies:
+
+\begin{itemize}
+   \item 11 fitting intervals to extract \EB spectrum:\\
+   \ra $1.4-1.8~\gev$ : two 200~\mev wide (control-region for fit)\\
+   \ra $1.8-2.7~\gev$ : one 200~\mev and seven 100~\mev wide \textbf{(signal region)} \\
+   \ra $2.7~\gev+$  \hspace{14.5pt}: one `overflow' bin (control region for fit)\\
+   \item The \textbf{fit is performed using the three PDFs} in every interval
+\end{itemize}
+
+Fits on 1.6~\invab of simulation (four examples):
+
+\begin{columns}
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_1p6to1p8ppdf.pdf}
+   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p0to2p1ppdf.pdf}
+
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p3to2p4ppdf.pdf}
+   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p5to2p6ppdf.pdf}
+
+
+\end{columns}
+
+\begin{tikzpicture}[remember picture, overlay]
+   \node[] at (6,3) (img) {\includegraphics[width=0.2\textwidth]{../phd_thesis/figures/fitting/legend.png}};
+\end{tikzpicture}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Fit validity on smaller data sets}
+   \begin{itemize}
+      \item Fit prepared on 1.6~\invab
+      \item But Belle~II data is only 189~\invfb
+      \item[\ra] test stability on smaller data sample (1/10th)
+   \end{itemize}
+
+      \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/extracted_signal_generic_mc.pdf}
+  \begin{itemize}
+   \item[\ra] irrespective of background levels, consistent fit result
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Remaining background}
+\scriptsize\centering
+   \begin{itemize}
+      \item At this stage:
+      \item[\ra] Photon selections used
+      \item[\ra] Continuum suppressed
+      \item[\ra] Tag-side used to remove non-\B and poorly reconstructed \B events
+      \item[\ra] But still the result does not look like a photon energy spectrum!   
+      \item[\ra] remaining background removed in a simulation reliant way
+      \item[\ra] repeat the fit on simulation, but with \BtoXsgamma events removed
+      \item[\ra] Subtract peaking component!  
+   \end{itemize}
+
+
+   \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/subtracted_signal_generic_mc.pdf}
+
+\end{frame}
+
+\begin{frame}{Fit stability on smaller data sets}
+\scriptsize\centering
+   \begin{itemize}
+      \item Fit is tested by generating toy datasets based on the full 1.6~\invab fit
+      \item The distribution of extracted $\mathcal{N}_{\mathrm{CB}}$ is tested
+      \item Gaussian fits performed on the $\mathcal{N}_{\mathrm{CB}}^{\mathrm{expected}}$ - $\mathcal{N}_{\mathrm{CB}}^{\mathrm{extracted}}$
+   \end{itemize}
+
+\begin{columns}
+   \column{0.5\textwidth}
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/mc_validation/toy_study/mean_pull_toys.pdf}
+   \column{0.5\textwidth}
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/mc_validation/toy_study/sigma_pull_toys.pdf}
+\end{columns}
+
+\begin{itemize}
+   \item Linearity tests and correlation studies also performed
+   \item[\ra] all results points to the fact that the fitter is an unbiased estimator
+\end{itemize}
+
+
+
+
+
+\end{frame}
+
+
+\begin{frame}{Simulation-to-data calibration}
+   
+   \begin{itemize}
+      \item Usage of MVA tools trained on simulation and reliance on background simulation
+      \item[\ra] need to ensure adequate agreement between data and simulation
+   \end{itemize}
+
+   \begin{itemize}
+      \item FEI calibration
+      \item \piz and $\eta$ veto tool calibration
+      \item Photon detection efficiency calibration
+      \item Modelling of the post-fit background
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Data-to-simulation validation: off-resonance sample}
+
+\end{frame}
+
+\begin{frame}{Data-to-simulation validation: inverted continuum}
+
+\end{frame}
+
+\begin{frame}{Data-to-simulation validation: inverted \piz and $\eta$}
+
+\end{frame}
+
+\begin{frame}{Data-to-simulation validation: sidebands}
+
+\end{frame}
+
+\begin{frame}{\BtoXsgamma efficiency validation}
+
+\end{frame}
+
+\begin{frame}{Unfolding}
+
+\end{frame}
+
+\begin{frame}{Systematic uncertainties}
+
+\end{frame}
+
+\begin{frame}{Fit results}
+
+\end{frame}
+
+\begin{frame}{Background subtracted results}
+
+\end{frame}
+
+\begin{frame}{Total and partial branching fractions}
+
+\end{frame}
+
+\begin{frame}{First and second moments of the spectrum}
+
+\end{frame}
+
+\begin{frame}{Comparison with existing results}
+\end{frame}
+
+\begin{frame}{Input to the theoretical calculations}
+\end{frame}   
+
+\begin{frame}{Future prospects}
 \end{frame}
 
 \end{document}
