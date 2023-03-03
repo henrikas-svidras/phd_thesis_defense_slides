@@ -1249,40 +1249,266 @@ Fits on 1.6~\invab of simulation (four examples):
 \end{frame}
 
 \begin{frame}{\BtoXsgamma efficiency validation}
+\scriptsize\centering
+\begin{itemize}
+   \item Efficiency is assumed to factorise:
+\end{itemize}
+\begin{equation*}
+   \varepsilon_{\BtoXsgamma} = \varepsilon_{\mathrm{FEI}} \cdot \varepsilon_{\mathrm{selection}},
+\end{equation*}
+
+
+
+\begin{itemize}
+   \item $\varepsilon_{\mathrm{FEI}}$ calculated based on simulation + corrected using calibration factors
+\end{itemize}
+\begin{equation*}
+   \varepsilon_{\mathrm{FEI}} = 0.00444\pm0.00015
+\end{equation*}
+\begin{itemize}
+   \item $\varepsilon_{\mathrm{selection}}$ are calculated based on simulation + corrected:
+   \begin{itemize}
+      \scriptsize
+      \item \piVeto and \etaVeto correction, photon detection efficiency 
+      \item[\ra] calculated in separate analyses
+      \item \texttt{BDToutput}, \texttt{ZernikeMVA} by varying their selection 
+      \item[\ra] variations directly in data (blinded) evaluated and assigned as uncertainty
+   \end{itemize}
+\end{itemize}
+\includegraphics[width=0.45\textwidth]{../phd_thesis/figures/signal_validation/corrected_selection_efficiency.pdf}
+
+
 
 \end{frame}
 
 \begin{frame}{Unfolding}
+\centering\scriptsize
+
+\begin{itemize}
+   \item Simplest approach: bin-by-bin correction
+   \item[\ra] although cross-bin migrations are not taken into account
+   \item[\ra] however given the statistical uncertainty this is sufficient
+\end{itemize}
+\begin{equation*}\label{eq:bin_by_bin_unfolding}
+   x_i = y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
+  \end{equation*}
+
+  \begin{equation*}\label{eq:bin_by_bin_unfolding_error}
+      \Delta x_i = \Delta y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
+  \end{equation*}
+\begin{itemize}
+   \item Unfolding model chosen by merging the inclusive \BtoXsgamma model with $B\to\Kstar(892)\gamma$ resonance
+\end{itemize}
+
+\begin{columns}
+   \centering
+   \column{0.5\textwidth}
+   \textbf{Model:}
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_samples/hybrid_model_uncertainties.pdf}
+
+   \column{0.5\textwidth}
+   \centering
+   \textbf{Unfolding} (simulation):
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/signal_validation/reco_vs_true_spectrum.pdf}
+
+\end{columns}
+
 
 \end{frame}
 
 \begin{frame}{Systematic uncertainties}
-
+   \scriptsize\centering
+   \begin{itemize}
+      \item Summary of systematic uncertainties that are evaluates:
+      \item[\ra] Background modelling/normalisation uncertainties
+      \item[\ra] Fit model uncertainties
+      \item[\ra] Efficiency uncertainties
+      \item[\ra] Unfolding and \BtoXdgamma uncertainties   
+   \end{itemize}
 \end{frame}
 
-\begin{frame}{Fit results}
+\begin{frame}{Fit results -- Unblinded}
+\begin{columns}
+   \column{0.33\textwidth}
+   \centering
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_1p8to2p0ppdf.pdf}
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p2to2p3ppdf.pdf}
 
+   \column{0.33\textwidth}
+   \centering
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p0to2p1ppdf.pdf}
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p3to2p4ppdf.pdf}
+
+   \column{0.33\textwidth}
+   \centering
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p1to2p2ppdf.pdf}
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p4to2p5ppdf.pdf}
+\end{columns}
+\begin{columns}
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.66\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p5to2p6ppdf.pdf}
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.66\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p6to2p7ppdf.pdf}
+
+\end{columns}
 \end{frame}
 
 \begin{frame}{Background subtracted results}
+   \centering\scriptsize
+\textbf{Fit results summarised:}
+\begin{columns}
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/background_vs_data_final.pdf}
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/background_vs_data_final_log.pdf}
+\end{columns}
+\textbf{Background subtracted:}
+
+\begin{columns}
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/reco_spectrum_overlayed.pdf}
+   \column{0.5\textwidth}
+   \centering
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/reco_spectrum_overlayed_signal_region.pdf}
+\end{columns}
 
 \end{frame}
 
 \begin{frame}{Total and partial branching fractions}
+   \centering\scriptsize
+      \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/final_results/partial_bfs.pdf}
+
+      \textbf{Or numerically:}
+      \vspace{5pt}
+
+      \resizebox{1\textwidth}{!}{
+         \begin{tabular}{|c|ccc||cccc|}
+         \hline
+         \multirow{2}{*}[-6pt]{\EB interval [\gev]} &
+         \multirow{2}{*}[-6pt]{$\frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {E^B_{\g}}_{,i}} (10^{-4})$} &
+         \multirow{2}{*}[-6pt]{\makecell{Statistical\\uncertainty} ($10^{-4}$)} &
+         \multirow{2}{*}[-6pt]{\makecell{Systematic\\uncertainty} ($10^{-4}$)}& 
+         \multicolumn{4}{c|}{Systematic uncertainty group} \\
+         \cline{5-8}
+         & & & &        
+         \makecell{Background \\ modelling} &
+         \makecell{\Mbc fit \\ model} & 
+         \makecell{\BtoXsgamma \\efficiency} & 
+         \makecell{Other\\uncertainties}\\
+         \hline
+         $1.8-2.0$  &  0.48 & $\pm0.54$ & $\pm0.64$ & 0.49 & 0.42 & 0.03 & 0.09 \\
+         $2.0-2.1$  &  0.57 & $\pm0.31$ & $\pm0.25$ & 0.17 & 0.17 & 0.06 & 0.07 \\
+         $2.1-2.2$  &  0.13 & $\pm0.26$ & $\pm0.16$ & 0.11 & 0.13 & 0.01 & 0.01 \\
+         $2.2-2.3$  &  0.41 & $\pm0.22$ & $\pm0.10$ & 0.04 & 0.07 & 0.05 & 0.02 \\
+         $2.3-2.4$  &  0.48 & $\pm0.22$ & $\pm0.10$ & 0.02 & 0.06 & 0.06 & 0.05 \\
+         $2.4-2.5$  &  0.75 & $\pm0.19$ & $\pm0.14$ & 0.02 & 0.04 & 0.09 & 0.09 \\
+         $2.5-2.6$  &  0.71 & $\pm0.13$ & $\pm0.10$ & 0.00 & 0.02 & 0.09 & 0.04  \\
+         \hline
+         \end{tabular}
+     }
 
 \end{frame}
 
-\begin{frame}{First and second moments of the spectrum}
+\begin{frame}{Interated results}
+
+   \centering\scriptsize
+
+   \textbf{Integrated results:}
+
+   \resizebox{1\textwidth}{!}{
+  \begin{tabular}{|c|cl|}
+  \hline
+      \EB lower threshold [\hspace{-1pt}$\gev$] & 
+      $\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$ & 
+      \makecell{$\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$\\(extrapolated to $1.6~\gev)$}  \\
+      \hline
+          $1.8$  & $3.54 \pm 0.78$ (stat.) $\pm~0.83$ (syst.) & $3.65 \pm 0.80$ (stat.) $\pm 0.86$ (syst.) $\pm 0.02$ (extrap.)\\ 
+          $2.0$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
+          $2.1$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & $2.86 \pm 0.53$ (stat.) $\pm 0.40$ (syst.) $\pm 0.08$ (extrap.)\\
+      \hline
+  \end{tabular}
+
+}
+
+\vspace{10pt}
+
+\textbf{Moments of the spectrum:}
+
+\resizebox{1\textwidth}{!}{
+    \begin{tabular}{|c|cc|}
+    \hline
+        \EB lower threshold [\hspace{-1pt}$\gev$] & 
+        $\expval**{\EB}$ [$\gev$] & $\expval**{\EB^2}$ - $\expval**{\EB}^2$ [$\gev^2$]\\
+        \hline
+        1.8 & 2.284 $\pm$ 0.065 (stat.) $\pm$ 0.071 (syst.)    & 0.0502 $\pm$ 0.0157 (stat.) $\pm$ 0.0176 (syst.)\\
+        2.0 & 2.343 $\pm$ 0.036 (stat.) $\pm$ 0.026 (syst.)    & 0.0315 $\pm$ 0.0063 (stat.) $\pm$ 0.0045 (syst.)\\
+        2.1 & 2.410 $\pm$ 0.032 (stat.) $\pm$ 0.019 (syst.)    & 0.0147 $\pm$ 0.0057 (stat.) $\pm$ 0.0036 (syst.)\\
+        
+        \hline
+    \end{tabular}
+
+}
 
 \end{frame}
 
 \begin{frame}{Comparison with existing results}
+\centering\scriptsize
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/results_discussion/all_measurements_compared.pdf}
+
+      \begin{itemize}
+         \item Extrapolated results more precise but always model dependant
+         \item However to compare with theory predictions, extrapolations to a common threshold are necessary
+      \end{itemize}
+      
 \end{frame}
 
 \begin{frame}{Input to the theoretical calculations}
+
+   \begin{itemize}
+      \item Global fit of all inclusive experimental results
+      \item Determines:
+      \item[\ra] normalisation
+      \item[\ra] $m_b$
+      \item[\ra] $\lambda_1$  
+   \end{itemize}
+\begin{columns}
+   \column{0.5\textwidth}
+   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/results_discussion/simba_partial_bfs_expectation.pdf}
+
+   \column{0.5\textwidth}
+   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
+
+\end{columns}
+
+
 \end{frame}   
 
 \begin{frame}{Future prospects}
+\scriptsize\centering
+   \begin{itemize}
+      \item The future holds good things!
+      \item Other results already limited systematically
+      \item[\ra] hadronic tag will only be limited systematically at 5-10~\invab
+   \end{itemize}
+
+\resizebox{1\textwidth}{!}{
+      \begin{tabular}{|c|cccc|c|}
+          \hline
+          \multirow{2}{*}{Lower \EB threshold} & \multicolumn{4}{c|}{Statistical uncertainty} & \multirow{2}{*}{\makecell{Baseline (improved)\\ systematic uncertainty}} \\
+          & 1~\invab& 5~\invab & 10~\invab & 50~\invab & \\
+          \hline
+          1.4~\gev & 10.7\% & 6.4\% & 4.7\% & 2.2\% & 10.3 \% (5.2\%)\\
+          1.6~\gev & 9.9 \% & 6.1\% & 4.5\% & 2.1\% & 8.5 \% (4.2\%)\\ 
+          1.8~\gev & 9.3 \% & 5.7\% & 4.2\% & 2.0\% & 6.5 \% (3.2\%)\\ 
+          2.0~\gev & 8.3 \% & 5.1\% & 3.8\% & 1.7\% & 3.7 \% (1.8\%)\\ 
+          \hline
+      \end{tabular}
+}
 \end{frame}
 
 \end{document}
