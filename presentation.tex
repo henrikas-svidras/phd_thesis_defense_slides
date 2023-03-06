@@ -247,7 +247,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    
    \begin{itemize}
       \item[\ra] massive non-Standard Model particles modify $\mathcal{C}_i$ (normalisation)
-      \item[\ra] BSM probe!
+      \item[\ra] BSM probe: $      \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \Delta\mathcal{C}_i^{\mathrm{BSM}}$
       \item and one evaluates the decay rate as 
    \end{itemize}
    
@@ -342,36 +342,8 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
          \textbf{Only obtained by $\bm{B}$ factories}!
    \end{frame}
 
-   \begin{frame}{\safeBtoXsgamma measurement techniques}
-      \scriptsize
-      \begin{columns}
-         \centering
-         \column{0.4\textwidth}
-         \input{tikz/tagging.tex}
-         \column{0.6\textwidth}
-         \centering
-         \textbf{Sum of exclusive}
-         \begin{itemize}
-            \item Reconstruct specific $X_s$ states:
-            \begin{itemize}
-               \scriptsize
-               \item $K^*(892)$
-               \item $K^+p^-$\\
-               etc.
-            \end{itemize} 
-            \item Sum all reconstructed states
-            \item Correct for missing phase space using simulation
-         \end{itemize}
-
-         Very efficient!
-
-         But strongly simulation dependent...
-
-
-      \end{columns}
-   \end{frame}
-
-   \begin{frame}{\safeBtoXsgamma measurement techniques}
+   
+      \begin{frame}{\safeBtoXsgamma measurement techniques}
       \scriptsize
       \begin{columns}
          \centering
@@ -852,33 +824,14 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/subtracted_signal_generic_mc.pdf}
 
-\end{frame}
-
-\begin{frame}{Fit stability on smaller data sets}
-\scriptsize\centering
    \begin{itemize}
-      \item Fit is tested by generating toy datasets based on the full 1.6~\invab fit
-      \item The distribution of extracted $\mathcal{N}_{\mathrm{CB}}$ is tested
-      \item Gaussian fits performed on the $\mathcal{N}_{\mathrm{CB}}^{\mathrm{expected}}$ - $\mathcal{N}_{\mathrm{CB}}^{\mathrm{extracted}}$
+      \item Linearity tests and correlation studies also performed
+      \item[\ra] all results points to the fact that the fitter is an unbiased estimator
    \end{itemize}
 
-\begin{columns}
-   \column{0.5\textwidth}
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/mc_validation/toy_study/mean_pull_toys.pdf}
-   \column{0.5\textwidth}
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/mc_validation/toy_study/sigma_pull_toys.pdf}
-\end{columns}
-
-\begin{itemize}
-   \item Linearity tests and correlation studies also performed
-   \item[\ra] all results points to the fact that the fitter is an unbiased estimator
-\end{itemize}
-
-
-
-
-
 \end{frame}
+
+
 
 
 \begin{frame}{Simulation-to-data calibration}
@@ -886,16 +839,27 @@ Fits on 1.6~\invab of simulation (four examples):
    \scriptsize\centering
    
    \begin{itemize}
-      \item Usage of MVA tools trained on simulation and reliance on background simulation
-      \item[\ra] need to ensure adequate agreement between data and simulation
+      \item Reliance on many different tools and background modelling
+      \item Need to ensure adequate agreement between data and simulation
    \end{itemize}
 
+   \vspace{10pt}
+
+  Main supplementary calibration and modelling studies performed:
+
    \begin{itemize}
-      \item FEI calibration
-      \item \piz and $\eta$ veto tool calibration
-      \item Photon detection efficiency calibration
-      \item Modelling of the post-fit background
+      \item FEI \hspace{81pt} $\Rightarrow$ $B\to X_c \ell \nu$ 
+      \item \piz and $\eta$ veto tool \hspace{27pt}  $\Rightarrow$ $B^+\to \bar{D}^0\pi^+$ and $B^0\to D^-\pi^+$
+      \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.5\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Other Belle~II analyses}$}}
+      \item Photon detection efficiency  $\Rightarrow$ $\epem\ra\mumu(\gamma)$ \hspace{27pt} \textbf{\}Separate analysis performed}
+      \item Post-fit background \hspace{24pt} $\Rightarrow$ world average $\mathcal{B}$ variations \hspace{15pt} \textbf{\}Study for this analysis}
    \end{itemize}
+
+   \vspace{10pt}
+
+   \ra FEI calibration brings $\sim 5\%$ error\\
+   \ra \piz and $\eta$ veto tool add a $\sim 5-10\%$ uncertainty\\
+   \ra Other calibration uncertainties $\mathcal{O}(1\%)$\\
 
 \end{frame}
 
@@ -907,7 +871,7 @@ Fits on 1.6~\invab of simulation (four examples):
       \item[\ra] $\epem\ra\qqbar$ validation
    \end{itemize}
 \centering
-        \includegraphics[width=0.65\textwidth]{../phd_thesis/figures/data_validation/Bboth_offresonance_EB.pdf}
+        \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_validation/Bboth_offresonance_EB.pdf}
 
         \begin{itemize}
          \item[\ra] excellent \EB agreement
@@ -1321,25 +1285,34 @@ Extrapolation to $\EB>1.6~\gev$
 \end{frame}
 
 \begin{frame}{Input to the theoretical calculations}
-
-   \begin{itemize}
-      \item Global fit of all inclusive experimental results
-      \item Determines:
-      \item[\ra] normalisation
-      \item[\ra] $m_b$
-      \item[\ra] $\lambda_1$  
-   \end{itemize}
+\centering\scriptsize
 \begin{columns}
    \centering
    \column{0.5\textwidth}
+   \centering\scriptsize
+
+   \includegraphics[width=0.45\textwidth]{figures/babar_hadtag_spec_default_la055_a3.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/babar_incl_spec_default_la055_a3.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/babar_sem_spec_default_la055_a3.pdf}
+   \includegraphics[width=0.45\textwidth]{figures/belle_spec_default_la055_a3.pdf}
+   
+   {\Large +}
+   
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/simba_partial_bfs_expectation.pdf}
 
    \column{0.5\textwidth}
    \centering
+   \begin{itemize}
+      \item Global fit of all experimental information by simba
+      \item Extract shape function and its parameters
+   \end{itemize}
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
 
 \end{columns}
 
+\begin{tikzpicture}[remember picture, overlay]
+   \node (dog) at (-0.15,4.) {\LARGE $\bm{\Longrightarrow}$};
+\end{tikzpicture}
 
 \end{frame}   
 
@@ -1615,5 +1588,60 @@ Extrapolation to $\EB>1.6~\gev$
       \item 331 models
    \end{itemize}
 \end{frame}
+
+\begin{frame}{\safeBtoXsgamma measurement techniques}
+   \scriptsize
+   \begin{columns}
+      \centering
+      \column{0.4\textwidth}
+      \input{tikz/tagging.tex}
+      \column{0.6\textwidth}
+      \centering
+      \textbf{Sum of exclusive}
+      \begin{itemize}
+         \item Reconstruct specific $X_s$ states:
+         \begin{itemize}
+            \scriptsize
+            \item $K^*(892)$
+            \item $K^+p^-$\\
+            etc.
+         \end{itemize} 
+         \item Sum all reconstructed states
+         \item Correct for missing phase space using simulation
+      \end{itemize}
+
+      Very efficient!
+
+      But strongly simulation dependent...
+
+
+   \end{columns}
+\end{frame}
+
+\begin{frame}{Fit stability on smaller data sets}
+   \scriptsize\centering
+      \begin{itemize}
+         \item Fit is tested by generating toy datasets based on the full 1.6~\invab fit
+         \item The distribution of extracted $\mathcal{N}_{\mathrm{CB}}$ is tested
+         \item Gaussian fits performed on the $\mathcal{N}_{\mathrm{CB}}^{\mathrm{expected}}$ - $\mathcal{N}_{\mathrm{CB}}^{\mathrm{extracted}}$
+      \end{itemize}
+   
+   \begin{columns}
+      \column{0.5\textwidth}
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/mc_validation/toy_study/mean_pull_toys.pdf}
+      \column{0.5\textwidth}
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/mc_validation/toy_study/sigma_pull_toys.pdf}
+   \end{columns}
+   
+   \begin{itemize}
+      \item Linearity tests and correlation studies also performed
+      \item[\ra] all results points to the fact that the fitter is an unbiased estimator
+   \end{itemize}
+   
+   
+   
+   
+   
+   \end{frame}
 
 \end{document}
