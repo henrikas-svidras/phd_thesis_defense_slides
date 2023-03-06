@@ -496,11 +496,16 @@ Tag quality variables:
 
       \begin{itemize}
          \item Shown only for $B^+$ here, but similar for $B^0$
-         \item Two main background sources ($80\%\sim$):
-         \item[\ra] $\piz\ra\g\g$ 
-         \item[\ra] $\eta\ra\g\g$ 
          \item Remaining sources correspond to 0.5\%-3\% each 
       \end{itemize}
+
+      \begin{tikzpicture}[remember picture, overlay]
+         \node[] (show) at (5,5) {};
+         \node[] (showend) at (2,5) {};
+
+         \draw [->,>=stealth] (show) -- (showend);
+
+      \end{tikzpicture}
 
 \end{frame}
 
@@ -525,19 +530,10 @@ Tag quality variables:
 \begin{frame}{Photon misidentification}
 \centering   \scriptsize
 
-   \resizebox{1\textwidth}{!}{
-\begin{tabular}{|l||c|c||c|c||c|c||c|c||c|c||c|}
-    \hline
-    Particle species & \multicolumn{2}{c||}{$\gamma$} & \multicolumn{2}{c||}{$n^0$} & \multicolumn{2}{c||}{$\en$} & \multicolumn{2}{c||}{$K_L^0$} & \multicolumn{2}{c||}{$p^-$} & Other \\
-    \hline
-    Candidate rate (\feiBp/ \feiBz) & 96.1\% & 96.0\% & 2.4\% & 2.5\% & 0.5\% & 0.5\% & 0.5\% & 0.5\%  & 0.3\% & 0.3\% & 0.2\% \\
-    \hline
-\end{tabular}
-}   
 
 \begin{itemize}
-   \item Photon misidentification rate is small
-   \item Some neutron clusters are identified as photons
+   \item Photon misidentification rate is small (96\% of photons are true photons)
+   \item Some hadrons leave clusters which are misidentified
 \end{itemize}
 
 \vspace{5pt}
@@ -628,14 +624,14 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
    \mathrm{FOM}_{\mathrm{Punzi}}= \frac{\mathsf{S}}{\mathsf{S}_0} \frac{1}{\frac{3}{2}+\sqrt{\mathsf{B}}}.
 \end{equation}
 
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{|l|c|}
       \hline
-      Variable &    Figure-of-merit maximised at & Final chosen \\
+      Variable  & Threshold chosen \\
       \hline
-      \ZMVA                      & $>0.629$ & 0.6\\
-      \piVeto                    & $<0.258$ & 0.4\\
-      \etaVeto                   & $<0.036$ & 0.4\\
-      $\mathtt{BDT~output}$      & $>0.798$ & 0.8\\
+      \ZMVA                      & $>0.6$\\
+      \piVeto                    & $<0.4$\\
+      \etaVeto                   & $<0.4$\\
+      $\mathtt{BDT~output}$      & $>0.8$\\
       \hline
 \end{tabular}
 
