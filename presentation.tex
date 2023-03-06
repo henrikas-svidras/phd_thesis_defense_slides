@@ -116,10 +116,26 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 }
 \addtocounter{framenumber}{-1}
 
+
 %----------------------------------------------------------------------------------------
 %	INTRO
 %----------------------------------------------------------------------------------------
 \section{Introduction}
+
+\begin{frame}
+
+   \centering
+
+{\LARGE Measurement of the photon energy spectrum in
+{\color{OrangeRed}inclusive} {\color{YellowGreen}radiative} \texorpdfstring{$B$}{B} meson decays using the
+{\color{MidnightBlue}hadronic-tagging} method}
+
+\vspace{10pt}
+
+\textbf{Let's look at these three terms closer}
+
+\end{frame}
+
 \begin{frame}{Introduction: radiative \safeB meson decays}
 \centering\scriptsize
 {\normalsize What are \textbf{radiative $\bm{B}$} decays?
@@ -152,6 +168,8 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \centering\scriptsize
    {\normalsize What are \textbf{inclusive $\bm{B}$} decays?}
 
+   \vspace{10pt}
+
    \begin{itemize}
       \item $B$ mesons are the \textbf{lightest mesons involving a $\bm{b}$ quark}
       \item[\ra] decays always involve one or more flavour/generation changes!
@@ -178,7 +196,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \end{columns}
    
    \vspace{10pt}
-   Just a couple from thousands of potential examples!
+   Just a couple from many of potential examples!
 
 \end{frame}
 
@@ -197,7 +215,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \item Method for $\boldsymbol{e^+}\boldsymbol{e^-}$ \textbf{colliders only}!
       \item Use the known initial state of the \epem collision
       \item \textit{Tag} the signal side
-      \item the four-momentum constraint allows to \textbf{infer the charge, flavour, four-momentum} of the signal side
+      \item[\ra] the four-momentum constraint allows to \textbf{infer the charge, flavour, four-momentum} of the signal side
    \end{itemize}
 \end{columns}
 
@@ -207,276 +225,73 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 %----------------------------------------------------------------------------------------
 %	THEORY
 %----------------------------------------------------------------------------------------
-\section{\safeBtoXsdgamma theory}
 
-\begin{frame}{Description of the inclusive decays}
+\section{\safeBtoXsgamma theory}
+
+\begin{frame}{Description of the inclusive \BtoXsgamma decays}
    \scriptsize
-
+      \begin{equation}\nonumber
+         \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+                                                     + \cancel{\frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))}\right]
+      \end{equation}
+   
    \begin{itemize}
-      \item Fully inclusive decay rate is related to the \textbf{the parton decay rate}
-      \item The $b\to s$ electroweak loop is \textbf{dominated by the top quark} 
-      \item It \textbf{involves both weak and strong interactions}
-      \item[\ra] energy scale $\ll\order(m_W)$
-      \item[\ra] approximate weak interactions with effective point-like vertices.
+      \item For \btosgamma the second term is much less important
+      \item It is relevant for higher order corrections, and for \btodgamma
+      \item[\ra] Then the effective Lagrangian takes the form:
    \end{itemize}
-
-   \textbf{Effective Lagrangian:}
-   \begin{equation}\nonumber
-      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
-                                                  + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
-  \end{equation}
-
-\end{frame}
-
-
-\begin{frame}{Description of the inclusive decays}
-   \scriptsize
-
-   \begin{equation}\nonumber
-      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
-                                                  + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
-  \end{equation}
-
-  $\mathcal{C}_i$: Wilson coefficients (encode \Wpm and $Z$ interactions)
-  
-  $\mathcal{O}_i$: Four-quark and dipole-type operators (quark interactions)
-
-\end{frame}
-
-\begin{frame}{Description of the inclusive decays}
-   \scriptsize
-
-   \begin{equation}\nonumber
-      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
-                                                  + {\underbrace{\frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}}_{\substack{\approx 0.02,~\mathbf{q = s}\\\approx 0.47,~\mathbf{q = d}}}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
-   \end{equation}
-
-\begin{itemize}
-   \item For \btosgamma the second term is much less important
-   \item It is relevant for higher order corrections, and for \btodgamma
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Description of the inclusive decays}
-\scriptsize
-   \begin{equation}\nonumber
-      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
-                                                  + \cancel{\frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))}\right]
-   \end{equation}
-
-\begin{itemize}
-   \item For \btosgamma the second term is much less important
-   \item It is relevant for higher order corrections, and for \btodgamma
-   \item[\ra] Then the effective Lagrangian takes the form:
-\end{itemize}
-
-\vspace{-15pt}
-
-\input{tikz/b_to_s_gamma_effective.tex}
-
-\begin{itemize}
-   \item and one evaluates the decay rate as 
-\end{itemize}
-
-\vspace{-10pt}
-
-\begin{equation}\nonumber
-   \Gamma(\btosgamma)\propto|\mel**{s\gamma}{\mathcal{L}_{\mathrm{eff}}}{b}|^2
-\end{equation}
-
-\end{frame}
-
-
-\begin{frame}{\safeBtoXsgamma total decay rate calculations}
-\scriptsize
+   
+   \vspace{-0pt}
+   
+   \input{tikz/b_to_s_gamma_effective.tex}
+   
    \begin{itemize}
-      \item That was for the \textit{parton} decay rate;
-      \item[\ra] can be calculated perturbatively 
-      \item Switch from partons to hadrons assuming quark-hadron duality:
+      \item[\ra] massive non-Standard Model particles modify $\mathcal{C}_i$ (normalisation)
+      \item[\ra] BSM probe!
+      \item and one evaluates the decay rate as 
    \end{itemize}
+   
+   \vspace{-10pt}
+   
+   
    \begin{equation}\nonumber
-      \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \underbrace{\Delta\Gamma_{\mathrm{non-p.}}}_{\substack{\text{additional}\\\text{non-perturbative}\\\text{term}}}
+      \Gamma(\btosgamma)\propto|\mel**{s\gamma}{\mathcal{L}_{\mathrm{eff}}}{b}|^2
+   \end{equation}   
+
+   \begin{equation}\nonumber
+      \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \underbrace{\Delta\Gamma_{\text{non-peturbative}}}_{\substack{\text{depends on}\\ \text{\Egamma (or }M_X\text{)!}}}
   \end{equation}
+
   \begin{itemize}
-   \item[\ra] related to the fact that the $b$ quark is non-stationary and within a $B$ meson
-   \item Many such effects decrease or `average out' over the totality of the spectrum
-   \item However, others remain: e.g. around $\Egamma<1.5~\gev$ non-perturbative \ccbar contributions become relevant 
-     \end{itemize}
-
-     \textbf{A convention $\Egamma>1.6~\gev$ chosen in inclusive decay rate calculations}
-
+   \item theory calculations often use $\Egamma > 1.6~\gev$  which yields $\Delta\Gamma_{\text{non-peturbative}} \sim \mathcal{O}(3\%)$
+  \end{itemize}
+  
 \end{frame}
 
-\begin{frame}{\safeBtoXsdgamma spectrum calculations}
-\scriptsize
+\begin{frame}{Description of \BtoXsgamma photon energy spectrum}
+
+   \scriptsize\centering
+
    Non-perturbative effects more complicated if the partial decay rates are considered
+
+   \vspace{10pt}
 
    \begin{columns}
       \column{0.5\textwidth}
-      \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_to_experiment.png}
+      \centering
+      \includegraphics[width=0.8\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_to_experiment.png}
       \column{0.5\textwidth}
-      \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_components.png}
+      \centering
+      \includegraphics[width=0.8\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_components.png}
    \end{columns}
 
    \begin{itemize}
-      \item Use soft-collinear effective field theory:
+      \item $b$ quark is not stationary in the $B$ meson!
+      \item such non-perturbative effects encoded in a so-called \textbf{shape-function} $\bm{\mathcal{F}}$!
+      \item[\ra] it is a universal property of the $B$ meson
+      \item[\ra] $\mathcal{F}$ is necessary in other analyses such as $V_{ub}$ determination from $B\to X_u\ell\nu$ 
    \end{itemize}
-   \begin{equation}\nonumber
-      d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
-  \end{equation}
-  which splits the calculation of:
-  \begin{itemize}
-   \item[] {\color{red}$\mathcal{H}$: effective hard interaction (perturbative)}
-   \item[] {\color{blue}$\mathcal{J}$: collinear particle interactions (perturbative)}
-   \item[] {\color{orange}$\mathcal{S}$: soft particle interactions}
-  \end{itemize}
-
-\vspace{-10pt}
-
-\begin{flushright}
-   \tiny \textbf{Credit to Frank Tackmann for the illustrations.}
-\end{flushright}
-
-\end{frame}
-
-\begin{frame}{\safeBtoXsdgamma spectrum calculations}
-   \scriptsize
-      Non-perturbative effects more complicated if the partial decay rates are considered
    
-      \begin{columns}
-         \column{0.5\textwidth}
-         \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_to_experiment.png}
-         \column{0.5\textwidth}
-         \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_components.png}
-      \end{columns}
-   
-      \begin{itemize}
-         \item Use soft-collinear effective field theory:
-      \end{itemize}
-      \begin{equation}\nonumber
-         d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
-     \end{equation}
-
-     \vspace{-10pt}
-     \begin{itemize}
-      \item It is assumed that:
-     \end{itemize}
-     \begin{equation}\nonumber
-      \mathcal{S} \equiv \underbrace{\mathcal{S}_p}_{\substack{\text{perturbative}\\\text{partonic soft function}}} \otimes \underbrace{\mathcal{F}}_{\substack{\text{non perturbative}\\\textbf{shape function}}}
-     \end{equation}
-     \begin{itemize}
-      \item[\ra] the theory is capable to separate perturbative and non-perturbative terms 
-     \end{itemize}
-
-   \vspace{-5pt}
-   
-   \begin{flushright}
-      \tiny \textbf{Credit to Frank Tackmann for the illustrations.}
-   \end{flushright}
-   
-   \end{frame}
-
-   \begin{frame}{\BtoXsgamma spectrum and the shape function}
-      \scriptsize
-      \begin{itemize}
-         \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
-         \item \textbf{Crucial input for other analyses}, e.g. $|V_{ub}|$ measurements with $B\to\X_u\ell\nu$, using phase space selection to separate $B\to\X_c\ell\nu$ states
-      \end{itemize}
-
-      \textbf{So how to evaluate it?}
-
-   \end{frame}
-
-
-   \begin{frame}{\BtoXsgamma spectrum and the shape function}
-      \scriptsize
-      \begin{itemize}
-         \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
-         \item \textbf{Crucial input for other analyses}, e.g. $|V_{ub}|$ measurements with $B\to\X_u\ell\nu$, using phase space selection to separate $B\to\X_c\ell\nu$ states
-      \end{itemize}
-
-      \textbf{So how to evaluate it?}
-      \begin{itemize}
-         \item[\ra] you have to use experimental information: 
-         \item[\ra] \BtoXsgamma is a highly suitable channel for this
-      \end{itemize}
-
-   \end{frame}
-
-   \begin{frame}{\BtoXsgamma spectrum and the shape function}
-      \scriptsize
-      It can be shown that the moments of photon energy spectrum relate to
-      \begin{equation}\nonumber
-         \expval**{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval**{\Egamma^2}-\expval**{\Egamma}^2 \sim \lambda_1/3+\order(\Lambda_{\mathrm{QCD}}),
-     \end{equation}
-     with:
-     \begin{itemize}
-      \item [] $m_b$: $b$ quark pole MASS
-      \item [] $\lambda_1$: $b$ quark kinetic energy parameter
-      \item [] etc. for higher moments
-     \end{itemize}
-   $\mathcal{F}$ can be parametrised in terms of these quantities!
-   \end{frame}
-
-
-   \begin{frame}{Kagan-Neubert model}
-      \scriptsize
-      \textbf{Kagan-Neubert} model is often used for experimental analyses:
-      \begin{equation}\nonumber
-         \mathcal{F}(x) = N\left(1-\frac{x}{m_B-m_b}\right)^a\exp{(1+a)\frac{x}{m_B-m_b}},
-     \end{equation}
-     and the parameter $a$ is also related to the second moment of the shape function.
-
-     Then the spectrum can be described by two parameters: $m_b$ and $\lambda_1$;
-
-     \begin{itemize}
-      \item[\ra] Measure the moments of \BtoXsgamma spectrum to obtain a better description 
-     \end{itemize}
-
-   \end{frame}
-
-   \begin{frame}{SIMBA global fit of \BtoXsgamma}
-      \scriptsize
-      \textbf{SIMBA} collaboration: 
-      Combine all the information available from experimental measurements
-      \begin{itemize}
-       \item[\ra] global fit of \BtoXsgamma measurements to determine $m_b$ and $\lambda_1$
-      \end{itemize}
-
-      \begin{columns}
-         \centering
-         \column{0.5\textwidth}
-         \includegraphics[width=0.7\textwidth]{figures/babar_hadtag_spec_default_la055_a3.pdf}
-         \includegraphics[width=0.7\textwidth]{figures/babar_incl_spec_default_la055_a3.pdf}
-         \column{0.5\textwidth}
-         \includegraphics[width=0.7\textwidth]{figures/babar_sem_spec_default_la055_a3.pdf}
-         \includegraphics[width=0.7\textwidth]{figures/belle_spec_default_la055_a3.pdf}
-      \end{columns}
-      \begin{flushright}
-         {\tiny\textbf{Phys.Rev.Lett. 127 (2021) 10, 102001}}
-      \end{flushright}
-   \end{frame}
-
-\begin{frame}{Beyond the Standard Model}
-   \scriptsize
-   Only heavy particles are expected, in other words, the effective Lagrangian would be modified as:
-   \begin{equation}\nonumber
-      \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \Delta\mathcal{C}_i^{\mathrm{BSM}}.
-   \end{equation}
-   Some models may propose $\Delta\mathcal{C}_j^{\mathrm{BSM}}$, where $\mathcal{C}_j^{\mathrm{SM}}=0$
-
-\vspace{10pt}
-   In no particular order, some (but surely not all) theories which propose such modifications:
-   \begin{itemize}
-      \item two-Higgs-doublet models $\leftarrow$ \textbf{to my knowledge, the most studied}
-      \item minimal supersymmetric models with minimal flavour violation
-      \item and left-right symmetric models
-      \item general minimal-supersymmetric theories
-      \item models with extra dimensions
-      \item the littlest Higgs models
-      \item 331 models
-   \end{itemize}
 \end{frame}
 
    %----------------------------------------------------------------------------------------
@@ -539,6 +354,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
          \begin{itemize}
             \item Reconstruct specific $X_s$ states:
             \begin{itemize}
+               \scriptsize
                \item $K^*(892)$
                \item $K^+p^-$\\
                etc.
@@ -616,8 +432,11 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/corss_sections.pdf}
       \begin{itemize}
          \item \epem collissions create not only \FourS!
+         \item[] $\sigma({\epem(\gamma)}) \approx 300~\nb$
+         \item[] $\sigma({\FourS}) \approx 1.11~\nb$
          \item Many processes are highly different and easy to distinguish
          \item Background from $\epem\ra\qqbar$ and $\epem\ra\tautau$ often important
+         \item[\ra] \textbf{all this part of Belle~II simulation}
       \end{itemize}
    \end{frame}
 
@@ -627,15 +446,19 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \section{Belle II analysis}
 
    \begin{frame}{Analysis recipe}
-      \scriptsize
+      \scriptsize\centering
+      \begin{itemize}
+         \item Return to \BtoXsgamma analysis
+      \end{itemize}
       
-      $\mathrm{`tag~B'} + \mathrm{`signal~B'} \ra \FourS$
+      `$\mathrm{tag~B}$' + `$\mathrm{signal~B}$' $\ra \FourS$
      
       \begin{itemize}
-         \item Reconstruct all events where one of the $B$ mesons decays hadronically
-         \item[\to] \textbf{Full event intepretation} algorithm used (next slide)
-         \item Require a high-energy photon from the other $B$ meson
-         \item[\to] cannot make any more requirements about the signal side, while maintaining an inclusive sample!
+         \item Reconstruct all events where \textbf{one of the $B$ mesons decays hadronically}
+         \item[\to] Full event intepretation algorithm used (next slide)
+         \item Require a \textbf{high-energy photon from the other $B$ meson}
+         \item[\to] cannot make any more requirements while maintaining an inclusive sample 
+         \item[] (i.e. no $M_X$ selection)
       \end{itemize}
 \textbf{Final goal:}
       \begin{equation}\nonumber
@@ -645,7 +468,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 
    \begin{frame}{Full Event Interpretation}
-      \scriptsize
+      \scriptsize\centering
    \begin{columns}
       \column{0.5\textwidth}
          \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_reconstruction/FEI_tagging.png}
@@ -661,9 +484,19 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       
    \end{columns}
 \begin{itemize}
-   \item[\ra] end up with $B^+$ and $B^0$ candidates and a probability score \feiProb for each
    \item Trained on simulated data but calibrated on data samples!
+   \item[\ra]\textbf{end up with $B^+$ and $B^0$ candidates and a probability score \feiProb for each}
 \end{itemize}   
+
+\vspace{10pt}
+
+Tag quality variables:
+\vspace{-5pt}
+\begin{equation*}
+   \underbrace{\Mbc = \sqrt{(\sqrt{s}/2)^2 - (p^*_B)^2}}_{\text{beam-constrained mass}}; \quad\quad \Delta E = \sqrt{s}/2 - E_{B}^*;
+\end{equation*}
+
+
 \end{frame}
 
 \begin{frame}{Reconstructed samples}
@@ -681,11 +514,11 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_reconstruction/Bz_tagged_background.pdf}
    \end{columns}
    \begin{itemize}
-      \item[\ra] non-\FourS processes dominant!
+      \item[\ra] \textbf{non-}$\bm{\Upsilon(4S)}$ \textbf{processes dominant!}
    \end{itemize}
 \end{frame}
 
-\begin{frame}{Main background sources}
+\begin{frame}{Main photon background sources}
 \centering\scriptsize
       \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_selection/Bp_photon_sources.pdf}
 
@@ -702,7 +535,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \begin{frame}{\piz and $\eta$ suppression}
    \scriptsize\centering
 \begin{itemize}
-   \item $\piz\ra\g\g$ and $\eta\ra\g\g$ where one photon is much higher energy than the other mimic the signal
+   \item $\piz\ra\g\g$ and $\eta\ra\g\g$ mimic the signal (high-$E$ $\gamma$ and low-$E$ $\gamma$)
    \item \textbf{Combine all lower-energy photons with the high-energy photon candidate}
    \item Use multivariate methods to evaluate the compatibility of the combination with a decay from \piz or $\eta$
 \end{itemize}
@@ -940,13 +773,13 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
    \end{itemize}
 
     \begin{tikzpicture}[remember picture, overlay]
-      \node[fill, white] (init) at (-5,4.5) {\color{black} discard};
-      \node[] (inittwo) at (-4.6,4.4) {};
-      \node[] (init2) at (-5,5) {accept};
+      \node[fill, white] (init) at (-5,5) {\color{black} discard};
+      \node[] (inittwo) at (-4.6,4.9) {};
+      \node[] (init2) at (-5,5.5) {accept};
       
-      \node[] (end1) at (-4,4.7) {};
-      \node[] (end2) at (-4,5) {};
-      \node[] (end3) at (-4,4.3) {};
+      \node[] (end1) at (-4,5.2) {};
+      \node[] (end2) at (-4,5.5) {};
+      \node[] (end3) at (-4,4.8) {};
       
       \draw[-stealth] (init) -- (end1);
       \draw[-stealth] (inittwo) -- (end3);
@@ -993,6 +826,7 @@ Fits on 1.6~\invab of simulation (four examples):
 \end{frame}
 
 \begin{frame}{Fit validity on smaller data sets}
+   \scriptsize\centering
    \begin{itemize}
       \item Fit prepared on 1.6~\invab
       \item But Belle~II data is only 189~\invfb
@@ -1009,9 +843,6 @@ Fits on 1.6~\invab of simulation (four examples):
 \scriptsize\centering
    \begin{itemize}
       \item At this stage:
-      \item[\ra] Photon selections used
-      \item[\ra] Continuum suppressed
-      \item[\ra] Tag-side used to remove non-\B and poorly reconstructed \B events
       \item[\ra] But still the result does not look like a photon energy spectrum!   
       \item[\ra] remaining background removed in a simulation reliant way
       \item[\ra] repeat the fit on simulation, but with \BtoXsgamma events removed
@@ -1051,6 +882,8 @@ Fits on 1.6~\invab of simulation (four examples):
 
 
 \begin{frame}{Simulation-to-data calibration}
+
+   \scriptsize\centering
    
    \begin{itemize}
       \item Usage of MVA tools trained on simulation and reliance on background simulation
@@ -1104,7 +937,7 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \begin{itemize}
       \item Excellent agreement of \EB
-      \item Problematic \Mbc!
+      \item Problematic for \Mbc!
    \item[\ra] related to the fact that $\sqrt{s}$ may vary during data taking
       \item[\ra] cannot be captured by data taking period independent simulation
    \end{itemize}
@@ -1130,7 +963,7 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \begin{itemize}
       \item Excellent agreement of \EB
-      \item Problematic \Mbc!
+      \item Problematic for \Mbc!
       \item[\ra] need to modify the \Mbc in simulation:  
    \end{itemize}
    \begin{equation*}
@@ -1138,7 +971,7 @@ Fits on 1.6~\invab of simulation (four examples):
    \end{equation*}
 
    \begin{itemize}
-   \item[\ra] e.g. if x value is set for 50\% of data, then the weighted probability for x is 0.5
+   \item[\ra] e.g. if x value is set for 30\% of data, then the weighted probability for x is 0.3
 \end{itemize}
 \end{frame}
 
@@ -1159,6 +992,7 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \begin{itemize}
       \item Now only the `corrected' \Mbc is used!
+      \item Assign \textbf{the difference with, without corrected \Mbc as fit model uncertainty}!
    \end{itemize}
 
 \end{frame}
@@ -1179,6 +1013,7 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \begin{itemize}
       \item Now only the `corrected' \Mbc is used!
+      \item Not only \Mbc discrepancy but also endpoint discrepancy
    \end{itemize}
 
 \end{frame}
@@ -1200,7 +1035,8 @@ Fits on 1.6~\invab of simulation (four examples):
    \begin{itemize}
       \item \text{zernikeMVA} discrepancy?
       \item[\ra] improved agreement when no \texttt{zernikeMVA} is used
-      \item[\ra] more studies are needed to pinpoint the exact cause of this discrepancy, but it seems to be a this analysis specific background
+      \item[\ra] more studies are needed to pinpoint the exact cause of this discrepancy
+      \item[\ra] seems to be a this-analysis-specific background
    \end{itemize}
 
 \end{frame}
@@ -1224,8 +1060,11 @@ Fits on 1.6~\invab of simulation (four examples):
       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/sidebands_fit/DATA_MbcFit_2p7to5p0ppdf.pdf}
    \end{columns}
 
-   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/data_validation/sidebands_background_vs_data.pdf}
+   \begin{itemize}
+      \item $\mathcal{N}_{\mathrm{DATA}}/\mathcal{N}_{\mathrm{MC}}\approx 1.087\pm 0.080$
+   \end{itemize}
 
+   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/data_validation/sidebands_background_vs_data.pdf}
 
 \end{frame}
 \begin{frame}{Data-to-simulation validation: sidebands}
@@ -1246,6 +1085,10 @@ Fits on 1.6~\invab of simulation (four examples):
 
    $\xrightarrow{\text{Apply an 8.7\% correction, because we expect the results here to be consistent with 0}}$
 
+   \begin{itemize}
+      \item Assign \textbf{the full correction as a systematic uncertainty}
+   \end{itemize}
+
 \end{frame}
 
 \begin{frame}{\BtoXsgamma efficiency validation}
@@ -1257,7 +1100,7 @@ Fits on 1.6~\invab of simulation (four examples):
    \varepsilon_{\BtoXsgamma} = \varepsilon_{\mathrm{FEI}} \cdot \varepsilon_{\mathrm{selection}},
 \end{equation*}
 
-
+\vspace{-5pt}
 
 \begin{itemize}
    \item $\varepsilon_{\mathrm{FEI}}$ calculated based on simulation + corrected using calibration factors
@@ -1270,7 +1113,8 @@ Fits on 1.6~\invab of simulation (four examples):
    \begin{itemize}
       \scriptsize
       \item \piVeto and \etaVeto correction, photon detection efficiency 
-      \item[\ra] calculated in separate analyses
+      \item[\ra] calculated in separate analyses\\
+      \vspace{5pt}
       \item \texttt{BDToutput}, \texttt{ZernikeMVA} by varying their selection 
       \item[\ra] variations directly in data (blinded) evaluated and assigned as uncertainty
    \end{itemize}
@@ -1316,16 +1160,16 @@ Fits on 1.6~\invab of simulation (four examples):
 
 \end{frame}
 
-\begin{frame}{Systematic uncertainties}
-   \scriptsize\centering
-   \begin{itemize}
-      \item Summary of systematic uncertainties that are evaluates:
-      \item[\ra] Background modelling/normalisation uncertainties
-      \item[\ra] Fit model uncertainties
-      \item[\ra] Efficiency uncertainties
-      \item[\ra] Unfolding and \BtoXdgamma uncertainties   
-   \end{itemize}
-\end{frame}
+% \begin{frame}{Systematic uncertainties}
+%    \scriptsize\centering
+%    \begin{itemize}
+%       \item Summary of systematic uncertainties that are evaluates:
+%       \item[\ra] Background modelling/normalisation uncertainties
+%       \item[\ra] Fit model uncertainties
+%       \item[\ra] Efficiency uncertainties
+%       \item[\ra] Unfolding and \BtoXdgamma uncertainties   
+%    \end{itemize}
+% \end{frame}
 
 \begin{frame}{Fit results -- Unblinded}
 \begin{columns}
@@ -1431,6 +1275,8 @@ Fits on 1.6~\invab of simulation (four examples):
           $2.0$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
           $2.1$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & $2.86 \pm 0.53$ (stat.) $\pm 0.40$ (syst.) $\pm 0.08$ (extrap.)\\
       \hline
+      World average (\EB>1.6~\gev) & \multicolumn{2}{c}{$3.49\pm0.19$} \\
+      \hline
   \end{tabular}
 
 }
@@ -1450,6 +1296,9 @@ Fits on 1.6~\invab of simulation (four examples):
         2.1 & 2.410 $\pm$ 0.032 (stat.) $\pm$ 0.019 (syst.)    & 0.0147 $\pm$ 0.0057 (stat.) $\pm$ 0.0036 (syst.)\\
         
         \hline
+       World average: & $2.314 \pm 0.011$ & $0.0303 \pm 0.0025$ \\
+       \hline
+
     \end{tabular}
 
 }
@@ -1458,11 +1307,15 @@ Fits on 1.6~\invab of simulation (four examples):
 
 \begin{frame}{Comparison with existing results}
 \centering\scriptsize
+
+Extrapolation to $\EB>1.6~\gev$ 
+
       \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/results_discussion/all_measurements_compared.pdf}
 
       \begin{itemize}
          \item Extrapolated results more precise but always model dependant
-         \item However to compare with theory predictions, extrapolations to a common threshold are necessary
+         \item Different experiments and theory choose different thresholds
+         \item[\ra] extrapolations to a common threshold are necessary
       \end{itemize}
       
 \end{frame}
@@ -1477,11 +1330,13 @@ Fits on 1.6~\invab of simulation (four examples):
       \item[\ra] $\lambda_1$  
    \end{itemize}
 \begin{columns}
+   \centering
    \column{0.5\textwidth}
-   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/results_discussion/simba_partial_bfs_expectation.pdf}
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/simba_partial_bfs_expectation.pdf}
 
    \column{0.5\textwidth}
-   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
+   \centering
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
 
 \end{columns}
 
@@ -1509,6 +1364,256 @@ Fits on 1.6~\invab of simulation (four examples):
           \hline
       \end{tabular}
 }
+\end{frame}
+
+\appendix
+
+%----------------------------------------------------------------------------------------
+%	B to Xs gamma
+%----------------------------------------------------------------------------------------
+\section{Appendix}
+
+\begin{frame}
+
+   \centering\Large
+
+   Appendix
+
+\end{frame}
+
+\begin{frame}{Description of the inclusive decays}
+   \scriptsize
+
+   \begin{itemize}
+      \item Fully inclusive decay rate is related to the \textbf{the parton decay rate}
+      \item The $b\to s$ electroweak loop is \textbf{dominated by the top quark} 
+      \item It \textbf{involves both weak and strong interactions}
+      \item[\ra] energy scale $\ll\order(m_W)$
+      \item[\ra] approximate weak interactions with effective point-like vertices.
+   \end{itemize}
+
+   \textbf{Effective Lagrangian:}
+   \begin{equation}\nonumber
+      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+                                                  + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
+  \end{equation}
+
+  \vspace{10pt}
+
+  $\mathcal{C}_i$: Wilson coefficients (encode \Wpm and $Z$ interactions)
+  
+  $\mathcal{O}_i$: Four-quark and dipole-type operators (quark interactions)
+
+\end{frame}
+
+\begin{frame}{Description of the inclusive decays}
+   \scriptsize
+
+   \begin{equation}\nonumber
+      \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+                                                  + {\underbrace{\frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}}_{\substack{\approx 0.02,~\mathbf{q = s}\\\approx 0.47,~\mathbf{q = d}}}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
+   \end{equation}
+
+\begin{itemize}
+   \item For \btosgamma the second term is much less important
+   \item It is relevant for higher order corrections, and for \btodgamma
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{\safeBtoXsgamma total decay rate calculations}
+\scriptsize
+   \begin{itemize}
+      \item That was for the \textit{parton} decay rate;
+      \item[\ra] can be calculated perturbatively 
+      \item Switch from partons to hadrons assuming quark-hadron duality:
+   \end{itemize}
+
+   \vspace{10pt}
+
+   \begin{equation}\nonumber
+      \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \underbrace{\Delta\Gamma_{\mathrm{non-p.}}}_{\substack{\text{additional}\\\text{non-perturbative}\\\text{term}}}
+  \end{equation}
+  \begin{itemize}
+   \item[\ra] related to the fact that the $b$ quark is non-stationary and within a $B$ meson
+   \item Many such effects decrease or `average out' over the totality of the spectrum
+   \item However, others remain: e.g. around $\Egamma<1.5~\gev$ non-perturbative \ccbar contributions become relevant 
+     \end{itemize}
+
+     \textbf{A convention $\Egamma>1.6~\gev$ chosen in inclusive decay rate calculations}
+
+\end{frame}
+
+\begin{frame}{\safeBtoXsdgamma spectrum calculations}
+\scriptsize
+   Non-perturbative effects more complicated if the partial decay rates are considered
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_to_experiment.png}
+      \column{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_components.png}
+   \end{columns}
+
+   \begin{itemize}
+      \item Use soft-collinear effective field theory:
+   \end{itemize}
+   \begin{equation}\nonumber
+      d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
+  \end{equation}
+  which splits the calculation of:
+  \begin{itemize}
+   \item[] {\color{red}$\mathcal{H}$: effective hard interaction (perturbative)}
+   \item[] {\color{blue}$\mathcal{J}$: collinear particle interactions (perturbative)}
+   \item[] {\color{orange}$\mathcal{S}$: soft particle interactions}
+  \end{itemize}
+
+\vspace{-10pt}
+
+\begin{flushright}
+   \tiny \textbf{Credit to Frank Tackmann for the illustrations.}
+\end{flushright}
+
+\end{frame}
+
+\begin{frame}{\safeBtoXsdgamma spectrum calculations}
+   \scriptsize
+      Non-perturbative effects more complicated if the partial decay rates are considered
+   
+      \begin{columns}
+         \column{0.5\textwidth}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_to_experiment.png}
+         \column{0.5\textwidth}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/theory/xsgamma_theory_components.png}
+      \end{columns}
+   
+      \begin{itemize}
+         \item Use soft-collinear effective field theory:
+      \end{itemize}
+      \begin{equation}\nonumber
+         d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
+     \end{equation}
+
+     \vspace{-10pt}
+     \begin{itemize}
+      \item It is assumed that:
+     \end{itemize}
+     \begin{equation}\nonumber
+      \mathcal{S} \equiv \underbrace{\mathcal{S}_p}_{\substack{\text{perturbative}\\\text{partonic soft function}}} \otimes \underbrace{\mathcal{F}}_{\substack{\text{non perturbative}\\\textbf{shape function}}}
+     \end{equation}
+     \begin{itemize}
+      \item[\ra] the theory is capable to separate perturbative and non-perturbative terms 
+     \end{itemize}
+
+   \vspace{-5pt}
+   
+   \begin{flushright}
+      \tiny \textbf{Credit to Frank Tackmann for the illustrations.}
+   \end{flushright}
+   
+   \end{frame}
+
+   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+      \scriptsize
+      \begin{itemize}
+         \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
+         \item \textbf{Crucial input for other analyses}, e.g. $|V_{ub}|$ measurements with $B\to\X_u\ell\nu$, using phase space selection to separate $B\to\X_c\ell\nu$ states
+      \end{itemize}
+
+      \textbf{So how to evaluate it?}
+
+   \end{frame}
+
+
+   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+      \scriptsize
+      \begin{itemize}
+         \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
+         \item \textbf{Crucial input for other analyses}, e.g. $|V_{ub}|$ measurements with $B\to\X_u\ell\nu$, using phase space selection to separate $B\to\X_c\ell\nu$ states
+      \end{itemize}
+
+      \textbf{So how to evaluate it?}
+      \begin{itemize}
+         \item[\ra] you have to use experimental information: 
+         \item[\ra] \BtoXsgamma is a highly suitable channel for this
+      \end{itemize}
+
+   \end{frame}
+
+   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+      \scriptsize
+      It can be shown that the moments of photon energy spectrum relate to
+      \begin{equation}\nonumber
+         \expval**{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval**{\Egamma^2}-\expval**{\Egamma}^2 \sim \lambda_1/3+\order(\Lambda_{\mathrm{QCD}}),
+     \end{equation}
+     with:
+     \begin{itemize}
+      \item [] $m_b$: $b$ quark pole MASS
+      \item [] $\lambda_1$: $b$ quark kinetic energy parameter
+      \item [] etc. for higher moments
+     \end{itemize}
+   $\mathcal{F}$ can be parametrised in terms of these quantities!
+   \end{frame}
+
+
+   \begin{frame}{Kagan-Neubert model}
+      \scriptsize
+      \textbf{Kagan-Neubert} model is often used for experimental analyses:
+      \begin{equation}\nonumber
+         \mathcal{F}(x) = N\left(1-\frac{x}{m_B-m_b}\right)^a\exp{(1+a)\frac{x}{m_B-m_b}},
+     \end{equation}
+     and the parameter $a$ is also related to the second moment of the shape function.
+
+     Then the spectrum can be described by two parameters: $m_b$ and $\lambda_1$;
+
+     \begin{itemize}
+      \item[\ra] Measure the moments of \BtoXsgamma spectrum to obtain a better description 
+     \end{itemize}
+
+   \end{frame}
+
+   \begin{frame}{SIMBA global fit of \BtoXsgamma}
+      \scriptsize
+      \textbf{SIMBA} collaboration: 
+      Combine all the information available from experimental measurements
+      \begin{itemize}
+       \item[\ra] global fit of \BtoXsgamma measurements to determine $m_b$ and $\lambda_1$
+      \end{itemize}
+
+      \begin{columns}
+         \centering
+         \column{0.5\textwidth}
+         \includegraphics[width=0.7\textwidth]{figures/babar_hadtag_spec_default_la055_a3.pdf}
+         \includegraphics[width=0.7\textwidth]{figures/babar_incl_spec_default_la055_a3.pdf}
+         \column{0.5\textwidth}
+         \includegraphics[width=0.7\textwidth]{figures/babar_sem_spec_default_la055_a3.pdf}
+         \includegraphics[width=0.7\textwidth]{figures/belle_spec_default_la055_a3.pdf}
+      \end{columns}
+      \begin{flushright}
+         {\tiny\textbf{Phys.Rev.Lett. 127 (2021) 10, 102001}}
+      \end{flushright}
+   \end{frame}
+
+\begin{frame}{Beyond the Standard Model}
+   \scriptsize
+   Only heavy particles are expected, in other words, the effective Lagrangian would be modified as:
+   \begin{equation}\nonumber
+      \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \Delta\mathcal{C}_i^{\mathrm{BSM}}.
+   \end{equation}
+   Some models may propose $\Delta\mathcal{C}_j^{\mathrm{BSM}}$, where $\mathcal{C}_j^{\mathrm{SM}}=0$
+
+\vspace{10pt}
+   In no particular order, some (but surely not all) theories which propose such modifications:
+   \begin{itemize}
+      \item two-Higgs-doublet models $\leftarrow$ \textbf{to my knowledge, the most studied}
+      \item minimal supersymmetric models with minimal flavour violation
+      \item and left-right symmetric models
+      \item general minimal-supersymmetric theories
+      \item models with extra dimensions
+      \item the littlest Higgs models
+      \item 331 models
+   \end{itemize}
 \end{frame}
 
 \end{document}
