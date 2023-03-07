@@ -211,6 +211,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \input tikz/tagging.tex
 
    \column{0.66\textwidth}
+   \centering
    \begin{itemize}
       \item Method for $\boldsymbol{e^+}\boldsymbol{e^-}$ \textbf{colliders only}!
       \item[\ra] i.e. initial collision state has to be known 
@@ -218,6 +219,21 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \item \textit{Tag} the signal side
       \item[\ra] the four-momentum constraint allows to \textbf{infer the charge, flavour, four-momentum} of the signal side
    \end{itemize}
+
+   \begin{tikzpicture}
+      \node[anchor = south west, inner sep=0] (image) at (current page.south west) 
+          {\includegraphics[width=0.8\textwidth]{../phd_thesis/figures/experiment_overview/tagging_advantages_mod.png}};
+      \node[below = 5 mm of image] (ghost) {};
+         \node[align = center, left =15mm of ghost] (firsttext)% <---- 
+          {\footnotesize \textbf{Untagged}};
+      \node[right = 2 mm of firsttext] (temp) {};
+      \node[align = center, above = 1mm of temp] (secondtext)% <---- 
+          {\footnotesize \textbf{lepton tagging}};
+      \node[align = center, right = 6mm of firsttext] (thirdtext)% <---- 
+          {\footnotesize \textbf{semileptonic tagging}};
+      \node[align = center, right = 6mm of secondtext] (fourthtext)% <---- 
+          {\footnotesize \textbf{hadronic tagging}};
+   \end{tikzpicture}
 \end{columns}
 
 
@@ -233,12 +249,23 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \scriptsize
       \begin{equation}\nonumber
          \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
-                                                     + \cancel{\frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))}\right]
+                                                     + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
       \end{equation}
    
    \begin{itemize}
       \item For \btosgamma the second term is much less important
       \item It is relevant for higher order corrections, and for \btodgamma
+   \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Description of the inclusive \BtoXsgamma decays}
+   \scriptsize
+      \begin{equation}\nonumber
+         \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)+ ...\right]
+      \end{equation}
+   
+   \begin{itemize}
       \item[\ra] Then the effective Lagrangian takes the form:
    \end{itemize}
    
@@ -249,25 +276,22 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \begin{itemize}
       \item[\ra] massive non-Standard Model particles modify $\mathcal{C}_i$ (normalisation)
       \item[\ra] BSM probe: $      \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \Delta\mathcal{C}_i^{\mathrm{BSM}}$
-      \item and one evaluates the decay rate as 
+      \item[\ra] total decay rate is modified
    \end{itemize}
    
    \vspace{-10pt}
    
-   
    \begin{equation}\nonumber
-      \Gamma(\btosgamma)\propto|\mel**{s\gamma}{\mathcal{L}_{\mathrm{eff}}}{b}|^2
-   \end{equation}   
-
-   \begin{equation}\nonumber
-      \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \underbrace{\Delta\Gamma_{\text{non-peturbative}}}_{\substack{\text{depends on}\\ \text{\Egamma (or }M_X\text{)!}}}
+      \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \underbrace{\Delta\Gamma_{\text{non-perturbative}}}_{\substack{\text{depends on}\\ \text{\Egamma (or }M_X\text{)!}}}
   \end{equation}
 
   \begin{itemize}
-   \item theory calculations often use $\Egamma > 1.6~\gev$  which yields $\Delta\Gamma_{\text{non-peturbative}} \sim \mathcal{O}(3\%)$
+   \item theory calculations often use $\Egamma > 1.6~\gev$  which yields $\Delta\Gamma_{\text{non-perturbative}} \sim \mathcal{O}(3\%)$
   \end{itemize}
   
 \end{frame}
+
+\addtocounter{framenumber}{-1}
 
 \begin{frame}{Description of \BtoXsgamma photon energy spectrum}
 
@@ -334,38 +358,38 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \end{frame}
 
    
-      \begin{frame}{\safeBtoXsgamma measurement techniques}
-      \scriptsize
-      \begin{columns}
-         \centering
-         \column{0.4\textwidth}
-         \input{tikz/tagging.tex}
-         \column{0.6\textwidth}
-         \centering
-         \textbf{Untagged/Tagged}
+   %    \begin{frame}{\safeBtoXsgamma measurement techniques}
+   %    \scriptsize
+   %    \begin{columns}
+   %       \centering
+   %       \column{0.4\textwidth}
+   %       \input{tikz/tagging.tex}
+   %       \column{0.6\textwidth}
+   %       \centering
+   %       \textbf{Untagged/Tagged}
 
-         \begin{itemize}
-            \item Do not reconstruct $X_s$: treat them in a `missing-momentum' way
-            \item Suppress background only using the information of the photon
-            \item \textbf{If tagging}: also use the information of the second $B$ meson
-         \end{itemize}
+   %       \begin{itemize}
+   %          \item Do not reconstruct $X_s$: treat them in a `missing-momentum' way
+   %          \item Suppress background only using the information of the photon
+   %          \item \textbf{If tagging}: also use the information of the second $B$ meson
+   %       \end{itemize}
 
-         \begin{tikzpicture}
-            \node[anchor = south west, inner sep=0] (image) at (current page.south west) 
-                {\includegraphics[width=0.8\textwidth]{../phd_thesis/figures/experiment_overview/tagging_advantages_mod.png}};
-            \node[below = 5 mm of image] (ghost) {};
-               \node[align = center, left =15mm of ghost] (firsttext)% <---- 
-                {\footnotesize \textbf{Untagged}};
-            \node[right = 2 mm of firsttext] (temp) {};
-            \node[align = center, above = 1mm of temp] (secondtext)% <---- 
-                {\footnotesize \textbf{lepton tagging}};
-            \node[align = center, right = 6mm of firsttext] (thirdtext)% <---- 
-                {\footnotesize \textbf{semileptonic tagging}};
-            \node[align = center, right = 6mm of secondtext] (fourthtext)% <---- 
-                {\footnotesize \textbf{hadronic tagging}};
-         \end{tikzpicture}
-      \end{columns}
-   \end{frame}
+   %       \begin{tikzpicture}
+   %          \node[anchor = south west, inner sep=0] (image) at (current page.south west) 
+   %              {\includegraphics[width=0.8\textwidth]{../phd_thesis/figures/experiment_overview/tagging_advantages_mod.png}};
+   %          \node[below = 5 mm of image] (ghost) {};
+   %             \node[align = center, left =15mm of ghost] (firsttext)% <---- 
+   %              {\footnotesize \textbf{Untagged}};
+   %          \node[right = 2 mm of firsttext] (temp) {};
+   %          \node[align = center, above = 1mm of temp] (secondtext)% <---- 
+   %              {\footnotesize \textbf{lepton tagging}};
+   %          \node[align = center, right = 6mm of firsttext] (thirdtext)% <---- 
+   %              {\footnotesize \textbf{semileptonic tagging}};
+   %          \node[align = center, right = 6mm of secondtext] (fourthtext)% <---- 
+   %              {\footnotesize \textbf{hadronic tagging}};
+   %       \end{tikzpicture}
+   %    \end{columns}
+   % \end{frame}
 
    %----------------------------------------------------------------------------------------
    %	Belle II
@@ -375,11 +399,14 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \begin{frame}{SuperKEKB}
       \scriptsize\centering
       \begin{columns}
-         \column{0.5\textwidth}
+         \column{0.75\textwidth}
          \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/super_kekb.png}
-         \column{0.5\textwidth}
-         \includegraphics[width=1\textwidth]{figures/Layout-of-SuperKEKB-at-the-KEK-Tsukuba-campus.png}
+      %    \column{0.5\textwidth}
+      %    \includegraphics[width=1\textwidth]{figures/Layout-of-SuperKEKB-at-the-KEK-Tsukuba-campus.png}
       \end{columns}
+
+      \vspace{10pt}
+
       \begin{itemize}
          \item Supplies a 7~\gev electron and 4~\gev positron beam
          \item Operates since 2018
@@ -429,7 +456,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
      
       \begin{itemize}
          \item Reconstruct all events where \textbf{one of the $B$ mesons decays hadronically}
-         \item[\to] Full event intepretation algorithm used (next slide)
+         \item[\to] Full event interpretation algorithm used (next slide)
          \item Require a \textbf{high-energy photon from the other $B$ meson}
          \item[\to] cannot make any more requirements while maintaining an inclusive sample 
          \item[] (i.e. no $M_X$ selection)
@@ -450,18 +477,35 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \column{0.5\textwidth}
          \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_reconstruction/FEI_tagging.png}
       \column{0.5\textwidth}
-         \begin{itemize}
-            \item Reconstructs $B$ mesons in thousands of subdecay chains
-            \item Hadronic and semileptonic mode
-            \item \textbf{Step 1:} Combine detector-level objects to final state particles
-            \item \textbf{Step 2:} Combine final state particles to intermediate particles
-            \item \textbf{Step 3:} Combine final/intermediate state particles to other intermediate particles or $B$ mesons
-            \item \textbf{Step 4:} Repeat step 3 for all decay chains.
-         \end{itemize}
+      \centering
+      $\mathcal{O}(10000)$ decay chains reconstructed:
+      
+         % \begin{itemize}
+         %    \item Reconstructs $B$ mesons in thousands of subdecay chains
+         %    \item Hadronic and semileptonic mode
+         %    \item \textbf{Step 1:} Combine detector-level objects to final state particles
+         %    \item \textbf{Step 2:} Combine final state particles to intermediate particles
+         %    \item \textbf{Step 3:} Combine final/intermediate state particles to other intermediate particles or $B$ mesons
+         %    \item \textbf{Step 4:} Repeat step 3 for all decay chains.
+         % \end{itemize}
+         Detector level objects
+
+         \downdownarrows	
+
+         Final state particles
+
+         $\downarrow\circlearrowleft$	
+
+         Intermediate state particles \circlearrowleft	
+
+         \downdownarrows	
+
+         $36~B^+$ and $33~B^0$ channels
       
    \end{columns}
+   \vspace{5pt}
 \begin{itemize}
-   \item[\ra] Combination validity is evaluated at every step by \textbf{boosted decision trees (BDTs)}
+   \item Pre-trained BDT evaluates combination validity at every step
    \item[\ra]\textbf{end up with $B^+$ and $B^0$ candidates and a probability score \feiProb for each}
 \end{itemize}   
 
@@ -481,6 +525,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \begin{itemize}
       \item Because of tagging, $B$ meson rest frame attainable
       \item[\ra] energy provided in the signal $B$ meson rest frame
+      \item[\ra] \textbf{theoretically most desirable}!
       \item $\EB>1.4~\gev$ threshold adopted
       \item[\ra] compromise between disk space and maintaining as much signal as possible
       \item Signal is modelled using a default Belle II model (Kagan-Neubert)
@@ -605,20 +650,8 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 \centering\scriptsize
 
 \begin{itemize}
-   \item The previously presented selections are optimised using a Punzi figure-of-merit
+   \item The selections are optimised using a figure-of-merit and applied:
 \end{itemize}
-
-\begin{equation}\nonumber
-   \mathrm{FOM}_{\mathrm{Punzi}}= \frac{\mathsf{S}}{\mathsf{S}_0} \frac{1}{\frac{3}{2}+\sqrt{\mathsf{B}}}.
-\end{equation}
-
-Optimise :
-
-      \ZMVA \hspace{1cm}      
-      \piVeto  \hspace{1cm}   
-      \etaVeto  \hspace{1cm}
-      $\mathtt{BDT~output}$
-
 
 \vspace{5pt}
 
@@ -631,60 +664,12 @@ Optimise :
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_optimisation/Bz_tagged_background_optimal.pdf}
 \end{columns}
 
-
-\end{frame}
-
-\begin{frame}{Best tag-side candidate selection}
-\scriptsize\centering
-   \begin{itemize}
-      \item    FEI produces up to 20 candidates in each event!
-      \item[\ra] Choose the best tag-side candidate based on \feiProb
-   \end{itemize}
-
-\begin{columns}
-   \column{0.5\textwidth}
-   \centering
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/bp_Mbc_with_random_best_tag_selection.pdf}
-   \column{0.5\textwidth}
-   \centering
-   \begin{tikzpicture}[remember picture, overlay]
-      \node[] (img) {\includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/bp_continuum_Mbc_with_random_best_tag_selection.pdf}
-      };
-      \node[] at (-0.5,-0.2) (img2)  {\scriptsize$\epem\ra\qqbar$ only};
-   \end{tikzpicture}
-
-\end{columns}
-
 \begin{itemize}
-   \item[\ra] Better contrast between \B mesons and $\epem\ra\qqbar$
-   \item Motivates to choose the highest \feiProb candidate
-   % \item What about the cases where there is \feiBp and \feiBz candidates in the same event?
-   % \item[\ra] in such cases, the correctly charged candidate has a much higher \feiProb
+   \item[\ra] 100 times better signal-to-background ratio!
+   \item After this point the tag side candidate with the highest \feiProb is picked
+   \item[\ra] that leaves 1 tag + 1 photon candidate per event!
+   \item[\ra] further background suppression by fitting
 \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Good tag-B mesons}
-   \centering\scriptsize
-   \begin{itemize}
-      \item Briefly introduce a loose definition: good tag-\B mesons
-      \item The goal is not to reconstruct the tag side:
-      \item Only to infer the charge, momentum and flavour of the signal side.
-      \item How to define the criterion for that?
-      \item[\ra] \textbf{Compare} $\bm{M_{bc}}$ \textbf{distributions of different reconstruction errors}
-   \end{itemize}
-
-   \begin{columns}
-      \column{0.5\textwidth}
-      \centering
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/goodbad_tag_comparison.pdf}
-      \column{0.5\textwidth}
-      \centering
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/isSig_tag_comparison.pdf}
-   \end{columns}
-
-   \ra in data such reconstruction information not available
-   \ra employ an \Mbc fit
 
 \end{frame}
 
@@ -745,6 +730,50 @@ Optimise :
 \end{frame}
 
 \begin{frame}{Fit binning}
+   \small\scriptsize
+   
+   Optimise based on statistical significance figure of merit studies:
+   
+   \begin{itemize}
+      \item 11 fitting intervals to extract \EB spectrum:\\
+      \ra $1.4-1.8~\gev$ : two 200~\mev wide (control-region for fit)\\
+      \ra $1.8-2.7~\gev$ : one 200~\mev and seven 100~\mev wide \textbf{(signal region)} \\
+      \ra $2.7~\gev\mathtt{+}$  \hspace{14.5pt}: one `overflow' bin (control region for fit)\\
+      \item The \textbf{fit is performed using the three PDFs} in every interval
+   \end{itemize}
+   
+   Fits on 1.6~\invab of simulation (four examples):
+   
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_1p6to1p8ppdf.pdf}
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p0to2p1ppdf.pdf}
+   
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p3to2p4ppdf.pdf}
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p5to2p6ppdf.pdf}
+   
+   
+   \end{columns}
+   
+   \begin{tikzpicture}[remember picture, overlay]
+      \node[] at (6,3) (img) {\includegraphics[width=0.2\textwidth]{../phd_thesis/figures/fitting/legend.png}};
+      % \node[rectangle,
+      %  draw = red,
+      %  line width=0.5mm,
+      %  minimum width = 2.2cm, 
+      %  minimum height = 0.25cm] (r) at (6,2.38) {};
+      %  \node[] at (6,2.0) {\tiny \color{red} $\mathcal{N}_{\mathrm{CB}}$: normalisation};
+   \end{tikzpicture}
+   
+   
+   
+   
+   \end{frame}
+
+\begin{frame}{Fit binning}
 \small\scriptsize
 
 Optimise based on statistical significance figure of merit studies:
@@ -775,6 +804,12 @@ Fits on 1.6~\invab of simulation (four examples):
 
 \begin{tikzpicture}[remember picture, overlay]
    \node[] at (6,3) (img) {\includegraphics[width=0.2\textwidth]{../phd_thesis/figures/fitting/legend.png}};
+   \node[rectangle,
+    draw = red,
+    line width=0.5mm,
+    minimum width = 2.2cm, 
+    minimum height = 0.25cm] (r) at (6,2.38) {};
+    \node[] at (6,2.0) {\tiny \color{red} $\mathcal{N}_{\mathrm{CB}}$: normalisation};
 \end{tikzpicture}
 
 
@@ -799,8 +834,8 @@ Fits on 1.6~\invab of simulation (four examples):
 
 \begin{frame}{Remaining background}
 \scriptsize\centering
+\textbf{At this stage:}
    \begin{itemize}
-      \item At this stage:
       \item Data sample = \textbf{(a)} \BtoXsgamma events + \textbf{(b)} remaining non-\BtoXsgamma background
       \item[\ra] remaining background removed in a simulation reliant way
       \item[\ra] repeat the fit on simulation, but with \BtoXsgamma events removed
@@ -809,6 +844,11 @@ Fits on 1.6~\invab of simulation (four examples):
 
 
    \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/subtracted_signal_generic_mc.pdf}
+
+\begin{itemize}
+   \item[\ra] statistical uncertainty only, but clearly dominant 
+\end{itemize}
+
 \end{frame}
 
 
@@ -1072,7 +1112,7 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \begin{itemize}
       \item Assign \textbf{the full correction as a systematic uncertainty}
-      \item[\ra] Conservative approach: also acommodates the issues seen earlier
+      \item[\ra] Conservative approach: also accommodates the issues seen earlier
    \end{itemize}
 
 \end{frame}
@@ -1121,13 +1161,13 @@ Fits on 1.6~\invab of simulation (four examples):
    \item[\ra] although cross-bin migrations are not taken into account
    \item[\ra] however given the statistical uncertainty this is sufficient
 \end{itemize}
-\begin{equation*}\label{eq:bin_by_bin_unfolding}
-   x_i = y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
-  \end{equation*}
+% \begin{equation*}\label{eq:bin_by_bin_unfolding}
+%    x_i = y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
+%   \end{equation*}
 
-  \begin{equation*}\label{eq:bin_by_bin_unfolding_error}
-      \Delta x_i = \Delta y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
-  \end{equation*}
+%   \begin{equation*}\label{eq:bin_by_bin_unfolding_error}
+%       \Delta x_i = \Delta y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
+%   \end{equation*}
 \begin{itemize}
    \item Unfolding model:
    \item[\ra] inclusive \BtoXsgamma model with
@@ -1135,8 +1175,8 @@ Fits on 1.6~\invab of simulation (four examples):
 \end{itemize}
 
 \begin{columns}
-   \centering
    \column{0.5\textwidth}
+   \centering
    \textbf{Model:}
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_samples/normalised_signal_model.pdf}
 
@@ -1161,7 +1201,15 @@ Fits on 1.6~\invab of simulation (four examples):
 %    \end{itemize}
 % \end{frame}
 
-\begin{frame}{Fit results -- Unblinded}
+\addtocounter{framenumber}{-1}
+{\setbeamertemplate{footline}{} 
+\begin{frame}
+   \centering
+   \textbf{Unblinded results}
+\end{frame}
+}
+
+\begin{frame}{Fit results}
 \begin{columns}
    \column{0.33\textwidth}
    \centering
@@ -1189,10 +1237,7 @@ Fits on 1.6~\invab of simulation (four examples):
 \end{columns}
 \end{frame}
 
-\begin{frame}
-   \centering
-   \textbf{Unblinded results}
-\end{frame}
+
 
 \begin{frame}{Background subtracted results}
    \centering\scriptsize
@@ -1274,6 +1319,9 @@ Fits on 1.6~\invab of simulation (four examples):
       \hline
       World average (\EB>1.6~\gev) & \multicolumn{2}{c}{$3.49\pm0.19$} \\
       \hline
+      BaBar hadronic-tagged & \multicolumn{2}{c}{$3.90\pm0.91\pm0.64$ [extrapolated $\EB>1.6~\gev$]}\\ 
+      \hline
+
   \end{tabular}
 
 }
@@ -1295,7 +1343,6 @@ Fits on 1.6~\invab of simulation (four examples):
         \hline
        World average: & $2.314 \pm 0.011$ & $0.0303 \pm 0.0025$ \\
        \hline
-
     \end{tabular}
 
 }
@@ -1317,7 +1364,7 @@ Extrapolation to $\EB>1.6~\gev$
       
 \end{frame}
 
-\begin{frame}{Input to the theoretical calculations}
+\begin{frame}{Input to the theoretical calculations (SIMBA collaboration)}
 \centering\scriptsize
 \begin{columns}
    \centering
@@ -1336,8 +1383,8 @@ Extrapolation to $\EB>1.6~\gev$
    \column{0.5\textwidth}
    \centering
    \begin{itemize}
-      \item Global fit of all experimental information by simba
-      \item Extract shape function and its parameters
+      \item Global fit of all experimental information
+      \item Extract spectrum normalisation, shape function parameters
    \end{itemize}
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
 
@@ -1349,27 +1396,26 @@ Extrapolation to $\EB>1.6~\gev$
 
 \end{frame}   
 
-\begin{frame}{Future prospects}
+\begin{frame}{Outlook and summary}
 \scriptsize\centering
    \begin{itemize}
-      \item The future holds good things!
-      \item Other results already limited systematically
-      \item[\ra] hadronic tag will only be limited systematically at 5-10~\invab
+      \item First measurement of partial and total decay rates of inclusive \BtoXsgamma decays at Belle~II
+      \item[] and second ever, overall.
+      \item Sets the stage for future hadronic-tagged \BtoXsgamma measurements at Belle~II
+      \item Other measurement techniques are already limited systematically\\
+      \item Hadronic-tagged analysis only limited at 5~\invab\\
+      \begin{flushright}
+         \tiny
+         \textbf{Snowmass White Paper: Belle II physics reach and plans for the next decade and beyond}
+      
+      e-Print: 2207.06307 [hep-ex]
+      \end{flushright}
+      \item Results are awaited by the theory community as well!
    \end{itemize}
 
-\resizebox{1\textwidth}{!}{
-      \begin{tabular}{|c|cccc|c|}
-          \hline
-          \multirow{2}{*}{Lower \EB threshold} & \multicolumn{4}{c|}{Statistical uncertainty} & \multirow{2}{*}{\makecell{Baseline (improved)\\ systematic uncertainty}} \\
-          & 1~\invab& 5~\invab & 10~\invab & 50~\invab & \\
-          \hline
-          1.4~\gev & 10.7\% & 6.4\% & 4.7\% & 2.2\% & 10.3 \% (5.2\%)\\
-          1.6~\gev & 9.9 \% & 6.1\% & 4.5\% & 2.1\% & 8.5 \% (4.2\%)\\ 
-          1.8~\gev & 9.3 \% & 5.7\% & 4.2\% & 2.0\% & 6.5 \% (3.2\%)\\ 
-          2.0~\gev & 8.3 \% & 5.1\% & 3.8\% & 1.7\% & 3.7 \% (1.8\%)\\ 
-          \hline
-      \end{tabular}
-}
+
+
+
 \end{frame}
 
 \appendix
@@ -1682,6 +1728,61 @@ Extrapolation to $\EB>1.6~\gev$
 
 \end{frame}
 
+\begin{frame}{Best tag-side candidate selection}
+   \scriptsize\centering
+      \begin{itemize}
+         \item    FEI produces up to 20 candidates in each event!
+         \item[\ra] Choose the best tag-side candidate based on \feiProb
+      \end{itemize}
+   
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/bp_Mbc_with_random_best_tag_selection.pdf}
+      \column{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}[remember picture, overlay]
+         \node[] (img) {\includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/bp_continuum_Mbc_with_random_best_tag_selection.pdf}
+         };
+         \node[] at (-0.5,-0.2) (img2)  {\scriptsize$\epem\ra\qqbar$ only};
+      \end{tikzpicture}
+   
+   \end{columns}
+   
+   \begin{itemize}
+      \item[\ra] Better contrast between \B mesons and $\epem\ra\qqbar$
+      \item Motivates to choose the highest \feiProb candidate
+      % \item What about the cases where there is \feiBp and \feiBz candidates in the same event?
+      % \item[\ra] in such cases, the correctly charged candidate has a much higher \feiProb
+   \end{itemize}
+   
+   \end{frame}
+
+   \begin{frame}{Good tag-B mesons}
+      \centering\scriptsize
+      \begin{itemize}
+         \item Briefly introduce a loose definition: good tag-\B mesons
+         \item The goal is not to reconstruct the tag side:
+         \item Only to infer the charge, momentum and flavour of the signal side.
+         \item How to define the criterion for that?
+         \item[\ra] \textbf{Compare} $\bm{M_{bc}}$ \textbf{distributions of different reconstruction errors}
+      \end{itemize}
+   
+      \begin{columns}
+         \column{0.5\textwidth}
+         \centering
+         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/goodbad_tag_comparison.pdf}
+         \column{0.5\textwidth}
+         \centering
+         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/isSig_tag_comparison.pdf}
+      \end{columns}
+   
+      \ra in data such reconstruction information not available
+      \ra employ an \Mbc fit
+   
+   \end{frame}
+   
+
 \begin{frame}{Fit stability on smaller data sets}
    \scriptsize\centering
       \begin{itemize}
@@ -1707,5 +1808,35 @@ Extrapolation to $\EB>1.6~\gev$
    
    
    \end{frame}
+
+   \begin{frame}{Future prospects}
+      \scriptsize\centering
+         \begin{itemize}
+            \item The future holds good things!
+            \item Other results already limited systematically
+            \item[\ra] hadronic tag will only be limited systematically at 5-10~\invab
+         \end{itemize}
+      
+      \resizebox{1\textwidth}{!}{
+            \begin{tabular}{|c|cccc|c|}
+                \hline
+                \multirow{2}{*}{Lower \EB threshold} & \multicolumn{4}{c|}{Statistical uncertainty} & \multirow{2}{*}{\makecell{Baseline (improved)\\ systematic uncertainty}} \\
+                & 1~\invab& 5~\invab & 10~\invab & 50~\invab & \\
+                \hline
+                1.4~\gev & 10.7\% & 6.4\% & 4.7\% & 2.2\% & 10.3 \% (5.2\%)\\
+                1.6~\gev & 9.9 \% & 6.1\% & 4.5\% & 2.1\% & 8.5 \% (4.2\%)\\ 
+                1.8~\gev & 9.3 \% & 5.7\% & 4.2\% & 2.0\% & 6.5 \% (3.2\%)\\ 
+                2.0~\gev & 8.3 \% & 5.1\% & 3.8\% & 1.7\% & 3.7 \% (1.8\%)\\ 
+                \hline
+            \end{tabular}
+      }
+      
+      
+      \begin{flushright}
+         \textbf{Snowmass White Paper: Belle II physics reach and plans for the next decade and beyond}
+      
+      e-Print: 2207.06307 [hep-ex]
+      \end{flushright}
+      \end{frame}
 
 \end{document}
