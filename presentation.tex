@@ -213,6 +213,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \column{0.66\textwidth}
    \begin{itemize}
       \item Method for $\boldsymbol{e^+}\boldsymbol{e^-}$ \textbf{colliders only}!
+      \item[\ra] i.e. initial collision state has to be known 
       \item Use the known initial state of the \epem collision
       \item \textit{Tag} the signal side
       \item[\ra] the four-momentum constraint allows to \textbf{infer the charge, flavour, four-momentum} of the signal side
@@ -289,7 +290,8 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \item $b$ quark is not stationary in the $B$ meson!
       \item such non-perturbative effects encoded in a so-called \textbf{shape-function} $\bm{\mathcal{F}}$!
       \item[\ra] it is a universal property of the $B$ meson
-      \item[\ra] $\mathcal{F}$ is necessary in other analyses such as $V_{ub}$ determination from $B\to X_u\ell\nu$ 
+      \item[\ra] $\mathcal{F}$ is necessary in other analyses where phase space selection are employed
+      \item[\ra] e.g., $V_{ub}$ determination from $B\to X_u\ell\nu$ 
    \end{itemize}
    
 \end{frame}
@@ -300,18 +302,13 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \section{\safeBtoXsdgamma experimental status}
 
    \begin{frame}{\safeBtoXsgamma experimental status}
-      \scriptsize
-      \begin{equation}\nonumber
-         \mathcal{B}(\BtoXsgamma) = (3.40\pm 0.17) \cdot 10 ^{-4}
-      \end{equation}
+      \scriptsize\centering
+      \begin{align*}\nonumber
+         \mathcal{B}(\BtoXsgamma)_{\mathrm{THEORY}} &= (3.40\pm 0.17) \cdot 10 ^{-4}\\
+         \mathcal{B}(\BtoXsgamma)_{\mathrm{EXPERIMENT}} &= (3.49\pm 0.19) \cdot 10 ^{-4}
+      \end{align*}
 
-      whereas the experimental value is:
-
-      \begin{equation}\nonumber
-         \mathcal{B}(\BtoXsgamma) = (3.49\pm 0.19) \cdot 10 ^{-4}
-      \end{equation}
-
-      which is a combination of the following measurements:
+      The experimental value is a \textbf{combination of the following measurements}:
       \vspace{5pt}
 
       \resizebox{1.\textwidth}{!}{
@@ -333,12 +330,6 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
          
          \vspace{10pt}
 
-         Notice three prevalent type of measurement techniques:
-         \begin{itemize}
-            \item Sum-of-exclusive
-            \item Untagged
-            \item Tagged
-         \end{itemize}
          \textbf{Only obtained by $\bm{B}$ factories}!
    \end{frame}
 
@@ -382,16 +373,27 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \section{Belle~II and SuperKEKB}
 
    \begin{frame}{SuperKEKB}
+      \scriptsize\centering
       \begin{columns}
          \column{0.5\textwidth}
          \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/super_kekb.png}
          \column{0.5\textwidth}
          \includegraphics[width=1\textwidth]{figures/Layout-of-SuperKEKB-at-the-KEK-Tsukuba-campus.png}
       \end{columns}
+      \begin{itemize}
+         \item Supplies a 7~\gev electron and 4~\gev positron beam
+         \item Operates since 2018
+      \end{itemize}
    \end{frame}
 
    \begin{frame}{Belle~II detector}
+      \scriptsize\centering
       \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/belle2.png}
+      \begin{itemize}
+         \item Designed to collect data at or around $\FourS$ resonance energy
+         \item 364~\invfb collected at \FourS energy and 42~\invfb are collected 60~\mev lower
+         \item This analysis uses the 2019-2021 data (189~\invfb)
+      \end{itemize}
    \end{frame}
 
 
@@ -417,7 +419,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    %----------------------------------------------------------------------------------------
    \section{Belle II analysis}
 
-   \begin{frame}{Analysis recipe}
+   \begin{frame}{\BtoXsgamma analysis recipe}
       \scriptsize\centering
       \begin{itemize}
          \item Return to \BtoXsgamma analysis
@@ -436,10 +438,13 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \begin{equation}\nonumber
          \left.\frac{d\mathcal{B}(\BtoXsgamma)}{d\EB}\right|_i = \mathcal{U}_i \cdot \frac{N_i(\BtoXsgamma)}{\varepsilon_i N_{B}},
       \end{equation}
+      \begin{itemize}
+         \item \BtoXdgamma assumed to have the same efficiency and subtracted (\sim 4.2\% of contribution)
+      \end{itemize}
    \end{frame}
 
 
-   \begin{frame}{Full Event Interpretation}
+   \begin{frame}{Full Event Interpretation (FEI)}
       \scriptsize\centering
    \begin{columns}
       \column{0.5\textwidth}
@@ -456,18 +461,18 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       
    \end{columns}
 \begin{itemize}
-   \item Trained on simulated data but calibrated on data samples!
+   \item[\ra] Combination validity is evaluated at every step by \textbf{boosted decision trees (BDTs)}
    \item[\ra]\textbf{end up with $B^+$ and $B^0$ candidates and a probability score \feiProb for each}
 \end{itemize}   
 
 \vspace{10pt}
 
-Tag quality variables:
+\textbf{Beam-constrained mass} can be used to evaluate tag-reconstruction quality
 \vspace{-5pt}
 \begin{equation*}
-   \underbrace{\Mbc = \sqrt{(\sqrt{s}/2)^2 - (p^*_B)^2}}_{\text{beam-constrained mass}}; \quad\quad \Delta E = \sqrt{s}/2 - E_{B}^*;
+\Mbc = \sqrt{(\sqrt{s}/2)^2 - (p^*_B)^2}
 \end{equation*}
-
+\ra resonant-like behaviour near $M_B$ for correctly reconstructed candidates
 
 \end{frame}
 
@@ -477,7 +482,9 @@ Tag quality variables:
       \item Because of tagging, $B$ meson rest frame attainable
       \item[\ra] energy provided in the signal $B$ meson rest frame
       \item $\EB>1.4~\gev$ threshold adopted
-      \item[\ra] compromise between background and signal ratio
+      \item[\ra] compromise between disk space and maintaining as much signal as possible
+      \item Signal is modelled using a default Belle II model (Kagan-Neubert)
+
    \end{itemize}
    \begin{columns}
       \column{0.5\textwidth}
@@ -495,15 +502,18 @@ Tag quality variables:
       \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_selection/Bp_photon_sources.pdf}
 
       \begin{itemize}
-         \item Shown only for $B^+$ here, but similar for $B^0$
-         \item Remaining sources correspond to 0.5\%-3\% each 
+         \item[\ra] Shown only for $B^+$ here, but similar for $B^0$
       \end{itemize}
 
       \begin{tikzpicture}[remember picture, overlay]
-         \node[] (show) at (5,5) {};
-         \node[] (showend) at (2,5) {};
+         \node[] (show) at (3.45,3.55) {
+         \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.35\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{0.5-3\% each}$}}
+         };
+         \node[] (showend) at (3,4.25) {
+         \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.3\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{85\% of background}$}}
+         };
 
-         \draw [->,>=stealth] (show) -- (showend);
+         % \draw [->,>=stealth] (show) -- (showend);
 
       \end{tikzpicture}
 
@@ -514,7 +524,8 @@ Tag quality variables:
 \begin{itemize}
    \item $\piz\ra\g\g$ and $\eta\ra\g\g$ mimic the signal (high-$E$ $\gamma$ and low-$E$ $\gamma$)
    \item \textbf{Combine all lower-energy photons with the high-energy photon candidate}
-   \item Use multivariate methods to evaluate the compatibility of the combination with a decay from \piz or $\eta$
+   \item Evaluate the compatibility of the combination with a decay from \piz or $\eta$
+   \item[\ra] Use a BDT
 \end{itemize}
 \begin{columns}
    \column{0.5\textwidth}
@@ -522,9 +533,10 @@ Tag quality variables:
    \column{0.5\textwidth}
    \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_selection/Bz_etaVeto_nopi.pdf}
 \end{columns}
-\begin{itemize}
-   \item[\ra] Validated in data using $B^+\to \bar{D}^0[\to K^+\pi^-]\pi^+$ and $B^0\to D^-[\to K^+\pi^-\pi^-]\pi^+$ decays
-\end{itemize}
+
+\begin{flushright}
+\textbf{Standard approach implemented in the Belle~II software}
+\end{flushright}
 \end{frame}
 
 \begin{frame}{Photon misidentification}
@@ -544,16 +556,16 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 
 \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_selection/Bp_zernikeMVA_mcPDG.pdf}
 
-\begin{itemize}
-   \item[\ra] successfully separates photons/non-photons
-\end{itemize}
+
+\begin{flushright}
+   \textbf{Standard approach implemented in the Belle~II software}
+   \end{flushright}
 
 \end{frame}
 
 \begin{frame}{Suppressing \qqbar events}
    \centering\scriptsize
    \begin{itemize}
-      \item Up to now we only talked photon backgrounds
       \item As seen at the beginning \textbf{many candidates originate in} {\boldmath$\epem\ra\qqbar$} \textbf{processes}
       \item[\ra] Continuum process suppression can be used to clean up false \g candidates
    \end{itemize}
@@ -561,41 +573,17 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
    \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/continuum_suppression/figure_continuum_suppression_event_shapes.pdf}
 
 \begin{itemize}
-\item $B$ factory experiments developed many ways to \textbf{parametrise the decay topology differences}
-\item They can be combined using a \textbf{boosted decision tree}
+\item $B$ factory experiments developed many ways to \textbf{parametrise the decay topology}
+\item The parameters are combined using a \textbf{boosted decision tree}
 \item \textbf{Problem:} decay topology is defined by particles in it 
 \item[\ra] that \textbf{includes the $X_s$ system!}
+\item Every potential training feature is tested to not bias the photon energy spectrum!
+\item[\ra] 70 features tested \ra 26 final features used
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Continuum suppression features}
 
-   \scriptsize\centering
-
-   \begin{itemize}
-      \item More than 70 features are tested
-      \item[\ra] here an example is shown
-   \end{itemize}
-
-   \begin{itemize}
-      \item \textbf{Test 1}: test if the feature is biasing to the \EB, \Estar, \Mbc  
-      \item[\ra] evaluate Jensen-Shannon distance in slices of the feature
-   \end{itemize}
-
-   \includegraphics[width=0.8\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/thrust/Btag_cosTBTO_bias_tested.pdf}
-
-
-   \begin{itemize}
-      \item \textbf{Test 2}: test if the feature is described correctly in Data
-      \item[\ra] use data with $\sqrt{s}-60~\mev$ (no \FourS events)
-   \end{itemize}
-
-
-
-   \includegraphics[width=0.3\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/datamc_agreement_tests/Btag_cosTBTO_agreement_tested.pdf}
-
-\end{frame}
 
 \begin{frame}{Continuum suppression training}
    \scriptsize\centering
@@ -607,8 +595,8 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
       \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/separation_curves.pdf}
 
 
-      \column{0.5\textwidth}
-      \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/feature_importance.pdf}
+      % \column{0.5\textwidth}
+      % \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/feature_importance.pdf}
 
    \end{columns}
 \end{frame}
@@ -624,16 +612,13 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
    \mathrm{FOM}_{\mathrm{Punzi}}= \frac{\mathsf{S}}{\mathsf{S}_0} \frac{1}{\frac{3}{2}+\sqrt{\mathsf{B}}}.
 \end{equation}
 
-\begin{tabular}{|l|c|}
-      \hline
-      Variable  & Threshold chosen \\
-      \hline
-      \ZMVA                      & $>0.6$\\
-      \piVeto                    & $<0.4$\\
-      \etaVeto                   & $<0.4$\\
-      $\mathtt{BDT~output}$      & $>0.8$\\
-      \hline
-\end{tabular}
+Optimise :
+
+      \ZMVA \hspace{1cm}      
+      \piVeto  \hspace{1cm}   
+      \etaVeto  \hspace{1cm}
+      $\mathtt{BDT~output}$
+
 
 \vspace{5pt}
 
@@ -671,9 +656,10 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 \end{columns}
 
 \begin{itemize}
+   \item[\ra] Better contrast between \B mesons and $\epem\ra\qqbar$
    \item Motivates to choose the highest \feiProb candidate
-   \item What about the cases where there is \feiBp and \feiBz candidates in the same event?
-   \item[\ra] in such cases, the correctly charged candidate has a much higher \feiProb
+   % \item What about the cases where there is \feiBp and \feiBz candidates in the same event?
+   % \item[\ra] in such cases, the correctly charged candidate has a much higher \feiProb
 \end{itemize}
 
 \end{frame}
@@ -681,10 +667,11 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 \begin{frame}{Good tag-B mesons}
    \centering\scriptsize
    \begin{itemize}
+      \item Briefly introduce a loose definition: good tag-\B mesons
       \item The goal is not to reconstruct the tag side:
       \item Only to infer the charge, momentum and flavour of the signal side.
       \item How to define the criterion for that?
-      \item[\ra] Compare \Mbc distributions of different reconstruction errors
+      \item[\ra] \textbf{Compare} $\bm{M_{bc}}$ \textbf{distributions of different reconstruction errors}
    \end{itemize}
 
    \begin{columns}
@@ -696,6 +683,8 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/best_tag_selection/isSig_tag_comparison.pdf}
    \end{columns}
 
+   \ra in data such reconstruction information not available
+   \ra employ an \Mbc fit
 
 \end{frame}
 
@@ -703,7 +692,7 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 \scriptsize\centering
 
 \begin{itemize}
-   \item Based on previous finding, all collected data can be split in the following categories:
+   \item The data sample can be split in the following categories:
 \end{itemize}
 
 \resizebox{0.7\textwidth}{!}{    
@@ -711,7 +700,7 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
    \toprule
        Component & Model in fit \\
        \midrule
-        {\color{ForestGreen} \epem\ra\BB well-reconstructed} & Crystal Ball  \\
+        {\color{ForestGreen} \epem\ra\BB good tags} & Crystal Ball  \\
         {\color{Bittersweet} \epem\ra\BB combinatorial} & Chebyshev polynomial, 5th order\\
         {\color{Bittersweet} \epem\ra\qqbar events} & Argus function\\
    \end{tabular}
@@ -764,7 +753,7 @@ Optimise based on statistical significance figure of merit studies:
    \item 11 fitting intervals to extract \EB spectrum:\\
    \ra $1.4-1.8~\gev$ : two 200~\mev wide (control-region for fit)\\
    \ra $1.8-2.7~\gev$ : one 200~\mev and seven 100~\mev wide \textbf{(signal region)} \\
-   \ra $2.7~\gev+$  \hspace{14.5pt}: one `overflow' bin (control region for fit)\\
+   \ra $2.7~\gev\mathtt{+}$  \hspace{14.5pt}: one `overflow' bin (control region for fit)\\
    \item The \textbf{fit is performed using the three PDFs} in every interval
 \end{itemize}
 
@@ -797,13 +786,14 @@ Fits on 1.6~\invab of simulation (four examples):
    \scriptsize\centering
    \begin{itemize}
       \item Fit prepared on 1.6~\invab
-      \item But Belle~II data is only 189~\invfb
+      \item But this analysis uses 189~\invfb
       \item[\ra] test stability on smaller data sample (1/10th)
    \end{itemize}
 
       \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/extracted_signal_generic_mc.pdf}
   \begin{itemize}
    \item[\ra] irrespective of background levels, consistent fit result
+   \item[\ra] But still the result does not look like a photon energy spectrum!   
   \end{itemize}
 \end{frame}
 
@@ -811,7 +801,7 @@ Fits on 1.6~\invab of simulation (four examples):
 \scriptsize\centering
    \begin{itemize}
       \item At this stage:
-      \item[\ra] But still the result does not look like a photon energy spectrum!   
+      \item Data sample = \textbf{(a)} \BtoXsgamma events + \textbf{(b)} remaining non-\BtoXsgamma background
       \item[\ra] remaining background removed in a simulation reliant way
       \item[\ra] repeat the fit on simulation, but with \BtoXsgamma events removed
       \item[\ra] Subtract peaking component!  
@@ -819,12 +809,6 @@ Fits on 1.6~\invab of simulation (four examples):
 
 
    \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/subtracted_signal_generic_mc.pdf}
-
-   \begin{itemize}
-      \item Linearity tests and correlation studies also performed
-      \item[\ra] all results points to the fact that the fitter is an unbiased estimator
-   \end{itemize}
-
 \end{frame}
 
 
@@ -848,7 +832,7 @@ Fits on 1.6~\invab of simulation (four examples):
       \item \piz and $\eta$ veto tool \hspace{27pt}  $\Rightarrow$ $B^+\to \bar{D}^0\pi^+$ and $B^0\to D^-\pi^+$
       \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.5\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Other Belle~II analyses}$}}
       \item Photon detection efficiency  $\Rightarrow$ $\epem\ra\mumu(\gamma)$ \hspace{27pt} \textbf{\}Separate analysis performed}
-      \item Post-fit background \hspace{24pt} $\Rightarrow$ world average $\mathcal{B}$ variations \hspace{15pt} \textbf{\}Study for this analysis}
+      \item Post-fit background \hspace{24pt} $\Rightarrow$ world average $\mathcal{B}$ variations \hspace{2pt} \textbf{\}Study for this analysis}
    \end{itemize}
 
    \vspace{10pt}
@@ -857,107 +841,161 @@ Fits on 1.6~\invab of simulation (four examples):
    \ra \piz and $\eta$ veto tool add a $\sim 5-10\%$ uncertainty\\
    \ra Other calibration uncertainties $\mathcal{O}(1\%)$\\
 
-\end{frame}
-
-\begin{frame}{Data-to-simulation validation: off-resonance sample}
-\scriptsize\centering
-   \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item Using a sample collected 60~\mev below the \FourS
-      \item[\ra] $\epem\ra\qqbar$ validation
-   \end{itemize}
-\centering
-        \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_validation/Bboth_offresonance_EB.pdf}
-
-        \begin{itemize}
-         \item[\ra] excellent \EB agreement
-         \item[\ra] however, off-resonance \Mbc is not comparable to on-resonance \Mbc
-        \end{itemize}
+   \textbf{\ra henceforth, the application of these corrections is always assumed}
 
 \end{frame}
 
-\begin{frame}{Data-to-simulation validation: inverted continuum}
+\begin{frame}{Data-to-simulation validation}
    \scriptsize\centering
-   \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item Flip \texttt{BDT output} of continuum suppression
-      \item[\ra]  $\epem\ra\qqbar$ validation with valid \Mbc
-   \end{itemize}
-
    \begin{columns}
       \column{0.5\textwidth}
       \centering
-         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_eb.pdf}
-
+      
+      Sample collected 60~\mev below the \FourS 
+      
+      (\textbf{only} $\bm{e^+e^-\rightarrow q\bar{q}}$)
+      \includegraphics[width=0.75\textwidth]{../phd_thesis/figures/data_validation/Bboth_offresonance_EB.pdf}
+      
+      Sample with \texttt{BDT output} inverted 
+      
+      (\textbf{mostly} $\bm{e^+e^-\rightarrow q\bar{q}}$)
+      \includegraphics[width=0.75\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_eb.pdf}
       \column{0.5\textwidth}
       \centering
-         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_mbc.pdf}
+      
+      Sample with $\piz$ and $\eta$ veto inverted 
+      
+      (\textbf{only} $\bm{B\bar{B}}$ \textbf{background})
+      \includegraphics[width=0.75\textwidth]{../phd_thesis/figures/data_validation/Bboth_bbbar_enhanced_eb.pdf}
+      
+      Control regions 
+      
+      (\textbf{mostly} $\bm{B\bar{B}}$ \textbf{background})
+      \includegraphics[width=0.75\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_eb.pdf}
 
    \end{columns}
-
-   \begin{itemize}
-      \item Excellent agreement of \EB
-      \item Problematic for \Mbc!
-   \item[\ra] related to the fact that $\sqrt{s}$ may vary during data taking
-      \item[\ra] cannot be captured by data taking period independent simulation
-   \end{itemize}
-
 \end{frame}
 
-\begin{frame}{Data-to-simulation validation: inverted continuum}
-   \scriptsize\centering
-   \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item Flip \texttt{BDT output} of continuum suppression
-      \item[\ra]  $\epem\ra\qqbar$ validation with valid \Mbc
-   \end{itemize}
+% \begin{frame}{Data-to-simulation validation: off-resonance sample}
+% \scriptsize\centering
+%    \begin{itemize}
+%       \item Once appropriate corrections are calculated: validate the simulation using data
+%       \item Using a sample collected 60~\mev below the \FourS
+%       \item[\ra] $\epem\ra\qqbar$ validation
+%    \end{itemize}
+% \centering
+%         \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_validation/Bboth_offresonance_EB.pdf}
 
-   \begin{columns}
-      \column{0.5\textwidth}
-      \centering
-         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_eb.pdf}
-      \column{0.5\textwidth}
-      \centering
-         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_mbccorrected.pdf}
-   \end{columns}
+%         \begin{itemize}
+%          \item[\ra] excellent \EB agreement
+%          \item[\ra] however, off-resonance \Mbc is not comparable to on-resonance \Mbc
+%         \end{itemize}
 
-   \begin{itemize}
-      \item Excellent agreement of \EB
-      \item Problematic for \Mbc!
-      \item[\ra] need to modify the \Mbc in simulation:  
-   \end{itemize}
-   \begin{equation*}
-      \sqrt{s}^{\mathrm{MC}} \xrightarrow[\mathrm{in~50\%~of~cases}]{\mathrm{replace~with~weighted~probability}} \sqrt{s}^{\mathrm{DATA}}
-   \end{equation*}
+% \end{frame}
 
-   \begin{itemize}
-   \item[\ra] e.g. if x value is set for 30\% of data, then the weighted probability for x is 0.3
-\end{itemize}
-\end{frame}
+% \begin{frame}{Data-to-simulation validation: inverted continuum}
+%    \scriptsize\centering
+%    \begin{itemize}
+%       \item Once appropriate corrections are calculated: validate the simulation using data
+%       \item Flip \texttt{BDT output} of continuum suppression
+%       \item[\ra]  $\epem\ra\qqbar$ validation with valid \Mbc
+%    \end{itemize}
 
-\begin{frame}{Data-to-simulation validation: inverted \piz and $\eta$}
-   \scriptsize\centering
-   \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item Flip \piVeto and \etaVeto
-      \item[\ra]  $\BB$ background validation ($B\to X \piz$ and $B\to X \eta$)
-   \end{itemize}
+%    \begin{columns}
+%       \column{0.5\textwidth}
+%       \centering
+%          \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_eb.pdf}
 
-   \begin{columns}
-      \column{0.5\textwidth}
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_bbbar_enhanced_eb.pdf}
-      \column{0.5\textwidth}
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_bbbar_enhanced_mbccorrected.pdf}
-   \end{columns}
+%       \column{0.5\textwidth}
+%       \centering
+%          \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_mbc.pdf}
 
-   \begin{itemize}
-      \item Now only the `corrected' \Mbc is used!
-      \item Assign \textbf{the difference with, without corrected \Mbc as fit model uncertainty}!
-   \end{itemize}
+%    \end{columns}
 
-\end{frame}
+%    \begin{itemize}
+%       \item Excellent agreement of \EB
+%       \item Problematic for \Mbc!
+%    \item[\ra] related to the fact that $\sqrt{s}$ may vary during data taking
+%       \item[\ra] cannot be captured by data taking period independent simulation
+%    \end{itemize}
 
-\begin{frame}{Data-to-simulation validation: sidebands}
+% \end{frame}
+
+% \begin{frame}{Data-to-simulation validation: inverted continuum}
+%    \scriptsize\centering
+%    \begin{itemize}
+%       \item Once appropriate corrections are calculated: validate the simulation using data
+%       \item Flip \texttt{BDT output} of continuum suppression
+%       \item[\ra]  $\epem\ra\qqbar$ validation with valid \Mbc
+%    \end{itemize}
+
+%    \begin{columns}
+%       \column{0.5\textwidth}
+%       \centering
+%          \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_eb.pdf}
+%       \column{0.5\textwidth}
+%       \centering
+%          \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_qqbar_enhanced_mbccorrected.pdf}
+%    \end{columns}
+
+%    \begin{itemize}
+%       \item Excellent agreement of \EB
+%       \item Problematic for \Mbc!
+%       \item[\ra] need to modify the \Mbc in simulation:  
+%    \end{itemize}
+%    \begin{equation*}
+%       \sqrt{s}^{\mathrm{MC}} \xrightarrow[\mathrm{in~50\%~of~cases}]{\mathrm{replace~with~weighted~probability}} \sqrt{s}^{\mathrm{DATA}}
+%    \end{equation*}
+
+%    \begin{itemize}
+%    \item[\ra] e.g. if x value is set for 30\% of data, then the weighted probability for x is 0.3
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Data-to-simulation validation: inverted \piz and $\eta$}
+%    \scriptsize\centering
+%    \begin{itemize}
+%       \item Once appropriate corrections are calculated: validate the simulation using data
+%       \item Flip \piVeto and \etaVeto
+%       \item[\ra]  $\BB$ background validation ($B\to X \piz$ and $B\to X \eta$)
+%    \end{itemize}
+
+%    \begin{columns}
+%       \column{0.5\textwidth}
+%       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_bbbar_enhanced_eb.pdf}
+%       \column{0.5\textwidth}
+%       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_bbbar_enhanced_mbccorrected.pdf}
+%    \end{columns}
+
+%    \begin{itemize}
+%       \item Now only the `corrected' \Mbc is used!
+%       \item Assign \textbf{the difference with, without corrected \Mbc as fit model uncertainty}!
+%    \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}{Data-to-simulation validation: sidebands}
+%    \scriptsize\centering
+%    \begin{itemize}
+%       \item Once appropriate corrections are calculated: validate the simulation using data
+%       \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection
+%    \end{itemize}
+
+%    \begin{columns}
+%       \column{0.5\textwidth}
+%       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_eb.pdf}
+%       \column{0.5\textwidth}
+%       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/sidebands_mbc_1.pdf}
+%    \end{columns}
+
+%    \begin{itemize}
+%       \item Now only the `corrected' \Mbc is used!
+%       \item Not only \Mbc discrepancy but also endpoint discrepancy
+%    \end{itemize}
+
+% \end{frame}
+
+\begin{frame}{Data-to-simulation agreement issues}
    \scriptsize\centering
    \begin{itemize}
       \item Once appropriate corrections are calculated: validate the simulation using data
@@ -966,38 +1004,25 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \begin{columns}
       \column{0.5\textwidth}
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_eb.pdf}
-      \column{0.5\textwidth}
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/sidebands_mbc_1.pdf}
-   \end{columns}
-
-   \begin{itemize}
-      \item Now only the `corrected' \Mbc is used!
-      \item Not only \Mbc discrepancy but also endpoint discrepancy
-   \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Data-to-simulation validation: sidebands}
-   \scriptsize\centering
-   \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection
-   \end{itemize}
-
-   \begin{columns}
-      \column{0.5\textwidth}
+      \centering
+      \texttt{ZernikeMVA} discrepancy
       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_zmva.pdf}
+      
+      \begin{itemize}
+         \item Seems to be an analysis-specific background
+         \item[\ra] not observed in control channel studies
+         \item[\ra] maintain and assign uncertainty   
+      \end{itemize}
+      
       \column{0.5\textwidth}
+      \Mbc Endpoint discrepancy
       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/sidebands_mbc_nozmva_1.pdf}
+      \begin{itemize}
+         \item Related to the fact that data-taking period independent simulation used
+         \item[\ra] correction and uncertainty applied
+      \end{itemize}
+  
    \end{columns}
-
-   \begin{itemize}
-      \item \text{zernikeMVA} discrepancy?
-      \item[\ra] improved agreement when no \texttt{zernikeMVA} is used
-      \item[\ra] more studies are needed to pinpoint the exact cause of this discrepancy
-      \item[\ra] seems to be a this-analysis-specific background
-   \end{itemize}
 
 \end{frame}
 
@@ -1047,6 +1072,7 @@ Fits on 1.6~\invab of simulation (four examples):
 
    \begin{itemize}
       \item Assign \textbf{the full correction as a systematic uncertainty}
+      \item[\ra] Conservative approach: also acommodates the issues seen earlier
    \end{itemize}
 
 \end{frame}
@@ -1068,19 +1094,21 @@ Fits on 1.6~\invab of simulation (four examples):
 \begin{equation*}
    \varepsilon_{\mathrm{FEI}} = 0.00444\pm0.00015
 \end{equation*}
+
+\vspace{-5pt}
+
 \begin{itemize}
    \item $\varepsilon_{\mathrm{selection}}$ are calculated based on simulation + corrected:
    \begin{itemize}
       \scriptsize
       \item \piVeto and \etaVeto correction, photon detection efficiency 
-      \item[\ra] calculated in separate analyses\\
       \vspace{5pt}
       \item \texttt{BDToutput}, \texttt{ZernikeMVA} by varying their selection 
       \item[\ra] variations directly in data (blinded) evaluated and assigned as uncertainty
+      \item roughly 10\% uncertainty
    \end{itemize}
 \end{itemize}
 \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/signal_validation/corrected_selection_efficiency.pdf}
-
 
 
 \end{frame}
@@ -1101,14 +1129,16 @@ Fits on 1.6~\invab of simulation (four examples):
       \Delta x_i = \Delta y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
   \end{equation*}
 \begin{itemize}
-   \item Unfolding model chosen by merging the inclusive \BtoXsgamma model with $B\to\Kstar(892)\gamma$ resonance
+   \item Unfolding model:
+   \item[\ra] inclusive \BtoXsgamma model with
+   \item[+] $B\to\Kstar(892)\gamma$ resonance
 \end{itemize}
 
 \begin{columns}
    \centering
    \column{0.5\textwidth}
    \textbf{Model:}
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_samples/hybrid_model_uncertainties.pdf}
+   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_samples/normalised_signal_model.pdf}
 
    \column{0.5\textwidth}
    \centering
@@ -1157,6 +1187,11 @@ Fits on 1.6~\invab of simulation (four examples):
    \includegraphics[width=0.66\textwidth]{../phd_thesis/figures/final_results/data_fits/DATA_MbcFit_2p6to2p7ppdf.pdf}
 
 \end{columns}
+\end{frame}
+
+\begin{frame}
+   \centering
+   \textbf{Unblinded results}
 \end{frame}
 
 \begin{frame}{Background subtracted results}
@@ -1215,10 +1250,12 @@ Fits on 1.6~\invab of simulation (four examples):
          \hline
          \end{tabular}
      }
-
+\begin{itemize}
+   \item Other uncertainties: subtraction of \BtoXdgamma component, unfolding, uncertainty of $B$ mesons in the sample
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Interated results}
+\begin{frame}{Integrated results}
 
    \centering\scriptsize
 
@@ -1612,6 +1649,37 @@ Extrapolation to $\EB>1.6~\gev$
 
 
    \end{columns}
+
+
+
+\end{frame}
+
+\begin{frame}{Continuum suppression features}
+
+   \scriptsize\centering
+
+   \begin{itemize}
+      \item More than 70 features are tested
+      \item[\ra] here an example is shown
+   \end{itemize}
+
+   \begin{itemize}
+      \item \textbf{Test 1}: test if the feature is biasing to the \EB, \Estar, \Mbc  
+      \item[\ra] evaluate Jensen-Shannon distance in slices of the feature
+   \end{itemize}
+
+   \includegraphics[width=0.8\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/thrust/Btag_cosTBTO_bias_tested.pdf}
+
+
+   \begin{itemize}
+      \item \textbf{Test 2}: test if the feature is described correctly in Data
+      \item[\ra] use data with $\sqrt{s}-60~\mev$ (no \FourS events)
+   \end{itemize}
+
+
+
+   \includegraphics[width=0.3\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/datamc_agreement_tests/Btag_cosTBTO_agreement_tested.pdf}
+
 \end{frame}
 
 \begin{frame}{Fit stability on smaller data sets}
