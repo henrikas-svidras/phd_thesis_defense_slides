@@ -1,0 +1,80 @@
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+\begin{tikzpicture}
+
+    % NODES
+    
+    % Initial state
+    \node [circle, minimum size=1.2cm, draw=white, ultra thick]    (collision) {} ;
+    % \node [] (collision) {} ;
+    \node [] (collisiontext) [below=0.03cm of collision.west] {\FourS};
+    \node [] (eminus)     [left=2cm of collision.center] {};
+    \node [] (eplus)     [right=1.5cm of collision.center] {};
+    \node [] (eplusabove) [above=0.1cm of eplus] {};
+    \node [] (eminusabove) [above=0.1cm of eminus] {};
+    \node [] (eminustext)     [right=0.3cm of eminusabove, text=blue] {\en};
+    \node [] (eplustext)     [left=0.3cm of eplusabove, text=red] {\ep};
+    
+    % BB bar
+    \node [] (bbarup) [above=0.7cm of collision.north east] {};
+    \node [] (bbardown) [below=0.5cm of collision.south east] {};
+    \node [] (bbarup_text) [right=0.05cm of bbarup.center] {$\B_{\mathrm{sig}}$};
+    \node [] (bbardown_text) [right=0.05cm of bbardown.center] {$\B_{\mathrm{tag}}$};
+    
+    % Xs gamma
+    %%gamma
+    \node [] (gamma_int) [left=0.5cm of bbarup.center] {};
+    \node [] (gamma) [above=1cm of gamma_int.center] {};
+    \node [] (gammatext) [left=0.05cm of gamma.center] {$\gamma$};
+    %%xs
+    \node [] (Xs_int) [right=0.5cm of bbarup.center] {};
+    \node [] (Xs) [above=0.5cm of Xs_int.center] {};
+    \node [] (Xstext) [left=0.05cm of Xs.center] {$X_{s}$};
+    %%xs daughters
+    \node [] (Xsd1_int) [left=0.05cm of Xs.center] {};
+    \node [] (Xsd1) [above=0.5cm of Xsd1_int.center] {};
+    \node [] (Xsd2_int) [right=0.2cm of Xs.center] {};
+    \node [] (Xsd2) [above=0.4cm of Xsd2_int.center] {};
+    \node [] (Xsd3_int) [right=0.35cm of Xs.center] {};
+    \node [] (Xsd3) [above=0.2cm of Xsd3_int.center] {};
+    
+
+    
+    %\node [] (hadron text) [below=0.05cm of bbardown.center] {\scriptsize hadrons};
+    
+    % Colored overal blocks
+    
+    \node [] (sigside) [above=0.8cm of bbarup] {};
+    \node [] (tagside) [below=1cm of bbardown] {};
+    \node [] (tagside_right) [right=0.2cm of tagside] {};
+    
+    \node [] (sigsidetext) [above=0.1cm of sigside] {\scriptsize Signal side};
+    
+    \begin{pgfonlayer}{bg}    % select the background layer
+    \node [rectangle, fill=green!20, text width=2cm, text centered, rounded corners, minimum height=1.7cm] (Signal_Side) at (sigside) {};
+    \end{pgfonlayer}
+
+    
+
+    
+    % LINES
+    
+    % Initial state
+    \draw [-Triangle, blue, thick] (eminus) -- (collision.center);
+    \draw [-Triangle, red, thick] (eplus) -- (collision.center);
+    
+    % BB bar
+    \draw[-Triangle, thick] (collision.center) -- (bbarup.center);
+    \draw[-Triangle, thick] (collision.center) -- (bbardown.center);
+    
+    % Xs gamma
+    \draw[-Triangle, thick, purple, dashed] (bbarup.center) -- (gamma.center);
+    \draw[-Triangle, thick] (bbarup.center) -- (Xs.center);
+    \draw[-Triangle, thick] (Xs.center) -- (Xsd1.center);
+    \draw[-Triangle, thick] (Xs.center) -- (Xsd3.center);
+    \draw[-Triangle, thick] (Xs.center) -- (Xsd2.center);
+    
+
+
+    
+\end{tikzpicture}

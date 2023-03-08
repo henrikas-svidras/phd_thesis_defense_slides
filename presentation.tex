@@ -100,7 +100,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \text{\large \meeting}
 \vspace{-10pt}
 }
-\titlegraphic{\includegraphics[width=2cm]{logos/DESY.png}\hspace*{4.75cm}~%
+\titlegraphic{\includegraphics[width=1.8cm]{logos/uni_profile_93570.jpg}\includegraphics[width=2cm]{logos/DESY.png}\hspace*{4.75cm}~%
    \includegraphics[width=2cm]{logos/belle2.png}
 }
 
@@ -164,47 +164,85 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 \end{frame}
 
+% \begin{frame}{Introduction: inclusive \safeB meson decays}
+%    \centering\scriptsize
+%    {\normalsize What are \textbf{inclusive $\bm{B}$} decays?}
+
+%    \vspace{10pt}
+
+%    \begin{itemize}
+%       \item $B$ mesons are the \textbf{lightest mesons involving a $\bm{b}$ quark}
+%       \item[\ra] decays always involve one or more flavour/generation changes!
+%       \item[\ra] plethora of final decay states from $u, d, c, s$ quarks
+%    \end{itemize}
+
+%    \vspace{10pt}
+
+%    \begin{columns}
+%       \column{0.5\textwidth}
+%       \centering
+%          \textbf{Exclusive}: pick a particular state and study its properties
+%             \begin{itemize}
+%                \item $B^0\to{K^0}^*(892)\gamma$
+%                \item $B^+\to K^+\mu^+\mu^-$
+%             \end{itemize}
+%       \column{0.5\textwidth}
+%       \centering
+%          \textbf{Inclusive}: study all states originating from the associated quark
+%          \begin{itemize}
+%             \item $B\to X_s \gamma$
+%             \item $B\to X_u \ell \nu$
+%          \end{itemize}
+%    \end{columns}
+   
+%    \vspace{10pt}
+%    Just a couple from many of potential examples!
+
+% \end{frame}
+
 \begin{frame}{Introduction: inclusive \safeB meson decays}
    \centering\scriptsize
+   
+   \vspace{5pt}
+   
    {\normalsize What are \textbf{inclusive $\bm{B}$} decays?}
-
-   \vspace{10pt}
-
-   \begin{itemize}
-      \item $B$ mesons are the \textbf{lightest mesons involving a $\bm{b}$ quark}
-      \item[\ra] decays always involve one or more flavour/generation changes!
-      \item[\ra] plethora of final decay states from $u, d, c, s$ quarks
-   \end{itemize}
-
-   \vspace{10pt}
+   
+   \vspace{5pt}
 
    \begin{columns}
-      \column{0.5\textwidth}
+      \column{0.33\textwidth}
+      \input{tikz/btosgamma_signalsideonly.tex}
+
+      \begin{tikzpicture}[remember picture, overlay]
+      
+      \node[rectangle, draw=red, minimum width=1cm, minimum height=0.9cm, thick] at (3.2,5.0) (rectangle) {};
+      \node [] (upcorner) [above=0cm of rectangle.north east]  {};
+      \node [] (ghost1)  [above=0.15cm of upcorner.north east] {};
+      \node [] (ghost2) [below=0.6cm of upcorner.north east] {};
+      \node [] (exclusive) [right=0.2cm of ghost1.east, text width=4cm] { \color{Mahogany} Exclusive: select a final state e.g. $K^*$, $K^+\pim$};
+      \node [] (inclusive)  [right=0.2cm of ghost2.east, text width=5cm]{ \color{RoyalBlue} Inclusive: apply no $M_X$ selection};
+      \end{tikzpicture}
+   
+      \column{0.66\textwidth}
       \centering
-         \textbf{Exclusive}: pick a particular state and study its properties
-            \begin{itemize}
-               \item $B^0\to{K^0}^*(892)\gamma$
-               \item $B^+\to K^+\mu^+\mu^-$
-            \end{itemize}
-      \column{0.5\textwidth}
-      \centering
-         \textbf{Inclusive}: study all states originating from the associated quark
-         \begin{itemize}
-            \item $B\to X_s \gamma$
-            \item $B\to X_u \ell \nu$
-         \end{itemize}
+      \begin{itemize}
+         \item $B$ mesons are the \textbf{lightest mesons involving a $\bm{b}$ quark}
+         \item[\ra] decays always involve one or more flavour/generation changes!
+         \item[\ra] plethora of final decay states from $u, d, c, s$ quarks
+      \end{itemize}
+   
+
    \end{columns}
    
-   \vspace{10pt}
-   Just a couple from many of potential examples!
-
-\end{frame}
+   
+   \end{frame}
 
 \begin{frame}{Introduction: hadronic tagging}
 \centering\scriptsize
-{\normalsize What is \textbf{hadronic tagging}?}
 
-\vspace{10pt}
+\vspace{5pt}
+
+{\normalsize What is \textbf{hadronic tagging}?}
 
 \begin{columns}
    \column{0.33\textwidth}
@@ -213,27 +251,34 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \column{0.66\textwidth}
    \centering
    \begin{itemize}
-      \item Method for $\boldsymbol{e^+}\boldsymbol{e^-}$ \textbf{colliders only}!
-      \item[\ra] i.e. initial collision state has to be known 
+      \item Method for excellent for $B$ factories:
       \item Use the known initial state of the \epem collision
-      \item \textit{Tag} the signal side
       \item[\ra] the four-momentum constraint allows to \textbf{infer the charge, flavour, four-momentum} of the signal side
    \end{itemize}
 
    \begin{tikzpicture}
       \node[anchor = south west, inner sep=0] (image) at (current page.south west) 
           {\includegraphics[width=0.8\textwidth]{../phd_thesis/figures/experiment_overview/tagging_advantages_mod.png}};
-      \node[below = 5 mm of image] (ghost) {};
-         \node[align = center, left =15mm of ghost] (firsttext)% <---- 
+      \node[below = 7mm of image] (ghost) {};
+      \node[left = 2 cm of ghost] (firsttext) {};
+      \node[right = 1 cm of firsttext] (secondtext) {};
+      \node[right = 1 cm of secondtext] (thirdtext) {};
+      \node[right = 1 cm of thirdtext] (fourthtext) {};
+
+      \node[align = center, rotate=45] (t1) at (firsttext)% <---- 
           {\footnotesize \textbf{Untagged}};
-      \node[right = 2 mm of firsttext] (temp) {};
-      \node[align = center, above = 1mm of temp] (secondtext)% <---- 
-          {\footnotesize \textbf{lepton tagging}};
-      \node[align = center, right = 6mm of firsttext] (thirdtext)% <---- 
+      \node[align = center, rotate=45] (t2) at (secondtext)% <---- 
+          {\footnotesize \textbf{leptonic tagging}};
+      \node[align = center, rotate=45] (t3) at (thirdtext)% <---- 
           {\footnotesize \textbf{semileptonic tagging}};
-      \node[align = center, right = 6mm of secondtext] (fourthtext)% <---- 
-          {\footnotesize \textbf{hadronic tagging}};
-   \end{tikzpicture}
+      \node[align = center, rotate=45] (t4) at (fourthtext)% <---- 
+          {\footnotesize \color{OliveGreen}\textbf{hadronic tagging}};
+      \node[align = center, right = 1mm of fourthtext] (t5) {};
+      \node[align = center, below = 5mm of fourthtext] (t6) {};
+      \node[align = center, below = 1cm of fourthtext] (t7) {};
+      \node[align = center, right = 3mm of t7] (t8) {this analysis};
+      \draw[->,>=stealth] (t8)--(t5);
+      \end{tikzpicture}
 \end{columns}
 
 
@@ -247,6 +292,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 \begin{frame}{Description of the inclusive \BtoXsgamma decays}
    \scriptsize
+   \textbf{Full effective Lagrangian:}
       \begin{equation}\nonumber
          \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
                                                      + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
@@ -261,6 +307,8 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 \begin{frame}{Description of the inclusive \BtoXsgamma decays}
    \scriptsize
+
+
       \begin{equation}\nonumber
          \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)+ ...\right]
       \end{equation}
@@ -276,7 +324,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \begin{itemize}
       \item[\ra] massive non-Standard Model particles modify $\mathcal{C}_i$ (normalisation)
       \item[\ra] BSM probe: $      \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \Delta\mathcal{C}_i^{\mathrm{BSM}}$
-      \item[\ra] total decay rate is modified
+      \item The total decay rate is interpreted in terms of \textbf{quark-hadron duality}:
    \end{itemize}
    
    \vspace{-10pt}
@@ -286,7 +334,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
   \end{equation}
 
   \begin{itemize}
-   \item theory calculations often use $\Egamma > 1.6~\gev$  which yields $\Delta\Gamma_{\text{non-perturbative}} \sim \mathcal{O}(3\%)$
+   \item Theory calculations often use $\Egamma > 1.6~\gev$  which yields $\Delta\Gamma_{\text{non-perturbative}} \sim \mathcal{O}(3\%)$
   \end{itemize}
   
 \end{frame}
@@ -312,10 +360,11 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
    \begin{itemize}
       \item $b$ quark is not stationary in the $B$ meson!
-      \item such non-perturbative effects encoded in a so-called \textbf{shape-function} $\bm{\mathcal{F}}$!
+      \item such \textbf{non-perturbative effects} encoded in a so-called \textbf{shape-function} $\bm{\mathcal{F}}$!
       \item[\ra] it is a universal property of the $B$ meson
       \item[\ra] $\mathcal{F}$ is necessary in other analyses where phase space selection are employed
-      \item[\ra] e.g., $V_{ub}$ determination from $B\to X_u\ell\nu$ 
+      \item[\ra] e.g. $V_{ub}$ determination from $B\to X_u\ell\nu$ 
+      \item $\mathcal{F}$ moments \textbf{related to} $\bm{m_b}$ and other heavy-quark expansion parameters
    \end{itemize}
    
 \end{frame}
@@ -327,6 +376,9 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
    \begin{frame}{\safeBtoXsgamma experimental status}
       \scriptsize\centering
+
+      \vspace{-40pt}
+
       \begin{align*}\nonumber
          \mathcal{B}(\BtoXsgamma)_{\mathrm{THEORY}} &= (3.40\pm 0.17) \cdot 10 ^{-4}\\
          \mathcal{B}(\BtoXsgamma)_{\mathrm{EXPERIMENT}} &= (3.49\pm 0.19) \cdot 10 ^{-4}
@@ -341,7 +393,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
          Year & Experiment                 & Technique & Data used  & Energy threshold &  $\mathcal{B}(B\rightarrow X_s\gamma) \times 10^{-4}$  [$\EB>1.6~\gev$]\\ 
          \hline
          2001 & CLEO   & Untagged         & 9.1~\invfb &  $\EB>2.0~\gev$ & $3.29\pm0.44\pm0.29$\\ 
-         2007 & BaBar & Hadronic-tagged  & 210~\invfb &  $\EB>1.9~\gev$ & $3.90\pm0.91\pm0.64$\\ 
+         {\color{WildStrawberry} 2007} & {\color{WildStrawberry}BaBar} &{\color{WildStrawberry} Hadronic-tagged}  & {\color{WildStrawberry}210~\invfb} &  {\color{WildStrawberry}$\EB>1.9~\gev$} & {\color{WildStrawberry}$3.90\pm0.91\pm0.64$}\\ 
          2009 & Belle & Untagged/Lepton-tagged      & 605~\invfb &  $\EB>1.7~\gev$ & $3.47\pm0.15\pm0.40$\\ 
          2012 & BaBar  & Lepton-tagged         & 347~\invfb &  $\EB>1.7~\gev$ & $3.32\pm0.16\pm0.31$\\ 
          2012 & BaBar  & Sum-of-exclusive & 429~\invfb &  $\EB>1.7~\gev$ & $3.52\pm0.20\pm0.51$\\ 
@@ -354,7 +406,29 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
          
          \vspace{10pt}
 
-         \textbf{Only obtained by $\bm{B}$ factories}!
+\begin{tikzpicture}[remember picture, overlay]
+   \node[] (one) at (-4.5,0.3) {};
+   \node[] (two) at (-3.5,-1) {\textbf{Only at $\bm{B}$ factories}};
+   \draw[->,>=stealth] (two) -- (one);
+
+   \node[] (three) at (-2.5,0.3) {};
+   \node[] (four) at (-0.5,-1.5) {\textbf{Various experimental techniques}};
+   \draw[->,>=stealth] (four) -- (three);
+
+   \node[] (five1) at (5,1.65) {};
+   \node[] (five21) at (5.8,1.65) {};
+   \node[] (five22) at (5.7,1.75) {};
+   \node[] (five3) at (5.5,-1) {};
+
+   \node[align=center, text width=2.7cm] (six) at (4.5,-1.5) {\color{WildStrawberry}\textbf{Hadronic tagged performed only once}};
+
+   \draw[->,>=stealth,color=WildStrawberry] (five21) -- (five1);
+   \draw[color=WildStrawberry] (five3) -- (five22);
+
+
+
+\end{tikzpicture}
+
    \end{frame}
 
    
@@ -399,10 +473,10 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \begin{frame}{SuperKEKB}
       \scriptsize\centering
       \begin{columns}
-         \column{0.75\textwidth}
+         \column{0.5\textwidth}
          \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/super_kekb.png}
-      %    \column{0.5\textwidth}
-      %    \includegraphics[width=1\textwidth]{figures/Layout-of-SuperKEKB-at-the-KEK-Tsukuba-campus.png}
+          \column{0.5\textwidth}
+          \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/belle2.png}
       \end{columns}
 
       \vspace{10pt}
@@ -410,15 +484,8 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \begin{itemize}
          \item Supplies a 7~\gev electron and 4~\gev positron beam
          \item Operates since 2018
-      \end{itemize}
-   \end{frame}
-
-   \begin{frame}{Belle~II detector}
-      \scriptsize\centering
-      \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/belle2.png}
-      \begin{itemize}
          \item Designed to collect data at or around $\FourS$ resonance energy
-         \item 364~\invfb collected at \FourS energy and 42~\invfb are collected 60~\mev lower
+         \item 362~\invfb collected at \FourS energy and 42~\invfb are collected 60~\mev lower
          \item This analysis uses the 2019-2021 data (189~\invfb)
       \end{itemize}
    \end{frame}
