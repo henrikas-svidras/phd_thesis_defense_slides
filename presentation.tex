@@ -522,7 +522,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       `$\mathrm{tag~B}$' + `$\mathrm{signal~B}$' $\ra \FourS$
      
       \begin{itemize}
-         \item Reconstruct all events where \textbf{one of the $B$ mesons decays hadronically}
+         \item Select all events where \textbf{one of the $B$ mesons decays hadronically}
          \item[\to] Full event interpretation algorithm used (next slide)
          \item Require a \textbf{high-energy photon from the other $B$ meson}
          \item[\to] cannot make any more requirements while maintaining an inclusive sample 
@@ -530,22 +530,30 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \end{itemize}
 \textbf{Final goal:}
       \begin{equation}\nonumber
-         \left.\frac{d\mathcal{B}(\BtoXsgamma)}{d\EB}\right|_i = \mathcal{U}_i \cdot \frac{N_i(\BtoXsgamma)}{\varepsilon_i N_{B}},
+         \left.\frac{d\mathcal{B}(\BtoXsgamma)}{d\EB}\right|_i = \mathcal{U}_i \cdot \frac{N_i(\BtoXsgamma)}{\varepsilon_i N_{B}}
       \end{equation}
       \begin{itemize}
          \item \BtoXdgamma assumed to have the same efficiency and subtracted (\sim 4.2\% of contribution)
+         \item A \textbf{blinded analysis}: results revealed only after full setup and optimisation
       \end{itemize}
    \end{frame}
 
 
    \begin{frame}{Full Event Interpretation (FEI)}
       \scriptsize\centering
-   \begin{columns}
-      \column{0.5\textwidth}
-         \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_reconstruction/FEI_tagging.png}
-      \column{0.5\textwidth}
-      \centering
-      $\mathcal{O}(10000)$ decay chains reconstructed:
+   % \begin{columns}
+      % \column{0.5\textwidth}
+      \resizebox{0.8\textwidth}{!}{
+      \begin{tikzpicture}
+         \node[] () at (0,0) {         \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_reconstruction/FEI_tagging.png}};
+         \node[] () at (4.5,1.95) {$\left.\rule{0pt}{.35\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Detector level objects}$};
+         \node[] () at (4.35,1.1) {$\left.\rule{0pt}{.35\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Final state particles}$};
+         \node[] () at (4.5,-0.5) {$\left.\rule{0pt}{1.05\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Intermediate particles}$};
+         \node[] () at (4.5,-1.9) {\bm{\rightarrow} $\bm{36~B^+}$ \textbf{and} $\bm{33~B^0}$ \textbf{channels}};      
+         \node[] () at (-2,-1.5) {$\bm{\mathcal{O}(10000)}$ \textbf{decay chains}};
+      \end{tikzpicture}
+      }
+      % \column{0.5\textwidth}
       
          % \begin{itemize}
          %    \item Reconstructs $B$ mesons in thousands of subdecay chains
@@ -555,35 +563,32 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
          %    \item \textbf{Step 3:} Combine final/intermediate state particles to other intermediate particles or $B$ mesons
          %    \item \textbf{Step 4:} Repeat step 3 for all decay chains.
          % \end{itemize}
-         Detector level objects
-
-         \downdownarrows	
-
-         Final state particles
-
-         $\downarrow\circlearrowleft$	
-
-         Intermediate state particles \circlearrowleft	
-
-         \downdownarrows	
-
-         $36~B^+$ and $33~B^0$ channels
-      
-   \end{columns}
+   % \end{columns}
    \vspace{5pt}
 \begin{itemize}
-   \item Pre-trained BDT evaluates combination validity at every step
-   \item[\ra]\textbf{end up with $B^+$ and $B^0$ candidates and a probability score \feiProb for each}
+   \item Pre-trained \textbf{B}oosted \textbf{D}ecision \textbf{T}ree evaluates combination validity at every step
+   \item[\ra]\textbf{obtain $B^+$ and $B^0$ candidates and a probability score \feiProb for each}
 \end{itemize}   
 
 \vspace{10pt}
 
-\textbf{Beam-constrained mass} can be used to evaluate tag-reconstruction quality
-\vspace{-5pt}
-\begin{equation*}
-\Mbc = \sqrt{(\sqrt{s}/2)^2 - (p^*_B)^2}
-\end{equation*}
-\ra resonant-like behaviour near $M_B$ for correctly reconstructed candidates
+\begin{columns}
+   \column{0.6\textwidth}
+   \centering
+   \textbf{Beam-constrained mass} can be used to evaluate tag-reconstruction quality:
+   \vspace{-5pt}
+   \begin{equation*}
+   \Mbc = \sqrt{(\sqrt{s}/2)^2 - (p_B)^2}
+   \end{equation*}
+   \column{0.4\textwidth}
+   \centering
+   \includegraphics[width=0.72\textwidth]{figures/Mbc_mock_figure.pdf}
+\end{columns}
+
+\begin{tikzpicture} [remember picture, overlay]
+   \node[rotate = 15] (t) at (0.5,1.35) {$\xrightarrow{\text{resonant-like behaviour}}$};
+\end{tikzpicture}
+
 
 \end{frame}
 
@@ -594,8 +599,8 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \item[\ra] energy provided in the signal $B$ meson rest frame
       \item[\ra] \textbf{theoretically most desirable}!
       \item $\EB>1.4~\gev$ threshold adopted
-      \item[\ra] compromise between disk space and maintaining as much signal as possible
-      \item Signal is modelled using a default Belle II model (Kagan-Neubert)
+      % \item[\ra] compromise between disk space and maintaining as much signal as possible
+      % \item Signal is modelled using a default Belle II model (Kagan-Neubert)
 
    \end{itemize}
    \begin{columns}
@@ -611,75 +616,105 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 \begin{frame}{Main photon background sources}
 \centering\scriptsize
-      \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_selection/Bp_photon_sources.pdf}
 
-      \begin{itemize}
-         \item[\ra] Shown only for $B^+$ here, but similar for $B^0$
-      \end{itemize}
+      % \begin{itemize}
+      %    \item[\ra] Shown only for $B^+$ here, but similar for $B^0$
+      % \end{itemize}
 
-      \begin{tikzpicture}[remember picture, overlay]
-         \node[] (show) at (3.45,3.55) {
-         \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.35\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{0.5-3\% each}$}}
+      \begin{tikzpicture}
+         \node[] (img) at (0,0) {      \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_selection/Bp_photon_sources.pdf}
          };
-         \node[] (showend) at (3,4.25) {
-         \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.3\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{85\% of background}$}}
+         \node[] (show) at (4.3,0.5) {
+         \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.35\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\xrightarrow{\hspace*{0.3cm}}{\large\bm{0.5-3\%}\textbf{ each}}$}}
+         };
+         \node[] (showend) at (4.25,1.15) {
+         \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.3\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\xrightarrow{\hspace*{1cm}}{\large\bm{85\%}\textbf{ of background}}$}}
          };
 
          % \draw [->,>=stealth] (show) -- (showend);
 
       \end{tikzpicture}
 
+{\large \texttt{+}\textbf{about 4\% of misidentified photons}}
+
 \end{frame}
 
-\begin{frame}{\piz and $\eta$ suppression}
-   \scriptsize\centering
-\begin{itemize}
-   \item $\piz\ra\g\g$ and $\eta\ra\g\g$ mimic the signal (high-$E$ $\gamma$ and low-$E$ $\gamma$)
-   \item \textbf{Combine all lower-energy photons with the high-energy photon candidate}
-   \item Evaluate the compatibility of the combination with a decay from \piz or $\eta$
-   \item[\ra] Use a BDT
-\end{itemize}
-\begin{columns}
-   \column{0.5\textwidth}
+\begin{frame}{Photon background suppression}
+   \centering\scriptsize
+   \begin{enumerate}
+      \item {\bf\large\piz and $\eta$ suppression:}\\
+      \item[\ra] \textbf{Combine all lower-energy photons with the high-energy photon candidate}
+      \item[\ra] Use BDT to check for consistency with $\piz(\eta)\ra\g\g$\\
+      \vspace{10pt}
+      \item {\bf\large Mis-ID photon suppression:}\\
+      \item[\ra] Photon and hadron showers differ in the electromagnetic calorimeter
+      \item[\ra] Use MVA which combines photon calorimeter shower-shape paremeters 
+  \end{enumerate}  
+  \begin{columns}
+   \column{0.33\textwidth}
    \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_selection/Bp_piVeto.pdf}
-   \column{0.5\textwidth}
+   \column{0.335\textwidth}
    \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_selection/Bz_etaVeto_nopi.pdf}
+   \column{0.33\textwidth}
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_selection/Bp_zernikeMVA_mcPDG.pdf}
 \end{columns}
 
-\begin{flushright}
-\textbf{Standard approach implemented in the Belle~II software}
-\end{flushright}
-\end{frame}
-
-\begin{frame}{Photon misidentification}
-\centering   \scriptsize
-
-
-\begin{itemize}
-   \item Photon misidentification rate is small (96\% of photons are true photons)
-   \item Some hadrons leave clusters which are misidentified
-\end{itemize}
-
-\vspace{5pt}
-
-Multivariate tool, which parametrises the shower shape in terms of Zernike polynomial moments:
-
-\vspace{5pt}
-
-\includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_selection/Bp_zernikeMVA_mcPDG.pdf}
-
-
-\begin{flushright}
-   \textbf{Standard approach implemented in the Belle~II software}
-   \end{flushright}
+\begin{tikzpicture}[remember picture, overlay]
+   \node[] (img) at (-3.5,2) {\bf\large 1};
+   \node[] (img) at (1,2) {\bf\large 1};
+   \node[] (img) at (5.5,2) {\bf\large 2};
+\end{tikzpicture}
 
 \end{frame}
+
+% \begin{frame}{\piz and $\eta$ suppression}
+%    \scriptsize\centering
+% \begin{itemize}
+%    \item $\piz\ra\g\g$ and $\eta\ra\g\g$ mimic the signal (high-$E$ $\gamma$ and low-$E$ $\gamma$)
+%    \item \textbf{Combine all lower-energy photons with the high-energy photon candidate}
+%    \item Evaluate the compatibility of the combination with a decay from \piz or $\eta$
+%    \item[\ra] Use a BDT
+% \end{itemize}
+% \begin{columns}
+%    \column{0.5\textwidth}
+%    \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_selection/Bp_piVeto.pdf}
+%    \column{0.5\textwidth}
+%    \includegraphics[width=1\textwidth]{../phd_thesis/figures/event_selection/Bz_etaVeto_nopi.pdf}
+% \end{columns}
+
+% \begin{flushright}
+% \textbf{Standard approach implemented in the Belle~II software}
+% \end{flushright}
+% \end{frame}
+
+% \begin{frame}{Photon misidentification}
+% \centering   \scriptsize
+
+
+% \begin{itemize}
+%    \item Photon misidentification rate is small (96\% of photons are true photons)
+%    \item Some hadrons leave clusters which are misidentified
+% \end{itemize}
+
+% \vspace{5pt}
+
+% Multivariate tool, which parametrises the shower shape in terms of Zernike polynomial moments:
+
+% \vspace{5pt}
+
+% \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_selection/Bp_zernikeMVA_mcPDG.pdf}
+
+
+% \begin{flushright}
+%    \textbf{Standard approach implemented in the Belle~II software}
+%    \end{flushright}
+
+% \end{frame}
 
 \begin{frame}{Suppressing \qqbar events}
    \centering\scriptsize
    \begin{itemize}
       \item As seen at the beginning \textbf{many candidates originate in} {\boldmath$\epem\ra\qqbar$} \textbf{processes}
-      \item[\ra] Continuum process suppression can be used to clean up false \g candidates
    \end{itemize}
 
    \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/continuum_suppression/figure_continuum_suppression_event_shapes.pdf}
@@ -689,29 +724,41 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 \item The parameters are combined using a \textbf{boosted decision tree}
 \item \textbf{Problem:} decay topology is defined by particles in it 
 \item[\ra] that \textbf{includes the $X_s$ system!}
-\item Every potential training feature is tested to not bias the photon energy spectrum!
-\item[\ra] 70 features tested \ra 26 final features used
+% \item Every potential training feature is tested to not bias the photon energy spectrum!
+% \item[\ra] 70 features tested \ra 26 final features used
 \end{itemize}
 
+\begin{tikzpicture}
+   \node[] (img1) at (-3.5,0) {\includegraphics[width=0.35\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/datamc_agreement_tests/Btag_cosTBz_agreement_tested.pdf}
+   };
+   \node[] (img2) at (3.5,0) {\includegraphics[width=0.35\textwidth]{../phd_thesis/figures/continuum_suppression/separation_curves.pdf}
+   };
+   \node[right= 0 cm of img1] (arrow1) {$\xrightarrow[\text{combined using a BDT}]{\text{26 \textbf{unbiasing} features}}$};
+
+   % \draw[>,>=stealth] (arrow1) -- (arrow2);
+\end{tikzpicture}
+
+
+
 \end{frame}
 
 
 
-\begin{frame}{Continuum suppression training}
-   \scriptsize\centering
-   Converge to 26 training features, and evaluate the boosted decision tree training:
+% \begin{frame}{Continuum suppression training}
+%    \scriptsize\centering
+%    Converge to 26 training features, and evaluate the boosted decision tree training:
 
-   \begin{columns}
-      \column{0.5\textwidth}
-      \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/roc_curve.png}
-      \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/separation_curves.pdf}
+%    \begin{columns}
+%       \column{0.5\textwidth}
+%       \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/roc_curve.png}
+%       \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/separation_curves.pdf}
 
 
-      % \column{0.5\textwidth}
-      % \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/feature_importance.pdf}
+%       % \column{0.5\textwidth}
+%       % \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/continuum_suppression/feature_importance.pdf}
 
-   \end{columns}
-\end{frame}
+%    \end{columns}
+% \end{frame}
 
 \begin{frame}{Selection optimisation}
 \centering\scriptsize
@@ -744,73 +791,132 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
 \scriptsize\centering
 
 \begin{itemize}
-   \item The data sample can be split in the following categories:
-\end{itemize}
-
-\resizebox{0.7\textwidth}{!}{    
-   \begin{tabular}{lc}
-   \toprule
-       Component & Model in fit \\
-       \midrule
-        {\color{ForestGreen} \epem\ra\BB good tags} & Crystal Ball  \\
-        {\color{Bittersweet} \epem\ra\BB combinatorial} & Chebyshev polynomial, 5th order\\
-        {\color{Bittersweet} \epem\ra\qqbar events} & Argus function\\
-   \end{tabular}
-   }
-
-   \vspace{10pt}
-
-\begin{itemize}
-   \item Example fits on the full dataset ($\EB>1.4~\gev$)
+   \item \textbf{Three tag categories} can be identified in the existing data samples
+   \item They can be described by empirical parametric functions
+   \item Example fits on the full dataset ($\EB>1.4~\gev$):
 \end{itemize}
 
    \begin{columns}
-      \centering
       \column{0.33\textwidth}
+      \centering
+      {\color{ForestGreen} \epem\ra\BB good tags}
       \includegraphics[width=1\textwidth]{../phd_thesis/figures/fitting/mbc_good_tags_fit.pdf}
 
       \column{0.33\textwidth}
+      \centering
+      {\color{Bittersweet} \epem\ra\BB combinatorial}
       \includegraphics[width=1\textwidth]{../phd_thesis/figures/fitting/mbc_combinatorial_tags_fit.pdf}
 
       \column{0.33\textwidth}
+      \centering
+      {\color{Bittersweet} \epem\ra\qqbar events}
       \includegraphics[width=1\textwidth]{../phd_thesis/figures/fitting/mbc_continuum_tags_fit.pdf}
 
    \end{columns}
 
    \begin{itemize}
-      \item [\ra] Use these PDFs to build a fitting model
+      \item [\ra] Use these PDFs to build a \textbf{total} $\bm{E_{\gamma}^B}$\textbf{-binned fitting model}
    \end{itemize}
 
-    \begin{tikzpicture}[remember picture, overlay]
-      \node[fill, white] (init) at (-5,5) {\color{black} discard};
-      \node[] (inittwo) at (-4.6,4.9) {};
-      \node[] (init2) at (-5,5.5) {accept};
+   %  \begin{tikzpicture}[remember picture, overlay]
+   %    \node[fill, white] (init) at (-5,5) {\color{black} discard};
+   %    \node[] (inittwo) at (-4.6,4.9) {};
+   %    \node[] (init2) at (-5,5.5) {accept};
       
-      \node[] (end1) at (-4,5.2) {};
-      \node[] (end2) at (-4,5.5) {};
-      \node[] (end3) at (-4,4.8) {};
+   %    \node[] (end1) at (-4,5.2) {};
+   %    \node[] (end2) at (-4,5.5) {};
+   %    \node[] (end3) at (-4,4.8) {};
       
-      \draw[-stealth] (init) -- (end1);
-      \draw[-stealth] (inittwo) -- (end3);
-      \draw[-stealth] (init2) -- (end2);
-      \end{tikzpicture}
+   %    \draw[-stealth] (init) -- (end1);
+   %    \draw[-stealth] (inittwo) -- (end3);
+   %    \draw[-stealth] (init2) -- (end2);
+   %    \end{tikzpicture}
 \end{frame}
 
 \begin{frame}{Fit binning}
-   \small\scriptsize
+   \small\scriptsize\centering
+
    
-   Optimise based on statistical significance figure of merit studies:
+   Optimal intervals based on statistical significance figure of merit studies:
    
-   \begin{itemize}
-      \item 11 fitting intervals to extract \EB spectrum:\\
-      \ra $1.4-1.8~\gev$ : two 200~\mev wide (control-region for fit)\\
-      \ra $1.8-2.7~\gev$ : one 200~\mev and seven 100~\mev wide \textbf{(signal region)} \\
-      \ra $2.7~\gev\mathtt{+}$  \hspace{14.5pt}: one `overflow' bin (control region for fit)\\
-      \item The \textbf{fit is performed using the three PDFs} in every interval
-   \end{itemize}
+   % \begin{itemize}
+   %    \item 11 fitting intervals to extract \EB spectrum:\\
+   %    \ra $1.4-1.8~\gev$ : two 200~\mev wide (control-region for fit)\\
+   %    \ra $1.8-2.7~\gev$ : one 200~\mev and seven 100~\mev wide \textbf{(signal region)} \\
+   %    \ra $2.7~\gev\mathtt{+}$  \hspace{14.5pt}: one `overflow' bin (control region for fit)\\
+   %    \item The \textbf{fit is performed using the three PDFs} in every interval
+   % \end{itemize}
    
-   Fits on 1.6~\invab of simulation (four examples):
+   \begin{tikzpicture}
+   \node[] (start) at (-5,0) {};
+   \node[] (end) at (5,0) {};
    
+   \node[] (1p6) at (-3.6,0) {};
+   \node[] (1p8) at (-2.2,0) {};
+   \node[] (2p0) at (-0.8,0) {};
+   \node[] (2p1) at (-0.1,0) {};
+   \node[] (2p2) at (0.6,0) {};
+   \node[] (2p3) at (1.3,0) {};
+   \node[] (2p4) at (2.0,0) {};
+   \node[] (2p5) at (2.7,0) {};
+   \node[] (2p6) at (3.4,0) {};
+   \node[] (2p7) at (4.1,0) {};
+   
+   
+   \draw[|->,>=stealth] (start)--(end);
+   \draw[|-] (start)--(1p6);
+   \draw[|-] (1p6)--(1p8);
+   \draw[|-] (1p8)--(2p0);
+   \draw[|-] (2p0)--(2p1);
+   \draw[|-] (2p1)--(2p2);
+   \draw[|-] (2p2)--(2p3);
+   \draw[|-] (2p3)--(2p4);
+   \draw[|-] (2p4)--(2p5);
+   \draw[|-] (2p5)--(2p6);
+   \draw[|-] (2p6)--(2p7);
+   \draw[|-] (2p7)--(end);
+   
+   
+   \node[] (starttext) at (-4.9,-0.3) {1.4};
+   \node[] (endtext) at (4.9,-0.3) {};
+   
+   \node[] (1p6text) at (-3.5,-0.3) {1.6};
+   \node[] (1p8text) at (-2.1,-0.3) {1.8};
+   \node[] (2p0text) at (-0.7,-0.3) {2.0};
+   \node[] (2p1text) at (-0.0,-0.3) {2.1};
+   \node[] (2p2text) at (0.7,-0.3) {2.2};
+   \node[] (2p3text) at (1.4,-0.3) {2.3};
+   \node[] (2p4text) at (2.1,-0.3) {2.4};
+   \node[] (2p5text) at (2.8,-0.3) {2.5};
+   \node[] (2p6text) at (3.5,-0.3) {2.6};
+   \node[] (2p7text) at (4.2,-0.3) {2.7};
+   
+   \node[] (sigregionstart) at (-2.093,0.3) {};
+   \node[] (sigregionend) at (4.207,0.3) {};
+   
+   \node[] (sigregiondrawstart1) at (-2.093,-0.1) {};
+   \node[] (sigregiondrawsend1) at (4.207,-0.1) {};
+   \node[] (sigregiondrawstart2) at (-2.093,0.5) {};
+   \node[] (sigregiondrawsend2) at (4.207,0.5) {};
+   
+   \node[] (sigregiontext) at (1.1,0.5) {Signal region};
+   \node[] (cr1text) at (-3.5,0.3) {Control region 1};
+   \node[] (cr2text) at (5.3,0.3) {Control region 2};
+   
+   
+   \draw[<->,>=stealth,dashed] (sigregionstart) -- (sigregionend);
+   \draw (sigregiondrawstart1) -- (sigregiondrawstart2);
+   \draw (sigregiondrawsend1) -- (sigregiondrawsend2);
+
+   \node[] (EB) at (0.7,-0.8) {\EB [$\gev$]};
+
+   \end{tikzpicture}
+
+   \vspace{5pt}
+   
+   Fits prepared on 1.6~\invab of simulation (four examples shown):
+
+
    \begin{columns}
       \column{0.5\textwidth}
       \centering
@@ -826,70 +932,24 @@ Multivariate tool, which parametrises the shower shape in terms of Zernike polyn
    \end{columns}
    
    \begin{tikzpicture}[remember picture, overlay]
-      \node[] at (6,3) (img) {\includegraphics[width=0.2\textwidth]{../phd_thesis/figures/fitting/legend.png}};
-      % \node[rectangle,
-      %  draw = red,
-      %  line width=0.5mm,
-      %  minimum width = 2.2cm, 
-      %  minimum height = 0.25cm] (r) at (6,2.38) {};
-      %  \node[] at (6,2.0) {\tiny \color{red} $\mathcal{N}_{\mathrm{CB}}$: normalisation};
+      \node[] at (0,3) (img) {\includegraphics[width=0.185\textwidth]{../phd_thesis/figures/fitting/legend.png}};
+      \node[rectangle,
+       draw = red,
+       line width=0.5mm,
+       minimum width = 2.2cm, 
+       minimum height = 0.25cm] (r) at (0,2.42) {};
+       \node[] at (0,2.0) {\tiny \color{red} $\mathcal{N}_{\mathrm{CB}}$: normalisation};
+       \node[] at (0,1.8) {\tiny \color{red} $\equiv$ good tag count};
+
    \end{tikzpicture}
-   
-   
-   
-   
+      
    \end{frame}
-
-\begin{frame}{Fit binning}
-\small\scriptsize
-
-Optimise based on statistical significance figure of merit studies:
-
-\begin{itemize}
-   \item 11 fitting intervals to extract \EB spectrum:\\
-   \ra $1.4-1.8~\gev$ : two 200~\mev wide (control-region for fit)\\
-   \ra $1.8-2.7~\gev$ : one 200~\mev and seven 100~\mev wide \textbf{(signal region)} \\
-   \ra $2.7~\gev\mathtt{+}$  \hspace{14.5pt}: one `overflow' bin (control region for fit)\\
-   \item The \textbf{fit is performed using the three PDFs} in every interval
-\end{itemize}
-
-Fits on 1.6~\invab of simulation (four examples):
-
-\begin{columns}
-   \column{0.5\textwidth}
-   \centering
-   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_1p6to1p8ppdf.pdf}
-   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p0to2p1ppdf.pdf}
-
-   \column{0.5\textwidth}
-   \centering
-   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p3to2p4ppdf.pdf}
-   \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/fitting/fits/full_MbcFit_2p5to2p6ppdf.pdf}
-
-
-\end{columns}
-
-\begin{tikzpicture}[remember picture, overlay]
-   \node[] at (6,3) (img) {\includegraphics[width=0.2\textwidth]{../phd_thesis/figures/fitting/legend.png}};
-   \node[rectangle,
-    draw = red,
-    line width=0.5mm,
-    minimum width = 2.2cm, 
-    minimum height = 0.25cm] (r) at (6,2.38) {};
-    \node[] at (6,2.0) {\tiny \color{red} $\mathcal{N}_{\mathrm{CB}}$: normalisation};
-\end{tikzpicture}
-
-
-
-
-\end{frame}
 
 \begin{frame}{Fit validity on smaller data sets}
    \scriptsize\centering
    \begin{itemize}
-      \item Fit prepared on 1.6~\invab
-      \item But this analysis uses 189~\invfb
-      \item[\ra] test stability on smaller data sample (1/10th)
+      \item The analysis will proceed with 189~\invfb
+      \item[\ra] test fitting stability on smaller data sample (1/10th)
    \end{itemize}
 
       \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/extracted_signal_generic_mc.pdf}
@@ -903,11 +963,18 @@ Fits on 1.6~\invab of simulation (four examples):
 \scriptsize\centering
 \textbf{At this stage:}
    \begin{itemize}
-      \item Data sample = \textbf{(a)} \BtoXsgamma events + \textbf{(b)} remaining non-\BtoXsgamma background
-      \item[\ra] remaining background removed in a simulation reliant way
-      \item[\ra] repeat the fit on simulation, but with \BtoXsgamma events removed
-      \item[\ra] Subtract peaking component!  
+      \item Data sample of {\color{ForestGreen} good tags}:
    \end{itemize}
+       \textbf{(a)} \BtoXsgamma events + \textbf{(b)} remaining non-\BtoXsgamma background
+   \begin{itemize}
+      \item Repeat the fit on \textbf{simulated background-only sample}
+      \item[\ra] obtain only non-\BtoXsgamma background \textbf{and subtract}
+      \item i.e. after unblinding:
+   \end{itemize}
+   \begin{equation*}
+      N(\BtoXsdgamma) = \mathcal{N}_{\mathrm{CB}}(\text{Data}) - \mathcal{N}_{\mathrm{CB}}(\text{simulated background-only}) 
+   \end{equation*}
+
 
 
    \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/mc_validation/subtracted_signal_generic_mc.pdf}
@@ -927,26 +994,25 @@ Fits on 1.6~\invab of simulation (four examples):
    
    \begin{itemize}
       \item Reliance on many different tools and background modelling
-      \item Need to ensure adequate agreement between data and simulation
+      \item Need to \textbf{ensure adequate agreement between data and simulation}
    \end{itemize}
 
    \vspace{10pt}
 
-  Main supplementary calibration and modelling studies performed:
+   Main supplementary calibration and modelling studies:
 
-   \begin{itemize}
-      \item FEI \hspace{81pt} $\Rightarrow$ $B\to X_c \ell \nu$ 
-      \item \piz and $\eta$ veto tool \hspace{27pt}  $\Rightarrow$ $B^+\to \bar{D}^0\pi^+$ and $B^0\to D^-\pi^+$
-      \smash{\raisebox{.5\dimexpr1\baselineskip+2\itemsep+1\parskip}{$\left.\rule{0pt}{.5\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Other Belle~II analyses}$}}
-      \item Photon detection efficiency  $\Rightarrow$ $\epem\ra\mumu(\gamma)$ \hspace{27pt} \textbf{\}Separate analysis performed}
-      \item Post-fit background \hspace{24pt} $\Rightarrow$ world average $\mathcal{B}$ variations \hspace{2pt} \textbf{\}Study for this analysis}
-   \end{itemize}
-
-   \vspace{10pt}
-
-   \ra FEI calibration brings $\sim 5\%$ error\\
-   \ra \piz and $\eta$ veto tool add a $\sim 5-10\%$ uncertainty\\
-   \ra Other calibration uncertainties $\mathcal{O}(1\%)$\\
+   \vspace{5pt}
+   {\def\arraystretch{1.5}
+\begin{tabular}{c|c|c}
+   Calibration study & Method & Uncertainty \\
+   \hline
+   FEI & $B\to X \ell \nu$ & $\sim5\%$\\
+   \piz and $\eta$ veto & $B^+\to \bar{D}^0\pi^+$ and $B^0\to D^-\pi^+$ & $\sim5-10\%$\\
+   Photon detection efficiency &  $\epem\ra\mumu(\gamma)$ & \multirow{2}{*}{$\mathcal{O}(1\%)$}\\
+   Post-fit background & world-average $\mathcal{B}$ variations & \\
+\end{tabular}
+   }
+\vspace{10pt}
 
    \textbf{\ra henceforth, the application of these corrections is always assumed}
 
@@ -1106,10 +1172,12 @@ Fits on 1.6~\invab of simulation (four examples):
    \scriptsize\centering
    \begin{itemize}
       \item Once appropriate corrections are calculated: validate the simulation using data
-      \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection
+      \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection:
    \end{itemize}
 
-   \begin{columns}
+   \vspace{5pt}
+
+   \begin{columns}[t]
       \column{0.5\textwidth}
       \centering
       \texttt{ZernikeMVA} discrepancy
@@ -1118,10 +1186,11 @@ Fits on 1.6~\invab of simulation (four examples):
       \begin{itemize}
          \item Seems to be an analysis-specific background
          \item[\ra] not observed in control channel studies
-         \item[\ra] maintain and assign uncertainty   
+         \item[\ra] keep selection and assign uncertainty   
       \end{itemize}
       
       \column{0.5\textwidth}
+      \centering
       \Mbc Endpoint discrepancy
       \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/sidebands_mbc_nozmva_1.pdf}
       \begin{itemize}
@@ -1136,8 +1205,7 @@ Fits on 1.6~\invab of simulation (four examples):
 \begin{frame}{Data-to-simulation validation: sidebands}
    \scriptsize\centering
    \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection
+      \item Similar behaviour observed after fitting:
    \end{itemize}
 
    \begin{columns}
@@ -1162,8 +1230,7 @@ Fits on 1.6~\invab of simulation (four examples):
 \begin{frame}{Data-to-simulation validation: sidebands}
    \scriptsize\centering
    \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection
+      \item Or the same with background subtracted:
    \end{itemize}
 
    \begin{columns}
@@ -1180,6 +1247,7 @@ Fits on 1.6~\invab of simulation (four examples):
    \begin{itemize}
       \item Assign \textbf{the full correction as a systematic uncertainty}
       \item[\ra] Conservative approach: also accommodates the issues seen earlier
+      \item[\ra] Dominant uncertainty (normalisation of background)!
    \end{itemize}
 
 \end{frame}
@@ -1190,33 +1258,35 @@ Fits on 1.6~\invab of simulation (four examples):
    \item Efficiency is assumed to factorise:
 \end{itemize}
 \begin{equation*}
-   \varepsilon_{\BtoXsgamma} = \varepsilon_{\mathrm{FEI}} \cdot \varepsilon_{\mathrm{selection}},
+   \varepsilon_{\BtoXsgamma} = \varepsilon_{\mathrm{FEI}} \cdot \varepsilon_{\mathrm{selection}}
 \end{equation*}
 
 \vspace{-5pt}
 
 \begin{itemize}
-   \item $\varepsilon_{\mathrm{FEI}}$ calculated based on simulation + corrected using calibration factors
+   \item $\varepsilon_{\mathrm{FEI}}$ calculated \textbf{based on simulation + corrected}:
 \end{itemize}
 \begin{equation*}
-   \varepsilon_{\mathrm{FEI}} = 0.00444\pm0.00015
+   \varepsilon_{\mathrm{FEI}} = (0.444\pm0.015) \%
 \end{equation*}
 
 \vspace{-5pt}
 
 \begin{itemize}
-   \item $\varepsilon_{\mathrm{selection}}$ are calculated based on simulation + corrected:
+   \item $\varepsilon_{\mathrm{selection}}$ are calculated \textbf{based on simulation + corrected}:
    \begin{itemize}
       \scriptsize
       \item \piVeto and \etaVeto correction, photon detection efficiency 
       \vspace{5pt}
       \item \texttt{BDToutput}, \texttt{ZernikeMVA} by varying their selection 
       \item[\ra] variations directly in data (blinded) evaluated and assigned as uncertainty
-      \item roughly 10\% uncertainty
    \end{itemize}
 \end{itemize}
-\includegraphics[width=0.45\textwidth]{../phd_thesis/figures/signal_validation/corrected_selection_efficiency.pdf}
-
+\begin{tikzpicture}
+   \node[] (img) at (0,0) {\includegraphics[width=0.45\textwidth]{../phd_thesis/figures/signal_validation/corrected_selection_efficiency.pdf}
+   };
+   \node[] (img) at (4,0) {$\approx 10\%$ uncertainty};
+\end{tikzpicture}
 
 \end{frame}
 
@@ -1224,10 +1294,19 @@ Fits on 1.6~\invab of simulation (four examples):
 \centering\scriptsize
 
 \begin{itemize}
-   \item Simplest approach: bin-by-bin correction
-   \item[\ra] although cross-bin migrations are not taken into account
-   \item[\ra] however given the statistical uncertainty this is sufficient
+   \centering
+   \item[] Real phenomenon $\xrightarrow{\textbf{measurement}}$ measured results
+   \item[] Measured results $\xrightarrow{\textbf{unfolding}}$ `real phenomenon'
+
 \end{itemize}
+
+\begin{itemize}
+   \item To go from measurement to a `real phenomenon' we rely on a model
+   \item[\ra] Detector modelling encoded in Belle~II simulation software
+\end{itemize}
+\begin{equation*}
+   \mathcal{U}_i = \frac{N(\BtoXsgamma)_{\text{generated},i}}{N(\BtoXsgamma)_{\text{measured},i}}~\text{for a given \EB interval}~i
+\end{equation*}
 % \begin{equation*}\label{eq:bin_by_bin_unfolding}
 %    x_i = y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
 %   \end{equation*}
@@ -1236,7 +1315,7 @@ Fits on 1.6~\invab of simulation (four examples):
 %       \Delta x_i = \Delta y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
 %   \end{equation*}
 \begin{itemize}
-   \item Unfolding model:
+   \item Unfolding model for evaluating $N(\BtoXsgamma)$:
    \item[\ra] inclusive \BtoXsgamma model with
    \item[+] $B\to\Kstar(892)\gamma$ resonance
 \end{itemize}
@@ -1309,24 +1388,31 @@ Fits on 1.6~\invab of simulation (four examples):
 \begin{frame}{Background subtracted results}
    \centering\scriptsize
 \textbf{Fit results summarised:}
-\begin{columns}
-   \column{0.5\textwidth}
-   \centering
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/background_vs_data_final.pdf}
-   \column{0.5\textwidth}
-   \centering
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/background_vs_data_final_log.pdf}
-\end{columns}
+
+   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/final_results/background_vs_data_final.pdf}
+   % \column{0.5\textwidth}
+   % \centering
+   % \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/background_vs_data_final_log.pdf}
+
 \textbf{Background subtracted:}
 
-\begin{columns}
-   \column{0.5\textwidth}
+\vspace{-3pt}
+
    \centering
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/reco_spectrum_overlayed.pdf}
-   \column{0.5\textwidth}
-   \centering
-   \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/final_results/reco_spectrum_overlayed_signal_region.pdf}
-\end{columns}
+   \begin{tikzpicture}
+      \node[] (img1) at (0,0) {      \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/final_results/reco_spectrum_overlayed_signal_region.pdf}
+      };
+      \node[] (img2) at (0.25,1.3) {      \clipbox*{{0.62\width} {0.56\height} {0.88\width} {0.68\height}}{
+         \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/final_results/reco_spectrum_overlayed.pdf}
+      }
+      };
+      \node[] (img3) at (1.8,1.3) {      \clipbox*{{0.6\width} {0.41\height} {0.895\width} {0.56\height}}{
+         \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/final_results/reco_spectrum_overlayed.pdf}
+      }
+      };
+ 
+   \end{tikzpicture}
+
 
 \end{frame}
 
@@ -1363,35 +1449,36 @@ Fits on 1.6~\invab of simulation (four examples):
          \end{tabular}
      }
 \begin{itemize}
-   \item Other uncertainties: subtraction of \BtoXdgamma component, unfolding, uncertainty of $B$ mesons in the sample
+   \item Other uncertainties: 
+   \item[] subtraction of \BtoXdgamma component, unfolding, uncertainty of $B$ mesons in the sample
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Integrated results}
 
-   \centering\scriptsize
+%    \centering\scriptsize
 
-   \textbf{Integrated results:}
+%    \textbf{Integrated results:}
 
-   \resizebox{1\textwidth}{!}{
-  \begin{tabular}{|c|cl|}
-  \hline
-      \EB lower threshold [\hspace{-1pt}$\gev$] & 
-      $\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$ & 
-      \makecell{$\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$\\(extrapolated to $1.6~\gev)$}  \\
-      \hline
-          $1.8$  & $3.54 \pm 0.78$ (stat.) $\pm~0.83$ (syst.) & $3.65 \pm 0.80$ (stat.) $\pm 0.86$ (syst.) $\pm 0.02$ (extrap.)\\ 
-          $2.0$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
-          $2.1$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & $2.86 \pm 0.53$ (stat.) $\pm 0.40$ (syst.) $\pm 0.08$ (extrap.)\\
-      \hline
-      World average (\EB>1.6~\gev) & \multicolumn{2}{c}{$3.49\pm0.19$} \\
-      \hline
-      BaBar hadronic-tagged & \multicolumn{2}{c}{$3.90\pm0.91\pm0.64$ [extrapolated $\EB>1.6~\gev$]}\\ 
-      \hline
+%    \resizebox{1\textwidth}{!}{
+%   \begin{tabular}{|c|cl|}
+%   \hline
+%       \EB lower threshold [\hspace{-1pt}$\gev$] & 
+%       $\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$ & 
+%       \makecell{$\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$\\(extrapolated to $1.6~\gev)$}  \\
+%       \hline
+%           $1.8$  & $3.54 \pm 0.78$ (stat.) $\pm~0.83$ (syst.) & $3.65 \pm 0.80$ (stat.) $\pm 0.86$ (syst.) $\pm 0.02$ (extrap.)\\ 
+%           $2.0$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
+%           $2.1$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & $2.86 \pm 0.53$ (stat.) $\pm 0.40$ (syst.) $\pm 0.08$ (extrap.)\\
+%       \hline
+%       World average (\EB>1.6~\gev) & \multicolumn{2}{c}{$3.49\pm0.19$} \\
+%       \hline
+%       BaBar hadronic-tagged & \multicolumn{2}{c}{$3.90\pm0.91\pm0.64$ [extrapolated $\EB>1.6~\gev$]}\\ 
+%       \hline
 
-  \end{tabular}
+%   \end{tabular}
 
-}
+% }
 
 \vspace{10pt}
 
@@ -1416,18 +1503,21 @@ Fits on 1.6~\invab of simulation (four examples):
 
 \end{frame}
 
-\begin{frame}{Comparison with existing results}
+\begin{frame}{Integrated branching fraction: comparison}
 \centering\scriptsize
 
-Extrapolation to $\EB>1.6~\gev$ 
+\begin{itemize}
+   \item Compare with BaBar hadronic tagged result:
+   \item[] $(3.90 \pm 0.91 \pm 0.64)\times 10^{-4}$\\
+   \item[] $(3.65 \pm 0.80 \pm 0.86)\times 10^{-4}$\\
+
+\end{itemize}
+
+Extrapolation to $\EB>1.6~\gev$ (for meaningful comparison)
 
       \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/results_discussion/all_measurements_compared.pdf}
 
-      \begin{itemize}
-         \item Extrapolated results more precise but always model dependant
-         \item Different experiments and theory choose different thresholds
-         \item[\ra] extrapolations to a common threshold are necessary
-      \end{itemize}
+
       
 \end{frame}
 
