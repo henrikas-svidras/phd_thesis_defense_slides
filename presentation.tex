@@ -472,6 +472,12 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
    \begin{frame}{SuperKEKB}
       \scriptsize\centering
+
+      \begin{itemize}
+         \item Operates since 2018
+         \item Designed to collect data at or around $\FourS$ resonance energy
+      \end{itemize}
+
       \begin{columns}
          \column{0.5\textwidth}
          \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/super_kekb.png}
@@ -483,31 +489,55 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
       \begin{itemize}
          \item Supplies a 7~\gev electron and 4~\gev positron beam
-         \item Operates since 2018
-         \item Designed to collect data at or around $\FourS$ resonance energy
          \item 362~\invfb collected at \FourS energy and 42~\invfb are collected 60~\mev lower
-         \item This analysis uses the 2019-2021 data (189~\invfb)
+         \item This analysis uses the 2019-2021 data ($189~\invfb+19~\invfb$)
       \end{itemize}
    \end{frame}
 
 
    \begin{frame}{Data samples in B factories}
       \scriptsize\centering
-      \textbf{$\sqrt{s} = 10.58~\gev$}
+      \textbf{$\sqrt{s} = 10.58~\gev$} 
       
       $\epem\ra X$
 
-      \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/corss_sections.pdf}
+      \vspace{10pt}
+
       \begin{itemize}
          \item \epem collissions create not only \FourS!
-         \item[] $\sigma({\epem(\gamma)}) \approx 300~\nb$
-         \item[] $\sigma({\FourS}) \approx 1.11~\nb$
          \item Many processes are highly different and easy to distinguish
          \item Background from $\epem\ra\qqbar$ and $\epem\ra\tautau$ often important
-         \item[\ra] \textbf{all this part of Belle~II simulation}
       \end{itemize}
+   \begin{flushleft}
+   \textbf{Simulated (Monte Carlo) samples used}
+   \end{flushleft}
+   \begin{itemize}
+      \vspace{-5pt}
+      \item 1.6~\invab of $\epem\ra\qqbar$ simulation
+      \item 1.6~\invab of generic $\FourS\ra B\bar{B}$ events ($B^+$ and $B^0$)
+   \end{itemize}
+   \begin{flushleft}
+   \textbf{Signal Monte Carlo samples}
+   \end{flushleft}
+   \begin{itemize}
+      \vspace{-5pt}
+      \item 100 M inclusive \BtoXsgamma decays (Kagan-Neubert model) 
+   \end{itemize}
+   \begin{flushright}
+      \tiny
+      \textbf{QCD anatomy of} \bm{$B\rightarrow X_s \gamma$} \textbf{decays}
+       
+      [Eur.Phys.J.C 7 (1999), 5-27]
+   \end{flushright}
+   \begin{tikzpicture}[remember picture, overlay]
+      \node[rotate=0] (text) at (3.5,3.9) {$\substack{\sim\text{10 times}\\ \text{of data sample size}}$};
+      \node[rotate=0] (st1) at (-0.5,3.3) {};
+      \node[rotate=0] (st2) at (2,2.6) {};
+      \draw[->,>=stealth, color=red] (st1) -- (text);
+      \draw[->,>=stealth, color=red] (st2) -- (text);
+   \end{tikzpicture}
+      
    \end{frame}
-
    %----------------------------------------------------------------------------------------
    %	B to Xs gamma
    %----------------------------------------------------------------------------------------
@@ -536,6 +566,21 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
          \item \BtoXdgamma assumed to have the same efficiency and subtracted (\sim 4.2\% of contribution)
          \item A \textbf{blinded analysis}: results revealed only after full setup and optimisation
       \end{itemize}
+
+      \begin{tikzpicture}[remember picture, overlay]
+         \node[] (u1) at (0.3,2.7) {\tiny unfolding correction};
+         \node[] (u2) at (0.3,2.25) {};
+         \draw[->,>=stealth] (u1) -- (u2);
+
+         \node[] (n1) at (3.3,2.7) {\tiny number of \BtoXsgamma};
+         \node[] (n2) at (2.5,2.35) {};
+         \draw[->,>=stealth] (n1) -- (n2);
+
+         \node[] (e1) at (3.3,1.5) {\tiny efficiency and normalisation};
+         \node[] (e2) at (2.1,1.95) {};
+         \draw[->,>=stealth] (e1) -- (e2);
+
+      \end{tikzpicture}
    \end{frame}
 
 
@@ -948,7 +993,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \begin{frame}{Fit validity on smaller data sets}
    \scriptsize\centering
    \begin{itemize}
-      \item The analysis will proceed with 189~\invfb
+      \item The analysis performed with 189~\invfb
       \item[\ra] test fitting stability on smaller data sample (1/10th)
    \end{itemize}
 
@@ -961,12 +1006,13 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 \begin{frame}{Remaining background}
 \scriptsize\centering
-\textbf{At this stage:}
    \begin{itemize}
       \item Data sample of {\color{ForestGreen} good tags}:
    \end{itemize}
        \textbf{(a)} \BtoXsgamma events + \textbf{(b)} remaining non-\BtoXsgamma background
-   \begin{itemize}
+   
+       \vspace{10pt}
+       \begin{itemize}
       \item Repeat the fit on \textbf{simulated background-only sample}
       \item[\ra] obtain only non-\BtoXsgamma background \textbf{and subtract}
       \item i.e. after unblinding:
@@ -1296,13 +1342,12 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \begin{itemize}
    \centering
    \item[] Real phenomenon $\xrightarrow{\textbf{measurement}}$ measured results
-   \item[] Measured results $\xrightarrow{\textbf{unfolding}}$ `real phenomenon'
+   \item[] Measured results $\xrightarrow[\text{model reliant}]{\textbf{unfolding}}$ `real phenomenon'
 
 \end{itemize}
-
 \begin{itemize}
-   \item To go from measurement to a `real phenomenon' we rely on a model
    \item[\ra] Detector modelling encoded in Belle~II simulation software
+   \item \textbf{Bin-by-bin correction} - simplest approach, acceptable due to large statistical uncertainty
 \end{itemize}
 \begin{equation*}
    \mathcal{U}_i = \frac{N(\BtoXsgamma)_{\text{generated},i}}{N(\BtoXsgamma)_{\text{measured},i}}~\text{for a given \EB interval}~i
@@ -1457,18 +1502,21 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \begin{frame}{Integrated branching fraction: comparison}
 \centering\scriptsize
 
-
+\begin{itemize}
+   \item Sum of the photon energy spectrum:
+\end{itemize}
 \begin{itemize}
    \centering
-   \item[$\EB>1.8~\gev$] $\mathcal{B}(\BtoXsgamma) = (3.54 \pm 0.78 \pm 0.83 )\times 10^{-4}$ \\
-   \item[$\EB>2.0~\gev$] $\mathcal{B}(\BtoXsgamma) = (3.06 \pm 0.56 \pm 0.47)\times 10^{-4} $ \\
+   \item[$\EB>1.8~\gev$] $\mathcal{B}(\BtoXsgamma) = (3.54 \pm 0.78~(\text{stat.}) \pm 0.83~(\text{syst.}))\times 10^{-4}$ \\
+   \item[$\EB>2.0~\gev$] $\mathcal{B}(\BtoXsgamma) = (3.06 \pm 0.56~(\text{stat.}) \pm 0.47~(\text{syst.}))\times 10^{-4} $ \\
 \end{itemize}
 
 \begin{itemize}
-   \centering
    \item Compare with BaBar hadronic-tagged result:
-   \item[$\EB>1.9~\gev$]  $\mathcal{B}(\BtoXsgamma) = (3.66 \pm 0.85 \pm 0.60)\times 10^{-4}$ \\
-
+\end{itemize}
+\begin{itemize}
+   \centering
+   \item[$\EB>1.9~\gev$]  $\mathcal{B}(\BtoXsgamma) = (3.66 \pm 0.85~(\text{stat.}) \pm 0.60~(\text{syst.}))\times 10^{-4}$ \\
 \end{itemize}
 
 \vspace{10pt}
@@ -1482,10 +1530,27 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 \end{frame}
 
 \begin{frame}{Integrated results}
-\scriptsize\centering
+\scriptsize
       \vspace{10pt}
       
-      \textbf{Moments of the spectrum:}
+      {\small\textbf{Moments of the spectrum}}
+
+      \begin{itemize}
+         \item Average calculated as a weighted sum
+      \end{itemize}
+
+      \vspace{-10pt}
+
+      \begin{align*}\label{eq:weighted_sum_moments}
+         \expval{\Egamma} = \frac{\int d\Egamma \Egamma \dv{\mathcal{B}}{\Egamma}}{\int d\Egamma \dv{\mathcal{B}}{\Egamma}}
+         \quad \ra \quad 
+         \begin{split}
+             \expval{\Egamma} &= \frac{\sum_i f_c(\Delta\Egamma^{}_{,i})\cdot  
+                                    \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}
+                                         {\Delta {\Egamma}_{,i}}}
+                                  {\sum_i \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {\Egamma}_{,i}}}
+         \end{split}
+      \end{align*} 
       
       \resizebox{1\textwidth}{!}{
           \begin{tabular}{|c|cc|}
@@ -1507,7 +1572,7 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 
       \begin{itemize}
          \item Can be used to evaluate important parameters related to the shape function (such as $m_b$)
-         \item[\ra] model/method dependant 
+         \item[\ra] exact values model/method dependant 
       \end{itemize}
       
 \end{frame}
@@ -1533,8 +1598,9 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    \column{0.5\textwidth}
    \centering
    \begin{itemize}
+      \item[]          {\tiny\textbf{Phys.Rev.Lett. 127 (2021) 10, 102001}}
       \item Global fit of all experimental information
-      \item Extract spectrum normalisation, shape function parameters
+      \item Extract spectrum normalisation, shape function parameters (e.g. $m_b$)
    \end{itemize}
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
 
@@ -1543,11 +1609,12 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 \begin{tikzpicture}[remember picture, overlay]
    \node (dog) at (-0.19,3.7) {\LARGE $\bm{\Longrightarrow}$};
    \node (dogbackup1) at (0.5,1) {normalisation};
-   \node (dogbackup2) at (3,0.5) {};
-   \node (catbackup1) at (0.8,2.85) {};
-   \node (catbackup2) at (3,1.) {};
+   \node (dogbackup2) at (-0.3,7) {};
+   \node (catbackup1) at (0.8,2.65) {};
+   \node (catbackup2) at (0.8,7) {};
 
    \draw[->,>=stealth, color=red] (dogbackup1) -- (catbackup1);
+   \draw[->,>=stealth, color=red] (catbackup2) -- (dogbackup2);
 
 \end{tikzpicture}
 
@@ -1899,6 +1966,23 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    \includegraphics[width=0.3\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/datamc_agreement_tests/Btag_cosTBTO_agreement_tested.pdf}
 
 \end{frame}
+
+   \begin{frame}{Data samples in B factories}
+      \scriptsize\centering
+      \textbf{$\sqrt{s} = 10.58~\gev$}
+      
+      $\epem\ra X$
+
+      \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/corss_sections.pdf}
+      \begin{itemize}
+         \item \epem collissions create not only \FourS!
+         \item[] $\sigma({\epem(\gamma)}) \approx 300~\nb$
+         \item[] $\sigma({\FourS}) \approx 1.11~\nb$
+         \item Many processes are highly different and easy to distinguish
+         \item Background from $\epem\ra\qqbar$ and $\epem\ra\tautau$ often important
+         \item[\ra] \textbf{all this part of Belle~II simulation}
+      \end{itemize}
+   \end{frame}
 
 \begin{frame}{Best tag-side candidate selection}
    \scriptsize\centering
