@@ -588,13 +588,15 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \scriptsize\centering
    % \begin{columns}
       % \column{0.5\textwidth}
-      \resizebox{0.8\textwidth}{!}{
+      \resizebox{0.7\textwidth}{!}{
       \begin{tikzpicture}
          \node[] () at (0,0) {         \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/event_reconstruction/FEI_tagging.png}};
          \node[] () at (4.5,1.95) {$\left.\rule{0pt}{.35\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Detector level objects}$};
          \node[] () at (4.35,1.1) {$\left.\rule{0pt}{.35\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Final state particles}$};
          \node[] () at (4.5,-0.5) {$\left.\rule{0pt}{1.05\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\textbf{Intermediate particles}$};
          \node[] () at (4.5,-1.9) {\bm{\rightarrow} $\bm{36~B^+}$ \textbf{and} $\bm{33~B^0}$ \textbf{channels}};      
+         \node[] () at (4.5,-2.3) {$B\to D^{(*)}(n\cdot\pi)$ and similar};      
+
          \node[] () at (-2,-1.5) {$\bm{\mathcal{O}(10000)}$ \textbf{decay chains}};
       \end{tikzpicture}
       }
@@ -623,7 +625,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \textbf{Beam-constrained mass} can be used to evaluate tag-reconstruction quality:
    \vspace{-5pt}
    \begin{equation*}
-   \Mbc = \sqrt{(\sqrt{s}/2)^2 - (p_B)^2}
+   \Mbc = \underbrace{\sqrt{(\sqrt{s}/2)^2 - (p_B)^2}}_{\text{in the collision frame}}
    \end{equation*}
    \column{0.4\textwidth}
    \centering
@@ -1805,17 +1807,6 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    
    \end{frame}
 
-   \begin{frame}{\BtoXsgamma spectrum and the shape function}
-      \scriptsize
-      \begin{itemize}
-         \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
-         \item \textbf{Crucial input for other analyses}, e.g. $|V_{ub}|$ measurements with $B\to\X_u\ell\nu$, using phase space selection to separate $B\to\X_c\ell\nu$ states
-      \end{itemize}
-
-      \textbf{So how to evaluate it?}
-
-   \end{frame}
-
 
    \begin{frame}{\BtoXsgamma spectrum and the shape function}
       \scriptsize
@@ -1836,11 +1827,11 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
       \scriptsize
       It can be shown that the moments of photon energy spectrum relate to
       \begin{equation}\nonumber
-         \expval**{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval**{\Egamma^2}-\expval**{\Egamma}^2 \sim \lambda_1/3+\order(\Lambda_{\mathrm{QCD}}),
+         \expval**{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval**{\Egamma^2}-\expval**{\Egamma}^2 \sim \lambda_1/12+\order(\Lambda_{\mathrm{QCD}}),
      \end{equation}
      with:
      \begin{itemize}
-      \item [] $m_b$: $b$ quark pole MASS
+      \item [] $m_b$: $b$ quark pole mass
       \item [] $\lambda_1$: $b$ quark kinetic energy parameter
       \item [] etc. for higher moments
      \end{itemize}
@@ -1854,14 +1845,19 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
       \begin{equation}\nonumber
          \mathcal{F}(x) = N\left(1-\frac{x}{m_B-m_b}\right)^a\exp{(1+a)\frac{x}{m_B-m_b}},
      \end{equation}
-     and the parameter $a$ is also related to the second moment of the shape function.
+
+     where $a$ is related to the second moment of $\mathcal{F}$:
+     \begin{equation*}
+      A_2 = \frac{m_B-m_b}{1+a} \quad A_2 \equiv -\lambda_1/3
+     \end{equation*}
+
 
      Then the spectrum can be described by two parameters: $m_b$ and $\lambda_1$;
 
-     \begin{itemize}
-      \item[\ra] Measure the moments of \BtoXsgamma spectrum to obtain a better description 
-     \end{itemize}
+     \begin{center}
 
+     \includegraphics[width=0.5\textwidth]{figures/kagan_neubert.png}
+   \end{center}
    \end{frame}
 
    \begin{frame}{SIMBA global fit of \BtoXsgamma}
@@ -1937,6 +1933,114 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 
 
 
+\end{frame}
+
+\begin{frame}{\BtoXsdgamma measured exclusives modes}
+   \centering
+   \begin{minipage}[c]{0.5\textwidth}
+      \centering
+      \BptoXsgamma exclusive modes
+      \resizebox{1\textwidth}{!}{
+      \begin{tabular}{|lc|}
+          \hline
+          Decay mode & Branching fraction ($\times 10^{-4}$) \\
+          \hline
+          \multicolumn{2}{|c|}{\textbf{Two decay products}}\\
+          $\Bp \to \Kstar(892)^+ \gamma$  & $0.392 \pm 0.022$ \\
+          $\Bp \to K_1(1270)^+  \gamma$   & $0.438 \pm ^{0.071}_{0.063}$ \\
+          $\Bp \to K_2^*(1430)^+  \gamma$ & $0.138 \pm 0.040$ \\            
+          $\Bp \to K^*(1410)^+  \gamma$   & $0.271 \pm ^{0.080}_{0.061}$ \\
+          $\Bp \to K^*(1680)^+  \gamma$   & $0.670 \pm ^{0.170}_{0.140}$ \\
+          $\Bp \to K_1(1400)^+  \gamma$   & $0.097 \pm ^{0.054}_{0.038}$ \\
+          \hline
+          \multicolumn{2}{|c|}{\textbf{Three or more decay products}}\\
+          $\Bp \to \Kstar(892)^0 \pi^+ \gamma$ & $0.233 \pm 0.012$ \\
+          $\Bp \to K^+ \pi^+\pi^- \gamma$ & $0.258 \pm 0.015$ \\
+          $\Bp \to K^0 \pi^+\pi^0 \gamma$ & $0.456 \pm 0.052$ \\
+          $\Bp \to K^+ \pi^+\pi^- \gamma$ (non-resonant) & $0.099 \pm ^{0.017}_{0.020}$ \\
+          \hline
+      \end{tabular}
+      }
+  \end{minipage}
+  \begin{minipage}[c]{0.395\textwidth}
+      \centering
+      \BztoXsgamma exclusive modes
+      \resizebox{1\textwidth}{!}{
+      \begin{tabular}{|lc|}
+          \hline
+          Decay mode & Branching fraction ($\times 10^{-4}$) \\
+          \hline
+          \multicolumn{2}{|c|}{\textbf{Two decay products}}\\
+          $\Bz \to \Kstar(892)^0 \gamma$ & $0.418 \pm 0.025$ \\
+          - & -\\
+          $\Bz \to K_2^*(1430)^0 \gamma$ & $0.124 \pm 0.024$ \\ 
+          - & -\\
+          - & -\\
+          - & -\\
+          \hline
+          \multicolumn{2}{|c|}{\textbf{Three or more decay products}}\\
+          - & -\\
+          $\Bz \to K^+ \pi^-\pi^0 \gamma$ & $0.407 \pm 0.038$\\
+          $\Bz \to K^0 \pi^+\pi^- \gamma$ & $0.199 \pm 0.018$\\
+          - & -\\
+          \hline
+      \end{tabular}
+      }
+  \end{minipage}
+  
+  \vspace{10pt}
+  
+  \begin{minipage}[c]{0.395\textwidth}
+      \centering
+      $B\to X_d\gamma$ exclusive modes
+      \resizebox{1\textwidth}{!}{
+      \begin{tabular}{|lc|}
+          \hline
+          Decay mode & Branching fraction ($\times 10^{-4}$) \\
+          \hline
+          $\Bp \to \rho^+(770)\gamma$ & $0.0098 \pm ^{0.0025}_{0.0024}$\\
+          $\Bz \to \rho^0(770)\gamma$ & $0.0086 \pm 0.0015$\\
+          $\Bz \to \omega(782)\gamma$ & $0.0044 \pm ^{0.0018}_{0.0016}$\\
+          \hline
+      \end{tabular}
+      }
+  \end{minipage}
+  
+
+\end{frame}
+
+\begin{frame}{Simulated samples}
+   \centering
+   \resizebox{0.7\textwidth}{!}{
+\begin{tabular}{|l|cc|}
+\hline
+Simulated sample & Size  & Generators used \\ 
+\hline
+Generic-\Bz & \multirow{6}{*}{0.9+0.7~\invab}& \multirow{2}{*}{\texttt{EvtGen}}\\
+Generic-\Bp &                          &\\
+\cline{3-3}
+continuum \uubar &                     & \multirow{4}{*}{\texttt{KKMC} interfaced to Pythia 8 }\\
+continuum \ddbar &                     &\\
+continuum \ccbar &                     &\\
+continuum \ssbar &                     &\\
+\cline{2-3}
+\BptoXsgamma      & \multirow{2}{*}{100 million}  & \multirow{2}{*}{\texttt{EvtGen}, \texttt{BTOXSGAMMA} model }\\
+\BztoXsgamma      & & \\
+\cline{2-3}
+\Bp\to\Kstarp(892)\g    & \multirow{2}{*}{10 million} & \multirow{2}{*}{\texttt{EvtGen}, \texttt{SVP\_HELAMP} model }\\
+\Bz\to\Kstarz(892)\g    &  & \\
+\hline
+\end{tabular}
+}
+
+   + detector response, \texttt{Geant 4}
+\end{frame}
+
+\begin{frame}{FEI modes}
+   \centering
+   \resizebox{0.45\textheight}{!}{
+      \input{../phd_thesis/tables/fei_modes.tex}
+   }
 \end{frame}
 
 \begin{frame}{Continuum suppression features}
