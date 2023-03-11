@@ -1893,15 +1893,61 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 \vspace{10pt}
    In no particular order, some (but surely not all) theories which propose such modifications:
    \begin{itemize}
-      \item two-Higgs-doublet models $\leftarrow$ \textbf{to my knowledge, the most studied}
+      \item two-Higgs-doublet models 
+      \item[\ra] more in next slides
       \item minimal supersymmetric models with minimal flavour violation
-      \item and left-right symmetric models
+      \item[\ra] flavour violation only in CKM
+      \item left-right symmetric models
       \item general minimal-supersymmetric theories
       \item models with extra dimensions
       \item the littlest Higgs models
       \item 331 models
    \end{itemize}
 \end{frame}
+
+\begin{frame}{Two-Higgs-doublet models}
+
+   \scriptsize
+
+   \textbf{New term in the SM Lagrangian:}
+   \begin{equation*}
+      \mathcal{L}_{H^+} = \frac{1}{\sqrt{\sqrt8G_F}} \sum_{i,j=1} \bar{u}_i (A_u m_{u_i}V_{ij}P_L - A_d m_{d_j}V_{ij}P_R)d_jH^+ + \mathrm{h.c}.
+  \end{equation*}
+
+  \textbf{Couplings:}
+
+\begin{align*}
+A_u = A_d = \frac{1}{\tan\beta} \quad (\textbf{type I})\\
+A_u = - \frac{1}{A_d} = \frac{1}{\tan\beta} \quad  (\textbf{type II})
+\end{align*}
+
+\textbf{Wilson coefficients:}
+
+\begin{equation*}\label{eq:partial_wilson_2hdm}
+   \Delta C_i^{(0)\text{2HDM}} = 
+   \begin{cases}
+       0, & i=1,...,6;\\
+       \frac{A_u^2}{3}F_i^{(1)}(y) - A_uA_dF_i^{(2)}(y), & i=7,8;\\
+   \end{cases}
+\end{equation*}
+and $y = m_t/m_{H^+}$
+\end{frame}
+
+\begin{frame}{Two-Higgs-Doublet models}
+   \centering
+\begin{columns}
+   \column{0.5\textwidth}
+   \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/theory/xsgamma_2hdm_type1.png}
+   \column{0.5\textwidth}
+   \includegraphics[width=0.9\textwidth]{../phd_thesis/figures/theory/xsgamma_2hdm_type2.png}
+\end{columns}
+
+       \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/theory/xsgamma_2hdm_both_types.png}
+
+
+  
+\end{frame}
+
 
 \begin{frame}{\safeBtoXsgamma measurement techniques}
    \scriptsize
@@ -2036,11 +2082,146 @@ continuum \ssbar &                     &\\
    + detector response, \texttt{Geant 4}
 \end{frame}
 
+\begin{frame}{\piz and $\eta$ veto}
+
+   \centering\scriptsize
+
+   $\gamma_{\mathrm{SOFT}} + \gamma_{\mathrm{HARD}}$
+
+   \begin{itemize}
+      \item Invariant mass of the soft photon and hard photon combination;
+      \item Soft photon energy in the laboratory frame;
+      \item Soft photon ECL cluster polar angle;
+      \item Distance between the soft photon ECL cluster and the nearest track extrapolated to the ECL;
+      \item Helicity angle of the combination.
+  \end{itemize}
+
+  \vspace{10pt}
+
+  The classifier for $\eta\ra\g\g$ includes additional observables to increase the separation power:
+  \begin{itemize}
+      \item \ZMVA of the soft photon;
+      \item Number of crystals where the soft photon has deposited energy;
+      \item Ratio of soft photon energy in 3-by-3 crystals around the central crystal to soft photon energy in the 5-by-5 crystals with the corner crystals removed.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\piz and $\eta$ validation}
+
+   \centering
+
+   $B^+\to \bar{D}^0[\to K^+\pi^-]\pi^+$ and $B^0\to D^-[\to K^+\pi^-\pi^-]\pi^+$
+
+   Combines $\pi^+$ with $\gamma$:
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_sim_corrections/data_fit_pi0_no_cut.png}
+
+
+      \column{0.5\textwidth}
+
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_sim_corrections/data_fit_pi0_with_cut.png}
+
+   \end{columns}
+
+
+      \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/data_sim_corrections/pi0veto_corrections.pdf}
+
+
+
+\end{frame}
+
+\begin{frame}{ZernikeMVA}
+   \scriptsize\centering
+
+   \textbf{Zernike polynomial}
+   \begin{equation*}
+      R_{nm}(\rho) = \sum^{\frac{n-|m|}{2}}_{s=0}(-1)^s \frac{(n-s)!}{ s! \left(\frac{n+|m|}{2}-s \right) ! \left( \frac{n-|m|}{2}-s\right) !}\rho^{n-2s}.
+  \end{equation*}
+
+  \textbf{Moments of a function} \bm $f$:
+
+  \begin{equation*}
+   Z_{nm} = \frac{n+1}{\pi} \int_0^{2\pi}\int^1_0 V^*_{nm}(\rho\cos\alpha,\rho\sin\alpha)f(\rho\cos\alpha, \rho\sin\alpha)\rho d\rho d\alpha.
+\end{equation*}
+
+\textbf{Dirac comb function}:
+
+
+\begin{equation*}
+   f(\vec{x}) = \sum_i \delta(\vec{x}-\vec{x}_i)\frac{w_iE_i}{\sum w_iE_i},
+\end{equation*}
+
+   \textbf{Zernike moments}:
+   \begin{equation*}
+      |Z_{nm}| = \frac{n+1}{\pi}\frac{1}{\sum_iw_iE_i}\left|\sum_iR_{nm}(\rho_i)e^{-im\alpha_i}w_iE_i\right|.
+  \end{equation*}
+
+11 Zernike moments providing the best separation between hadrons and photons is chosen
+
+  
+\end{frame}
+
 \begin{frame}{FEI modes}
    \centering
    \resizebox{0.45\textheight}{!}{
       \input{../phd_thesis/tables/fei_modes.tex}
    }
+\end{frame}
+
+\begin{frame}{FEI training}
+   \scriptsize\centering
+   \begin{itemize}
+      \item Trained on 100~\invfb of simulation
+      \item Quality of combination evaluated at every step by BDTs
+   \end{itemize}
+   \includegraphics[width=1\textwidth]{figures/fei_b_vars.png}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/event_reconstruction/Bp_tagged_background_feiSigProb.pdf}
+      \column{0.5\textwidth}
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/event_reconstruction/Bz_tagged_background_feiSigProb.pdf}
+   \end{columns}
+  
+\end{frame}
+
+\begin{frame}{FEI signal probability \feiProb}
+\centering
+      \includegraphics[width=0.85\textheight]{../phd_thesis/figures/appendices/FEI_signal_probabilities/Bp_feiSigProbs1.pdf}
+
+\end{frame}
+
+\begin{frame}{FEI calibration}
+
+   \centering\scriptsize
+
+   $B\rightarrow X_{u/c} \ell \nu$
+
+   \vspace{0pt}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+\centering
+      \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_sim_corrections/BpXenu_pl_fit_All_data_postfiterrs.pdf}
+      \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_sim_corrections/BpXmunu_pl_fit_All_data_postfiterrs.pdf}
+
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_sim_corrections/B0Xenu_pl_fit_All_data_postfiterrs.pdf}
+      \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_sim_corrections/B0Xenu_pl_fit_All_data_postfiterrs.pdf}
+
+   \end{columns}
+
+\vspace{0pt}
+
+   Evaluate branching fraction and calculate difference to expected (world average):
+
+   \begin{equation*}\label{eq:fei_calibration}
+      \mathcal{C}_{\mathrm{FEI}}(B^+) = 0.6599 \pm 0.0225; \quad \mathcal{C}_{\mathrm{FEI}}(B^0) = 0.6695 \pm 0.0237;
+  \end{equation*}
+
 \end{frame}
 
 \begin{frame}{Continuum suppression features}
@@ -2170,7 +2351,7 @@ continuum \ssbar &                     &\\
    \end{frame}
    \begin{frame}{Remaining post-fit $B^0$ backgrounds}
    
-      {\resizebox{\textwidth}{!}{
+      {\resizebox{1.35\textheight}{!}{
       \begin{tabular}{lrrrrrrrrrrr}
       \hline
       {\EB interval} &  
@@ -2234,7 +2415,7 @@ continuum \ssbar &                     &\\
    \end{frame}
 \begin{frame}{Remaining post-fit $B^+$ backgrounds}
    
-   \resizebox{\textwidth}{!}{
+   \resizebox{1.2\textheight}{!}{
       \begin{tabular}{lrrrrrrrrrrr}
       \hline
       {\EB interval} &  
