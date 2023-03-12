@@ -290,20 +290,20 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 \section{\safeBtoXsgamma theory}
 
-\begin{frame}{Description of the inclusive \BtoXsgamma decays}
-   \scriptsize
-   \textbf{Full effective Lagrangian:}
-      \begin{equation}\nonumber
-         \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
-                                                     + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
-      \end{equation}
+% \begin{frame}{Description of the inclusive \BtoXsgamma decays}
+%    \scriptsize
+%    \textbf{Full effective Lagrangian:}
+%       \begin{equation}\nonumber
+%          \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+%                                                      + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right]
+%       \end{equation}
    
-   \begin{itemize}
-      \item For \btosgamma the second term is much less important
-      \item It is relevant for higher order corrections, and for \btodgamma
-   \end{itemize}
+%    \begin{itemize}
+%       \item For \btosgamma the second term is much less important
+%       \item It is relevant for higher order corrections, and for \btodgamma
+%    \end{itemize}
   
-\end{frame}
+% \end{frame}
 
 \begin{frame}{Description of the inclusive \BtoXsgamma decays}
    \scriptsize
@@ -470,12 +470,13 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    %----------------------------------------------------------------------------------------
    \section{Belle~II and SuperKEKB}
 
-   \begin{frame}{SuperKEKB}
+   \begin{frame}{SuperKEKB and Belle II}
       \scriptsize\centering
 
       \begin{itemize}
          \item Operates since 2018
          \item Designed to collect data at or around $\FourS$ resonance energy
+         \item Supplies a 7~\gev electron and 4~\gev positron beam
       \end{itemize}
 
       \begin{columns}
@@ -488,7 +489,8 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \vspace{10pt}
 
       \begin{itemize}
-         \item Supplies a 7~\gev electron and 4~\gev positron beam
+         \item Excellent for inclusive analyses: 
+         \item[] ·\textbf{(a)} nearly $4\pi$ coverage, \textbf{(b)} $\sim 11$ tracks per \FourS event, \textbf{(c)} \epem initial state
          \item 362~\invfb collected at \FourS energy and 42~\invfb are collected 60~\mev lower
          \item This analysis uses the 2019-2021 data ($189~\invfb+19~\invfb$)
       \end{itemize}
@@ -545,12 +547,14 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
    \begin{frame}{\BtoXsgamma analysis recipe}
       \scriptsize\centering
-      \begin{itemize}
-         \item Return to \BtoXsgamma analysis
-      \end{itemize}
+      % \begin{itemize}
+      %    \item Return to \BtoXsgamma analysis
+      % \end{itemize}
       
-      `$\mathrm{tag~B}$' + `$\mathrm{signal~B}$' $\ra \FourS$
+      $\FourS\ra$ $\mathrm{tag~B}$' + `$\mathrm{signal~B}$'
      
+      \vspace{10pt}
+
       \begin{itemize}
          \item Select all events where \textbf{one of the $B$ mesons decays hadronically}
          \item[\to] Full event interpretation algorithm used (next slide)
@@ -642,10 +646,11 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \begin{frame}{Reconstructed samples}
    \scriptsize
    \begin{itemize}
-      \item Because of tagging, $B$ meson rest frame attainable
+      \item \textbf{Because of hadronic tagging}, $B$ meson rest frame attainable
       \item[\ra] energy provided in the signal $B$ meson rest frame
       \item[\ra] \textbf{theoretically most desirable}!
       \item $\EB>1.4~\gev$ threshold adopted
+      \item Only highest energy photon is selected
       % \item[\ra] compromise between disk space and maintaining as much signal as possible
       % \item Signal is modelled using a default Belle II model (Kagan-Neubert)
 
@@ -778,14 +783,12 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \begin{tikzpicture}
    \node[] (img1) at (-3.5,0) {\includegraphics[width=0.35\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/datamc_agreement_tests/Btag_cosTBz_agreement_tested.pdf}
    };
-   \node[] (img2) at (3.5,0) {\includegraphics[width=0.35\textwidth]{../phd_thesis/figures/continuum_suppression/separation_curves.pdf}
+   \node[] (img2) at (3.5,0) {\includegraphics[width=0.35\textwidth]{../phd_thesis/figures/continuum_suppression/trained_bdtBDT_output_test.pdf}
    };
    \node[right= 0 cm of img1] (arrow1) {$\xrightarrow[\text{combined using a BDT}]{\text{26 \textbf{unbiasing} features}}$};
 
    % \draw[>,>=stealth] (arrow1) -- (arrow2);
 \end{tikzpicture}
-
-
 
 \end{frame}
 
@@ -1004,15 +1007,17 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
    \item[\ra] irrespective of background levels, consistent fit result
    \item[\ra] But still the result does not look like a photon energy spectrum!   
   \end{itemize}
+
+  \begin{itemize}
+   \item Data sample of {\color{ForestGreen} good tags}:
+\end{itemize}
+    \textbf{(a)} \BtoXsgamma events + \textbf{(b)} remaining non-\BtoXsgamma background
+
 \end{frame}
 
 \begin{frame}{Remaining background}
 \scriptsize\centering
-   \begin{itemize}
-      \item Data sample of {\color{ForestGreen} good tags}:
-   \end{itemize}
-       \textbf{(a)} \BtoXsgamma events + \textbf{(b)} remaining non-\BtoXsgamma background
-   
+
        \vspace{10pt}
        \begin{itemize}
       \item Repeat the fit on \textbf{simulated background-only sample}
@@ -1086,7 +1091,7 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       
       Sample with $\piz$ and $\eta$ veto inverted 
       
-      (\textbf{only} $\bm{B\bar{B}}$ \textbf{background})
+      (\textbf{mostly} $\bm{B\bar{B}}$ \textbf{background})
       \includegraphics[width=0.75\textwidth]{../phd_thesis/figures/data_validation/Bboth_bbbar_enhanced_eb.pdf}
       
       Control regions 
@@ -1095,6 +1100,24 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
       \includegraphics[width=0.75\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_eb.pdf}
 
    \end{columns}
+\end{frame}
+
+\begin{frame}{Normalisation discrepancy in the control regions}
+\centering\scriptsize
+
+   \includegraphics[width=0.55\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_eb.pdf}
+
+   Two major culprits:
+   \begin{itemize}
+      \item Differences in \ZMVA behaviour (analysis specific background present)
+      \item $\sqrt{s}$ variations in time affecting the $\epem\ra\qqbar$/$\epem\ra\FourS$ and \Mbc
+      \item[] (not captured by data-taking period indpendent simulation)
+   \end{itemize}
+
+   \textbf{Both effects difficult to disentangle in this case}
+
+   \ra apply a \textbf{conservative uncertainty} to cover background normalisation
+
 \end{frame}
 
 % \begin{frame}{Data-to-simulation validation: off-resonance sample}
@@ -1216,39 +1239,6 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 
 % \end{frame}
 
-\begin{frame}{Data-to-simulation agreement issues}
-   \scriptsize\centering
-   \begin{itemize}
-      \item Once appropriate corrections are calculated: validate the simulation using data
-      \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection:
-   \end{itemize}
-
-   \vspace{5pt}
-
-   \begin{columns}[t]
-      \column{0.5\textwidth}
-      \centering
-      \texttt{ZernikeMVA} discrepancy
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_zmva.pdf}
-      
-      \begin{itemize}
-         \item Seems to be an analysis-specific background
-         \item[\ra] not observed in control channel studies
-         \item[\ra] keep selection and assign uncertainty   
-      \end{itemize}
-      
-      \column{0.5\textwidth}
-      \centering
-      \Mbc Endpoint discrepancy
-      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/sidebands_mbc_nozmva_1.pdf}
-      \begin{itemize}
-         \item Related to the fact that data-taking period independent simulation used
-         \item[\ra] correction and uncertainty applied
-      \end{itemize}
-  
-   \end{columns}
-
-\end{frame}
 
 \begin{frame}{Data-to-simulation validation: sidebands}
    \scriptsize\centering
@@ -1510,7 +1500,6 @@ hadronic-tagging method} % The short title appears at the bottom of every slide,
 \begin{itemize}
    \centering
    \item[$\EB>1.8~\gev$] $\mathcal{B}(\BtoXsgamma) = (3.54 \pm 0.78~(\text{stat.}) \pm 0.83~(\text{syst.}))\times 10^{-4}$ \\
-   \item[$\EB>2.0~\gev$] $\mathcal{B}(\BtoXsgamma) = (3.06 \pm 0.56~(\text{stat.}) \pm 0.47~(\text{syst.}))\times 10^{-4} $ \\
 \end{itemize}
 
 \begin{itemize}
@@ -1531,58 +1520,14 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
       
 \end{frame}
 
-\begin{frame}{Integrated results}
-\scriptsize
-      \vspace{10pt}
-      
-      {\small\textbf{Moments of the spectrum}}
-
-      \begin{itemize}
-         \item Average calculated as a weighted sum
-      \end{itemize}
-
-      \vspace{-10pt}
-
-      \begin{align*}\label{eq:weighted_sum_moments}
-         \expval{\Egamma} = \frac{\int d\Egamma \Egamma \dv{\mathcal{B}}{\Egamma}}{\int d\Egamma \dv{\mathcal{B}}{\Egamma}}
-         \quad \ra \quad 
-         \begin{split}
-             \expval{\Egamma} &= \frac{\sum_i f_c(\Delta\Egamma^{}_{,i})\cdot  
-                                    \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}
-                                         {\Delta {\Egamma}_{,i}}}
-                                  {\sum_i \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {\Egamma}_{,i}}}
-         \end{split}
-      \end{align*} 
-      
-      \resizebox{1\textwidth}{!}{
-          \begin{tabular}{|c|cc|}
-          \hline
-              \EB lower threshold [\hspace{-1pt}$\gev$] & 
-              $\expval**{\EB}$ [$\gev$] & $\expval**{\EB^2}$ - $\expval**{\EB}^2$ [$\gev^2$]\\
-              \hline
-              1.8 & 2.284 $\pm$ 0.065 (stat.) $\pm$ 0.071 (syst.)    & 0.0502 $\pm$ 0.0157 (stat.) $\pm$ 0.0176 (syst.)\\
-              2.0 & 2.343 $\pm$ 0.036 (stat.) $\pm$ 0.026 (syst.)    & 0.0315 $\pm$ 0.0063 (stat.) $\pm$ 0.0045 (syst.)\\
-              
-              \hline
-             World average ($>1.9~\gev$): & $2.314 \pm 0.011$ & $0.0303 \pm 0.0025$ \\
-             \hline
-          \end{tabular}
-      
-      }
-
-      \vspace{10pt}
-
-      \begin{itemize}
-         \item Can be used to evaluate important parameters related to the shape function (such as $m_b$)
-         \item[\ra] exact values model/method dependant 
-      \end{itemize}
-      
-\end{frame}
-      
+    
 
 
 \begin{frame}{Input to the theoretical calculations (SIMBA collaboration)}
 \centering\scriptsize
+
+\vspace{10pt}
+
 \begin{columns}
    \centering
    \column{0.5\textwidth}
@@ -1593,7 +1538,7 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    \includegraphics[width=0.45\textwidth]{figures/babar_sem_spec_default_la055_a3.pdf}
    \includegraphics[width=0.45\textwidth]{figures/belle_spec_default_la055_a3.pdf}
    
-   {\Large +}
+   {\Large + this work}
    
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/simba_partial_bfs_expectation.pdf}
 
@@ -1601,7 +1546,8 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    \centering
    \begin{itemize}
       \item[]          {\tiny\textbf{Phys.Rev.Lett. 127 (2021) 10, 102001}}
-      \item Global fit of all experimental information
+      \item Exact interpretation of the photon energy spectrum and $\mathcal{F}$ is model dependent
+      \item \textbf{Global fit of all experimental information}
       \item Extract spectrum normalisation, shape function parameters (e.g. $m_b$)
    \end{itemize}
    \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
@@ -1610,13 +1556,15 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 
 \begin{tikzpicture}[remember picture, overlay]
    \node (dog) at (-0.19,3.7) {\LARGE $\bm{\Longrightarrow}$};
-   \node (dogbackup1) at (0.5,1) {normalisation};
-   \node (dogbackup2) at (-0.3,7) {};
-   \node (catbackup1) at (0.8,2.65) {};
-   \node (catbackup2) at (0.8,7) {};
+   \node (dogbackup1) at (0.5,0.7) {normalisation};
+   \node (dogbackup2) at (-0.3,6.2) {};
+   \node (catbackup1) at (0.8,2.15) {};
+   \node (catbackup2) at (0.6,6.2) {};
 
    \draw[->,>=stealth, color=red] (dogbackup1) -- (catbackup1);
    \draw[->,>=stealth, color=red] (catbackup2) -- (dogbackup2);
+
+   \node (catbackup3) at (-15,8.2) {\textbf{BaBar and Belle results}};
 
 \end{tikzpicture}
 
@@ -1666,15 +1614,17 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 %----------------------------------------------------------------------------------------
 \section{Appendix}
 
-\begin{frame}
+\begin{frame}{\hypertarget{frame:A}{Appendix}}
 
-   \centering\Large
+   \centering\scriptsize
 
-   Appendix
+   \tableofcontents
 
 \end{frame}
 
-\begin{frame}{Description of the inclusive decays}
+\section{Theoretical description}
+
+\begin{frame}{Description of the inclusive decays \hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize
 
    \begin{itemize}
@@ -1693,13 +1643,13 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 
   \vspace{10pt}
 
-  $\mathcal{C}_i$: Wilson coefficients (encode \Wpm and $Z$ interactions)
+  $\mathcal{C}_i$: Wilson coefficients (encode \Wpm, $Z$ and $t$ interactions)
   
   $\mathcal{O}_i$: Four-quark and dipole-type operators (quark interactions)
 
 \end{frame}
 
-\begin{frame}{Description of the inclusive decays}
+\begin{frame}{Description of the inclusive decays\hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize
 
    \begin{equation}\nonumber
@@ -1715,7 +1665,7 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 \end{frame}
 
 
-\begin{frame}{\safeBtoXsgamma total decay rate calculations}
+\begin{frame}{\safeBtoXsgamma total decay rate calculations\hyperlink{frame:A}{$\circlearrowleft$}}
 \scriptsize
    \begin{itemize}
       \item That was for the \textit{parton} decay rate;
@@ -1738,7 +1688,10 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 
 \end{frame}
 
-\begin{frame}{\safeBtoXsdgamma spectrum calculations}
+\section{\safeBtoXsgamma spectrum description}
+
+
+\begin{frame}{\safeBtoXsdgamma spectrum calculations\hyperlink{frame:A}{$\circlearrowleft$}}
 \scriptsize
    Non-perturbative effects more complicated if the partial decay rates are considered
 
@@ -1770,7 +1723,7 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 
 \end{frame}
 
-\begin{frame}{\safeBtoXsdgamma spectrum calculations}
+\begin{frame}{\safeBtoXsdgamma spectrum calculations\hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize
       Non-perturbative effects more complicated if the partial decay rates are considered
    
@@ -1808,7 +1761,7 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    \end{frame}
 
 
-   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+   \begin{frame}{\BtoXsgamma spectrum and the shape function\hyperlink{frame:A}{$\circlearrowleft$}}
       \scriptsize
       \begin{itemize}
          \item The shape function $\mathcal{F}$ encodes the Fermi motion of the $b$ and is therefore \textbf{universal for the} \bm{$B$} \textbf{meson}\footnote[1]{\tiny however, more shape function need to be introduced at higher orders}
@@ -1823,7 +1776,7 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
 
    \end{frame}
 
-   \begin{frame}{\BtoXsgamma spectrum and the shape function}
+   \begin{frame}{\BtoXsgamma spectrum and the shape function\hyperlink{frame:A}{$\circlearrowleft$}}
       \scriptsize
       It can be shown that the moments of photon energy spectrum relate to
       \begin{equation}\nonumber
@@ -1837,6 +1790,8 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
      \end{itemize}
    $\mathcal{F}$ can be parametrised in terms of these quantities!
    \end{frame}
+
+   \section{Kagan-Neubert model}
 
 
    \begin{frame}{Kagan-Neubert model}
@@ -1860,29 +1815,10 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    \end{center}
    \end{frame}
 
-   \begin{frame}{SIMBA global fit of \BtoXsgamma}
-      \scriptsize
-      \textbf{SIMBA} collaboration: 
-      Combine all the information available from experimental measurements
-      \begin{itemize}
-       \item[\ra] global fit of \BtoXsgamma measurements to determine $m_b$ and $\lambda_1$
-      \end{itemize}
+   \section{BSM physics in \safeBtoXsgamma}
 
-      \begin{columns}
-         \centering
-         \column{0.5\textwidth}
-         \includegraphics[width=0.7\textwidth]{figures/babar_hadtag_spec_default_la055_a3.pdf}
-         \includegraphics[width=0.7\textwidth]{figures/babar_incl_spec_default_la055_a3.pdf}
-         \column{0.5\textwidth}
-         \includegraphics[width=0.7\textwidth]{figures/babar_sem_spec_default_la055_a3.pdf}
-         \includegraphics[width=0.7\textwidth]{figures/belle_spec_default_la055_a3.pdf}
-      \end{columns}
-      \begin{flushright}
-         {\tiny\textbf{Phys.Rev.Lett. 127 (2021) 10, 102001}}
-      \end{flushright}
-   \end{frame}
 
-\begin{frame}{Beyond the Standard Model}
+\begin{frame}{Beyond the Standard Model \hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize
    Only heavy particles are expected, in other words, the effective Lagrangian would be modified as:
    \begin{equation}\nonumber
@@ -1905,7 +1841,7 @@ Comparison of all results: (Extrapolation to $\EB>1.6~\gev$)
    \end{itemize}
 \end{frame}
 
-\begin{frame}{Two-Higgs-doublet models}
+\begin{frame}{Two-Higgs-doublet models \hyperlink{frame:A}{$\circlearrowleft$}}
 
    \scriptsize
 
@@ -1948,8 +1884,200 @@ and $y = m_t/m_{H^+}$
   
 \end{frame}
 
+\section{Belle II}
 
-\begin{frame}{\safeBtoXsgamma measurement techniques}
+
+\begin{frame}{Pixel vertex detector \hyperlink{frame:A}{$\circlearrowleft$}}
+
+   \scriptsize
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+         \includegraphics[width=0.7\textwidth]{../phd_thesis_defense_slides/figures/pxd_efficiency.png}
+      \column{0.5\textwidth}
+      \centering
+         \includegraphics[width=0.7\textwidth]{../phd_thesis_defense_slides/figures/pxd_layers.png}
+   \end{columns}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+         \includegraphics[width=0.7\textwidth]{../phd_thesis_defense_slides/figures/pxd_depfet.png}
+      \column{0.5\textwidth}
+         \begin{itemize}
+            \item DEPFET technology
+            \item Hit efficiency ~99\% in good regions
+            \item $z$ resolution $\sim15~\si{\micro\meter}$
+         \end{itemize}
+         {\tiny\textbf{Nuclear Inst. and Methods in Physics Research, A 1032 (2022) 166631}}
+   \end{columns}
+\end{frame}
+
+\begin{frame}{Silicon vertex detector \hyperlink{frame:A}{$\circlearrowleft$}}
+\centering\scriptsize
+
+Double Sided Silicon Strip sensors:
+\vspace{10pt}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.8\textwidth]{../phd_thesis/figures/experimental_setup/vxd.png}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.8\textwidth]{figures/svd_details.png}
+
+   \end{columns}
+
+   \vspace{10pt}
+
+   \includegraphics[width=0.8\textwidth]{figures/svd_resolution.png}
+
+   \begin{flushright}
+   \tiny\textbf{Nuclear Inst. and Methods in Physics Research, A 1045 (2023) 167578}
+   \end{flushright}
+\end{frame}
+
+\begin{frame}{Central drift chamber \hyperlink{frame:A}{$\circlearrowleft$}}
+   \centering\scriptsize
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/experimental_setup/cdc_quadrant.png}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/experimental_setup/cdc_layers.png}
+   \end{columns}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+         \includegraphics[width=0.8\textwidth]{figures/cdc_resolution.png}
+      \column{0.5\textwidth}
+      \begin{itemize}
+         \item 56 layers: axial and stereo orientation
+         \item $0.1-0.2$ cm resolution
+         \item He-C$_2$H$_6$ gas mixture
+      \end{itemize}
+
+      \begin{flushright}
+        \tiny \textbf{e-Print: 1910.06289 [physics.ins-det]}
+      \end{flushright}
+      
+   \end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Particle identification systems \hyperlink{frame:A}{$\circlearrowleft$}}
+   \scriptsize
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+      \textbf{Time of propagation counter}
+         \includegraphics[width=0.9\textwidth]{figures/top_schematic.png}
+         \begin{itemize}
+            \item 85\% $K^{\pm}$ identification at 10\% $\pi^{\pm}$ misidentification
+         \end{itemize}
+      \column{0.5\textwidth}
+      \textbf{Ring-imaging Cherenkov counter}
+         \includegraphics[width=0.9\textwidth]{figures/arich_schematic.png}
+         \begin{itemize}
+            \item 94\% $K^{\pm}$ identification at 11\% $\pi^{\pm}$ misidentification
+         \end{itemize}
+   \end{columns}
+   \begin{flushright}
+     \tiny \textbf{PoS EPS-HEP2021 (2022), 803}
+
+      \tiny \textbf{PTEP 2020 (2020) 9, 093H01}
+   \end{flushright}
+\end{frame}
+
+\begin{frame}{Electromagnetic calorimeter \hyperlink{frame:A}{$\circlearrowleft$}}
+   \centering\scriptsize
+   \begin{columns}
+      \column{0.5\textwidth}
+      \begin{itemize}
+         \item Photon detection \& energy measurement
+         \item Electron/hadron differentiation
+         \item $K_L^0$ detection (with KLM)
+         \item Triggering
+         \item Luminosity measurements
+      \end{itemize}
+      \column{0.5\textwidth}
+      8736 CsI(Tl) crystals:
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/experimental_setup/ecl.png}
+      \begin{itemize}
+         \item 4\% resolution at 100~\mev 
+         \item[] up to 2\% resolution at 5~\gev
+         \item 5-10 mm position resolution
+      \end{itemize}
+   \end{columns}
+
+   \begin{flushright}
+      \tiny
+      \textbf{JINST 15 (2020) 10, C10016}
+
+      \textbf{J.Phys.Conf.Ser. 587 (2015) 1, 012045}
+   \end{flushright}
+\end{frame}
+
+\begin{frame}{Track reconstruction \hyperlink{frame:A}{$\circlearrowleft$}}
+\scriptsize\centering
+         \begin{itemize}
+            \item $d_0$: the distance of the point of the closest approach to the $z$ axis;
+            \item $\phi_0$: the angle between the transverse momentum and the $x$ axis at the point of the closest approach;
+            \item $\omega$: the track curvature signed with the particle charge;
+            \item $z_0$: the $z$ coordinate at $d_0$;
+            \item $\tan\lambda$: the tangent of the track dip angle.
+        \end{itemize}
+
+\begin{columns}
+   \column{0.33\textwidth}
+   \clipbox*{0 {0\height} {.32\width} {1\height}}{%
+      \includegraphics[width=3\textwidth]{../phd_thesis/figures/experimental_setup/helix.png}
+   }
+   \column{0.33\textwidth}
+   \clipbox*{{.34\width}  {0\height} {.66\width} {1\height}}{%
+      \includegraphics[width=3\textwidth]{../phd_thesis/figures/experimental_setup/helix.png}
+   }
+   \column{0.33\textwidth}
+   \clipbox*{{.66\width} {0\height} {0.99\width} {1\height}}{%
+      \includegraphics[width=3\textwidth]{../phd_thesis/figures/experimental_setup/helix.png}
+   }
+\end{columns}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Clustering and photon reconstruction \hyperlink{frame:A}{$\circlearrowleft$}}
+   \scriptsize\centering
+   \begin{columns}
+   \column{0.5\textwidth}
+   \centering
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/experimental_setup/clustering1.png}
+   \column{0.5\textwidth}
+   \centering
+          \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/experimental_setup/clustering2.png}
+   \end{columns}
+
+   \begin{itemize}
+      \item Find connected regions starting from a seed crystal ($E>10~\mev$)
+      \item Add neighbours if $E>0.5~\mev$
+      \item Examine neighbours-neighbours if $E>10~\mev$
+      \item If more than one local maximum: 
+      \item[] energy divided into two clusters based on distance from central cystal
+   \end{itemize}
+
+\end{frame}
+
+\section{\safeBtoXsgamma measurement techniques}
+
+
+\begin{frame}{\safeBtoXsgamma measurement techniques \hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize
    \begin{columns}
       \centering
@@ -1981,7 +2109,7 @@ and $y = m_t/m_{H^+}$
 
 \end{frame}
 
-\begin{frame}{\BtoXsdgamma measured exclusives modes}
+\begin{frame}{\BtoXsdgamma measured exclusives modes \hyperlink{frame:A}{$\circlearrowleft$}}
    \centering
    \begin{minipage}[c]{0.5\textwidth}
       \centering
@@ -2055,7 +2183,26 @@ and $y = m_t/m_{H^+}$
 
 \end{frame}
 
-\begin{frame}{Simulated samples}
+\section{Simulated samples}
+
+\begin{frame}{Data samples in B factories \hyperlink{frame:A}{$\circlearrowleft$}}
+   \scriptsize\centering
+   \textbf{$\sqrt{s} = 10.58~\gev$}
+   
+   $\epem\ra X$
+
+   \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/corss_sections.pdf}
+   \begin{itemize}
+      \item \epem collissions create not only \FourS!
+      \item[] $\sigma({\epem(\gamma)}) \approx 300~\nb$
+      \item[] $\sigma({\FourS}) \approx 1.11~\nb$
+      \item Many processes are highly different and easy to distinguish
+      \item Background from $\epem\ra\qqbar$ and $\epem\ra\tautau$ often important
+      \item[\ra] \textbf{all this part of Belle~II simulation}
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Simulated samples \hyperlink{frame:A}{$\circlearrowleft$}}
    \centering
    \resizebox{0.7\textwidth}{!}{
 \begin{tabular}{|l|cc|}
@@ -2082,7 +2229,10 @@ continuum \ssbar &                     &\\
    + detector response, \texttt{Geant 4}
 \end{frame}
 
-\begin{frame}{\piz and $\eta$ veto}
+\section{Selection and reconstruction tools}
+
+
+\begin{frame}{\piz and $\eta$ veto \hyperlink{frame:A}{$\circlearrowleft$}}
 
    \centering\scriptsize
 
@@ -2106,7 +2256,7 @@ continuum \ssbar &                     &\\
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\piz and $\eta$ validation}
+\begin{frame}{\piz and $\eta$ validation \hyperlink{frame:A}{$\circlearrowleft$}}
 
    \centering
 
@@ -2132,7 +2282,7 @@ continuum \ssbar &                     &\\
 
 \end{frame}
 
-\begin{frame}{ZernikeMVA}
+\begin{frame}{ZernikeMVA \hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize\centering
 
    \textbf{Zernike polynomial}
@@ -2153,7 +2303,7 @@ continuum \ssbar &                     &\\
    f(\vec{x}) = \sum_i \delta(\vec{x}-\vec{x}_i)\frac{w_iE_i}{\sum w_iE_i},
 \end{equation*}
 
-   \textbf{Zernike moments}:
+   \textbf{Zernike moments of Dirac comb}:
    \begin{equation*}
       |Z_{nm}| = \frac{n+1}{\pi}\frac{1}{\sum_iw_iE_i}\left|\sum_iR_{nm}(\rho_i)e^{-im\alpha_i}w_iE_i\right|.
   \end{equation*}
@@ -2163,14 +2313,17 @@ continuum \ssbar &                     &\\
   
 \end{frame}
 
-\begin{frame}{FEI modes}
+\section{FEI}
+
+
+\begin{frame}{FEI modes \hyperlink{frame:A}{$\circlearrowleft$}}
    \centering
    \resizebox{0.45\textheight}{!}{
       \input{../phd_thesis/tables/fei_modes.tex}
    }
 \end{frame}
 
-\begin{frame}{FEI training}
+\begin{frame}{FEI training \hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize\centering
    \begin{itemize}
       \item Trained on 100~\invfb of simulation
@@ -2187,7 +2340,7 @@ continuum \ssbar &                     &\\
   
 \end{frame}
 
-\begin{frame}{FEI signal probability \feiProb}
+\begin{frame}{FEI signal probability \feiProb \hyperlink{frame:A}{$\circlearrowleft$}}
 \centering
       \includegraphics[width=0.85\textheight]{../phd_thesis/figures/appendices/FEI_signal_probabilities/Bp_feiSigProbs1.pdf}
 
@@ -2224,7 +2377,89 @@ continuum \ssbar &                     &\\
 
 \end{frame}
 
-\begin{frame}{Continuum suppression features}
+\section{Photon detection efficiency}
+
+
+\begin{frame}{Photon detection efficiency \hyperlink{frame:A}{$\circlearrowleft$}}
+   \centering\scriptsize
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/data_sim_corrections/eemumugamma.png}
+      \column{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{../phd_thesis/figures/data_sim_corrections/measurement_principle.png}
+   \end{columns}
+
+   \begin{equation*}
+      \varepsilon_{\gamma}(|\vec{p}_{\mathrm{recoil}}|, \theta_{\mathrm{recoil}}, \phi_{\mathrm{recoil}}) = \frac{N(\mathrm{photon~found}~\cup~\mathrm{recoil~found})}{N(\mathrm{recoil~found})},
+   \end{equation*}
+
+   \begin{columns}
+      \column{0.33\textwidth}
+      \centering
+      \textbf{Recoil found}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/data_sim_corrections/pyth_data_normalisation_to_mc_comparison_pRecoil_selected_repaired.pdf}
+      \column{0.33\textwidth}   
+      \centering
+      \textbf{Recoil found AND photon found}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/data_sim_corrections/pyth_data_normalisation_to_mc_comparison_pRecoil_matched_repaired.pdf}
+      \column{0.33\textwidth}
+      \centering
+      \textbf{Efficiency (ratio)}
+         \includegraphics[width=1\textwidth]{../phd_thesis/figures/data_sim_corrections/pyth_data_mc_agreement_pRecoil.pdf}
+
+   \end{columns}
+\end{frame}
+
+\section{Continuum suppression}
+
+
+\begin{frame}{Continuum suppression features \hyperlink{frame:A}{$\circlearrowleft$}}
+\scriptsize\centering
+   \begin{columns}
+      \column{0.5\textwidth}
+      \centering
+      \textbf{Thrust}
+      \begin{equation*}\label{eq:thrust}
+         T = \frac{\sum^N_{i=1}|\vec{T}\cdot\vec{p}_i|}{\sum^N_{i=1}|\vec{p}_i|}.
+     \end{equation*}
+
+     where $\vec{T}$ maximises the projection of the $\sum_i\vec{p}_i$.
+     \column{0.5\textwidth}
+     \centering
+     \textbf{Sphericity matrix}
+     \begin{equation*}
+      S^{\alpha,\beta} = \frac{\sum^N_{i=1}p_i^{\alpha}p_i^{\beta}}{\sum^N_{i=1}|\vec{p}_i|^2},
+  \end{equation*}
+     
+   \end{columns}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \begin{equation*}
+         B_l \equiv \sum_i \frac{|\vec{p}_i|}{\sqrt{s}}P_l(\cos\alpha_i),
+     \end{equation*}
+      \column{0.5\textwidth}
+      \begin{equation}
+         H_l \equiv \sum_{i,j} |\vec{p}_i||\vec{p}_j|P_l(\cos\theta_{ij}),
+     \end{equation}
+   \end{columns}
+
+   \ra etc. 
+
+   \textbf{More examples:}
+
+   \begin{columns}
+      \column{0.5\textwidth}
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/datamc_agreement_tests/Btag_cosTBTO_agreement_tested.pdf}
+      \column{0.5\textwidth}
+      \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/appendices/continuum_suppression_features/datamc_agreement_tests/Btag_CleoCone3_agreement_tested.pdf}    
+   \end{columns}
+   
+\end{frame}
+
+\begin{frame}{Continuum suppression features \hyperlink{frame:A}{$\circlearrowleft$}}
 
    \scriptsize\centering
 
@@ -2252,24 +2487,9 @@ continuum \ssbar &                     &\\
 
 \end{frame}
 
-   \begin{frame}{Data samples in B factories}
-      \scriptsize\centering
-      \textbf{$\sqrt{s} = 10.58~\gev$}
-      
-      $\epem\ra X$
+\section{Good tag B mesons}
 
-      \includegraphics[width=1\textwidth]{../phd_thesis/figures/experimental_setup/corss_sections.pdf}
-      \begin{itemize}
-         \item \epem collissions create not only \FourS!
-         \item[] $\sigma({\epem(\gamma)}) \approx 300~\nb$
-         \item[] $\sigma({\FourS}) \approx 1.11~\nb$
-         \item Many processes are highly different and easy to distinguish
-         \item Background from $\epem\ra\qqbar$ and $\epem\ra\tautau$ often important
-         \item[\ra] \textbf{all this part of Belle~II simulation}
-      \end{itemize}
-   \end{frame}
-
-\begin{frame}{Best tag-side candidate selection}
+\begin{frame}{Best tag-side candidate selection \hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize\centering
       \begin{itemize}
          \item    FEI produces up to 20 candidates in each event!
@@ -2299,7 +2519,7 @@ continuum \ssbar &                     &\\
    
    \end{frame}
 
-   \begin{frame}{Good tag-B mesons}
+   \begin{frame}{Good tag-B mesons \hyperlink{frame:A}{$\circlearrowleft$}}
       \centering\scriptsize
       \begin{itemize}
          \item Briefly introduce a loose definition: good tag-\B mesons
@@ -2323,8 +2543,76 @@ continuum \ssbar &                     &\\
    
    \end{frame}
    
+\section{Fitting}
 
-\begin{frame}{Fit stability on smaller data sets}
+\begin{frame}{Fitting functions \hyperlink{frame:A}{$\circlearrowleft$}}
+
+   \centering\scriptsize
+
+\begin{columns}
+   \column{0.5\textwidth}
+   \centering
+   \textbf{Chebyshev polynomials of the first kind} 
+   
+   (\BB combinatorial)
+
+   \vspace{-10pt}
+
+\begin{equation*}\label{eq:chebyshev_generator}
+   T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x),
+\end{equation*}
+with $T_0=1$ and $T_1=x$.
+\begin{equation*}\label{eq:chebyshev_pdf}
+   f(x, \vec{k}) = \sum_i^N k_i T_n(x),
+\end{equation*}
+
+\column{0.5\textwidth}
+\centering
+\textbf{Crystal Ball} 
+
+(Good tags)
+
+\vspace{-10pt}
+
+\begin{align*}\label{eq:crystal_ball}
+   f(x;\mu, \sigma, \alpha, n) =  
+   \begin{cases} 
+   \exp(- \frac{(x - \mu)^2}{2 \sigma^2}), & \mbox{for}\frac{x - \mu}{\sigma} \geqslant -\alpha \\
+   A \cdot (B - \frac{x - \mu}{\sigma})^{-n}, & \mbox{for }\frac{x - \mu}{\sigma} < -\alpha 
+   \end{cases}
+\end{align*}
+with
+\begin{align*}
+   \begin{split}
+   A &= \left(\frac{n}{\left| \alpha \right|}\right)^n \cdot \exp\left(- \frac {\left|\alpha \right|^2}{2}\right)\\
+   B   &= \frac{n}{\left| \alpha \right|}  - \left| \alpha \right|.
+   \end{split}
+\end{align*}
+
+\end{columns}
+
+
+  \textbf{ARGUS} 
+  
+  (\qqbar)
+
+  \vspace{-10pt}
+
+  \begin{equation*}\label{eq:argus_function}
+   f(m, m_0, c) = m \cdot \sqrt{ 1 - \left( \frac{m}{m_0} \right)^2}
+   \cdot \exp\left[ c \cdot \left(1 - \left(\frac{m}{m_0}\right)^2 \right) \right]
+\end{equation*}
+
+
+\end{frame}
+
+\begin{frame}{Optimal \EB intervals \hyperlink{frame:A}{$\circlearrowleft$}}
+   \centering
+   \includegraphics[width=0.5\textwidth]{../phd_thesis/figures/fitting/binning_significance.pdf}
+   
+\end{frame}
+
+\begin{frame}{Fit stability on smaller data sets \hyperlink{frame:A}{$\circlearrowleft$}}
    \scriptsize\centering
       \begin{itemize}
          \item Fit is tested by generating toy datasets based on the full 1.6~\invab fit
@@ -2349,7 +2637,8 @@ continuum \ssbar &                     &\\
    
    
    \end{frame}
-   \begin{frame}{Remaining post-fit $B^0$ backgrounds}
+
+   \begin{frame}{Remaining post-fit $B^0$ backgrounds \hyperlink{frame:A}{$\circlearrowleft$}}
    
       {\resizebox{1.35\textheight}{!}{
       \begin{tabular}{lrrrrrrrrrrr}
@@ -2413,7 +2702,7 @@ continuum \ssbar &                     &\\
       }}
       
    \end{frame}
-\begin{frame}{Remaining post-fit $B^+$ backgrounds}
+\begin{frame}{Remaining post-fit $B^+$ backgrounds \hyperlink{frame:A}{$\circlearrowleft$}}
    
    \resizebox{1.2\textheight}{!}{
       \begin{tabular}{lrrrrrrrrrrr}
@@ -2492,7 +2781,149 @@ continuum \ssbar &                     &\\
    
 \end{frame}
 
-   \begin{frame}{Future prospects}
+\section{Data-simulation agreement issues}
+
+   \begin{frame}{Data-to-simulation agreement issues \hyperlink{frame:A}{$\circlearrowleft$}}
+      \scriptsize\centering
+      \begin{itemize}
+         \item Once appropriate corrections are calculated: validate the simulation using data
+         \item The sideband region (\EB<1.8~\gev and \EB>2.7~\gev) with full signal selection:
+      \end{itemize}
+   
+      \vspace{5pt}
+   
+      \begin{columns}[t]
+         \column{0.5\textwidth}
+         \centering
+         \texttt{ZernikeMVA} discrepancy
+         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/Bboth_sidebands_zmva.pdf}
+         
+         \begin{itemize}
+            \item Seems to be an analysis-specific background
+            \item[\ra] not observed in control channel studies
+            \item[\ra] keep selection and assign uncertainty   
+         \end{itemize}
+         
+         \column{0.5\textwidth}
+         \centering
+         \Mbc Endpoint discrepancy
+         \includegraphics[width=0.85\textwidth]{../phd_thesis/figures/data_validation/sidebands_mbc_nozmva_1.pdf}
+         \begin{itemize}
+            \item Related to the fact that data-taking period independent simulation used
+            \item[\ra] correction and uncertainty applied
+         \end{itemize}
+     
+      \end{columns}
+   
+   \end{frame}
+   
+
+  \section{Efficiency and resolution}
+
+\begin{frame}{\BtoXsgamma efficiency dependance \hyperlink{frame:A}{$\circlearrowleft$}}
+   \begin{columns}
+      \column{0.5\textwidth}
+          \includegraphics[width=1\textwidth]{../phd_thesis/figures/signal_validation/epsilon_fei.pdf}
+      \column{0.5\textwidth}
+          \includegraphics[width=1\textwidth]{../phd_thesis/figures/signal_validation/selection_efficiency.pdf}
+   \end{columns}
+\end{frame}
+
+\begin{frame}{\EB Resolution}
+
+   \centering\scriptsize
+
+   \begin{itemize}
+      \item Measured in fits of $\tilde{\EB}-\EB$
+   \end{itemize}
+
+   \includegraphics[width=0.45\textwidth]{../phd_thesis/figures/signal_validation/resolution_bin_by_bin_withkstar.pdf}
+
+\begin{columns}
+\column{0.5\textwidth}
+\centering
+\textbf{Good tag:}
+
+\includegraphics[width=0.6\textwidth]{../phd_thesis/figures/appendices/resolution_fits/2p2to2p3.pdf}
+\column{0.5\textwidth}
+\centering
+\textbf{Perfect reconstruction:}
+\includegraphics[width=0.6\textwidth]{../phd_thesis/figures/appendices/resolution_fits/issignal_2p2to2p3.pdf}
+
+
+\end{columns}
+
+\end{frame}
+
+\section{Other results}
+
+\begin{frame}{Integrated results \hyperlink{frame:A}{$\circlearrowleft$}}
+   \scriptsize
+         \vspace{10pt}
+         
+         {\small\textbf{Moments of the spectrum}}
+   
+         \begin{itemize}
+            \item Average calculated as a weighted sum
+         \end{itemize}
+   
+         \vspace{-10pt}
+   
+         \begin{align*}\label{eq:weighted_sum_moments}
+            \expval{\Egamma} = \frac{\int d\Egamma \Egamma \dv{\mathcal{B}}{\Egamma}}{\int d\Egamma \dv{\mathcal{B}}{\Egamma}}
+            \quad \ra \quad 
+            \begin{split}
+                \expval{\Egamma} &= \frac{\sum_i f_c(\Delta\Egamma^{}_{,i})\cdot  
+                                       \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}
+                                            {\Delta {\Egamma}_{,i}}}
+                                     {\sum_i \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {\Egamma}_{,i}}}
+            \end{split}
+         \end{align*} 
+         
+         \resizebox{1\textwidth}{!}{
+             \begin{tabular}{|c|cc|}
+             \hline
+                 \EB lower threshold [\hspace{-1pt}$\gev$] & 
+                 $\expval**{\EB}$ [$\gev$] & $\expval**{\EB^2}$ - $\expval**{\EB}^2$ [$\gev^2$]\\
+                 \hline
+                 1.8 & 2.284 $\pm$ 0.065 (stat.) $\pm$ 0.071 (syst.)    & 0.0502 $\pm$ 0.0157 (stat.) $\pm$ 0.0176 (syst.)\\
+                 2.0 & 2.343 $\pm$ 0.036 (stat.) $\pm$ 0.026 (syst.)    & 0.0315 $\pm$ 0.0063 (stat.) $\pm$ 0.0045 (syst.)\\
+                 
+                 \hline
+                World average ($>1.9~\gev$): & $2.314 \pm 0.011$ & $0.0303 \pm 0.0025$ \\
+                \hline
+             \end{tabular}
+         
+         }
+   
+         \vspace{10pt}
+   
+         \begin{itemize}
+            \item Can be used to evaluate important parameters related to the shape function (such as $m_b$)
+            \item[\ra] exact values model/method dependant 
+         \end{itemize}
+
+
+         {\small\textbf{Integrated branching fraction}}
+
+         \resizebox{1\textwidth}{!}{
+    \begin{tabular}{|c|cl|}
+    \hline
+        \EB lower threshold [\hspace{-1pt}$\gev$] & 
+        $\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$ & 
+        \makecell{$\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$\\(extrapolated to $1.6~\gev)$} \\
+        \hline
+            $1.8$  & $3.54 \pm 0.78$ (stat.) $\pm~0.83$ (syst.) & $3.65 \pm 0.80$ (stat.) $\pm 0.86$ (syst.) $\pm 0.02$ (extrap.)\\ 
+            $2.0$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
+            $2.1$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & $2.86 \pm 0.53$ (stat.) $\pm 0.40$ (syst.) $\pm 0.08$ (extrap.)\\
+        \hline
+    \end{tabular}
+
+}
+         
+   \end{frame}
+
+   \begin{frame}{Future prospects \hyperlink{frame:A}{$\circlearrowleft$}}
       \scriptsize\centering
          \begin{itemize}
             \item The future holds good things!
